@@ -30,6 +30,7 @@
       <button class="nav-tab" data-view="drills">Drills</button>
       <button class="nav-tab" data-view="concepts">Concepts</button>
       <button class="nav-tab" data-view="tracker">Tracker</button>
+      <button class="nav-tab" data-view="logger">Logger</button>
     </nav>
     <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
@@ -145,6 +146,9 @@
             <ul class="caution-list" id="caution-list"></ul>
           </div>
         </div>
+
+        <!-- DM FOCUS NOTE -->
+        <p class="dm-focus-note" id="dm-focus-note" style="display:none"></p>
 
         <!-- PLAN STEPS -->
         <div class="plan-steps" id="plan-steps"></div>
@@ -338,8 +342,8 @@
             <span class="block-badge">BLOCK 1</span>
             <span class="block-weeks">Days 1–14</span>
           </div>
-          <h2 class="block-title">Angle Isolation & Peek Structure</h2>
-          <p class="block-desc">The highest-ROI block. Most "random" deaths come from overpeek and blended movement, not bad aim. Fix the setup first.</p>
+          <h2 class="block-title">Peeking & Angle Mechanics</h2>
+          <p class="block-desc">Core knowledge for every duel — how fights are opened, won, and lost. The highest-ROI block to master first.</p>
           <div class="concepts-list" id="concepts-block1"></div>
         </div>
 
@@ -348,8 +352,8 @@
             <span class="block-badge">BLOCK 2</span>
             <span class="block-weeks">Days 15–28</span>
           </div>
-          <h2 class="block-title">Stop Timing & Movement-Shot Rhythm</h2>
-          <p class="block-desc">When to shoot. The deadzone. Counter-strafe vs. tap-to-stop. This is where first-bullet accuracy lives.</p>
+          <h2 class="block-title">Movement & Mechanics Physics</h2>
+          <p class="block-desc">What actually happens to your character's accuracy and speed — the science under the mechanics.</p>
           <div class="concepts-list" id="concepts-block2"></div>
         </div>
 
@@ -358,8 +362,8 @@
             <span class="block-badge">BLOCK 3</span>
             <span class="block-weeks">Days 29–42</span>
           </div>
-          <h2 class="block-title">Target Transitions & Anti-Panic</h2>
-          <p class="block-desc">Multi-target fights, pressure transfer, visualization, and breaking the panic-spray reflex.</p>
+          <h2 class="block-title">Mental Frameworks & Performance</h2>
+          <p class="block-desc">Green mode, tension, visualization, and breaking the panic-spray reflex. The psychological layer of aim.</p>
           <div class="concepts-list" id="concepts-block3"></div>
         </div>
 
@@ -368,8 +372,8 @@
             <span class="block-badge">SUPPORT</span>
             <span class="block-weeks">Ongoing</span>
           </div>
-          <h2 class="block-title">Macro Protocols & Positioning</h2>
-          <p class="block-desc">UFOs, Oh Shit Line, Driver's Protocol, Tab habit — these support your mechanics, not replace them.</p>
+          <h2 class="block-title">Positioning, Game Sense & Macro</h2>
+          <p class="block-desc">UFOs, OH SH*T Line, Driver's Protocol, info-util-commit frameworks — these amplify your mechanics.</p>
           <div class="concepts-list" id="concepts-block4"></div>
         </div>
       </div>
@@ -431,6 +435,10 @@
             <label>DM note</label>
             <input type="text" id="log-dm-note" placeholder="e.g. Guardian felt clean today" />
           </div>
+          <div class="form-row">
+            <label>VOD review insight (5-Why root cause)</label>
+            <input type="text" id="log-vod-insight" placeholder="e.g. I panic peek because I don't pre-visualize B main" />
+          </div>
           <button class="save-log-btn" id="save-log">Save Log</button>
         </div>
 
@@ -472,6 +480,40 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════ LOGGER VIEW ═══════════════════════════════ -->
+  <section class="view" id="view-logger">
+    <div class="view-inner">
+      <h1 class="view-title">Death Logger</h1>
+      <p class="view-subtitle">Log after every death. Fast, honest, no excuses. Use between rounds.</p>
+
+      <div class="logger-tabs">
+        <button class="logger-tab-btn active" data-logger-tab="round">In-Round</button>
+        <button class="logger-tab-btn" data-logger-tab="summary">Summary</button>
+      </div>
+
+      <div class="logger-panel" id="logger-round-panel">
+        <p class="logger-prompt">What caused that death?</p>
+        <div class="death-cause-grid" id="death-cause-grid">
+          <!-- JS renders cause buttons here -->
+        </div>
+        <div class="death-diagnosis" id="death-diagnosis" style="display:none">
+          <div class="diagnosis-content" id="diagnosis-content"></div>
+          <div class="diagnosis-actions">
+            <button class="log-death-btn" id="log-death-btn">Log This Death</button>
+            <button class="skip-death-btn" id="skip-death-btn">Skip → Next Round</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="logger-panel" id="logger-summary-panel" style="display:none">
+        <div class="summary-content" id="summary-content">
+          <p class="summary-empty">No deaths logged yet this session.</p>
+        </div>
+      </div>
     </div>
   </section>
 
