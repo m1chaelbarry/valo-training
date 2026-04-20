@@ -879,128 +879,279 @@ const CONCEPTS_BY_BLOCK = {
 /* ═══════════════════════════════════════════════
    DATA — SESSION PLANS
 ═══════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════
+   DRILL ROTATION — cycles through drill pools
+   so each session has a specific recommended drill.
+═══════════════════════════════════════════════ */
+const DRILL_POOLS = {
+  peek: [
+    {
+      id: 'two-step-peek',
+      name: 'Two-Step Peek',
+      cue: '"Two steps, lift hand, stop before crosshair arrives." Say the angle out loud before each rep.',
+      where: 'Custom game or Ghost DM. Pick ONE angle. Repeat 15–20 deliberate reps.',
+      why: 'Foundation of every peek — most players blend movement and aiming simultaneously, which is why first shots miss. This drill forces them apart. Until this is automatic, every other peek drill is built on sand.'
+    },
+    {
+      id: 'idle-crosshair',
+      name: 'Idle Crosshair (Hand-Off-Mouse)',
+      cue: '"Keyboard moves. Hand completely off mouse until stopped."',
+      where: 'Custom game. Physically lift your mouse hand off the mouse, take two steps to peek, then put hand back only after you have stopped.',
+      why: 'Eliminates the most common mechanical habit: blending mouse movement with key movement. Feels extreme on purpose. If this feels impossible, that reveals exactly how bad the blend habit is.'
+    },
+    {
+      id: 'slice-fallback',
+      name: 'Slice & Fall Back',
+      cue: '"Close to wall, stop early, expose only a sliver — then fall back. No commit yet."',
+      where: 'Ghost DM or custom. Stand close to the corner. Flash just your gun model around the edge, then fall back immediately. Never go wide on the first show.',
+      why: 'The slice is your information peek — not your kill peek. Going straight to a full wide swing is a coin flip. This drills the information-first habit that separates structured peeking from gambling.'
+    },
+    {
+      id: 'slice-wide-combo',
+      name: 'Slice → Wide Swing Combo',
+      cue: '"Slice to bait their aim tight. Wide swing to catch them out of position."',
+      where: 'Custom game with a friend holding an angle. Full sequence: expose sliver → fall back → wide swing. 10 reps each combo variant.',
+      why: 'The slice baits the enemy crosshair narrow. The wide swing then catches them displaced. This is the complete peek sequence — slice for info and conditioning, wide for the kill.'
+    },
+    {
+      id: 'pause-peek',
+      name: 'Pause-Peek (Priming the Angle)',
+      cue: '"Run up. Brief stop here. Then out." — 3-beat rhythm.',
+      where: 'Common ranked angles in custom or Ghost DM. Run to entry point, pause 0.1 seconds at entry, then swing out. Watch shooting error indicator — must be yellow, not blue.',
+      why: 'Running at full speed requires ~2 seconds of deceleration before you can shoot accurately. The pause removes that delay — you are already near-zero velocity when you swing, so your first bullet is accurate from frame 1.'
+    }
+  ],
+  aim: [
+    {
+      id: 'deadzone-stop',
+      name: 'Deadzone Stop Timing',
+      cue: '"Release key → wait for yellow lines → click. In that order. Never fire on blue."',
+      where: 'Valorant range. Enable shooting error graph (Settings → Gameplay → Show Bullet Spread Indicators). Strafe A or D, then stop — wait until the spread lines turn yellow before firing.',
+      why: 'Yellow lines = bullet goes exactly where aimed. Blue lines = bullet will miss. Most players fire while blue without knowing it. This drill builds the wait-for-yellow reflex that accurate first shots require — it is the single most impactful timing habit.'
+    },
+    {
+      id: 'ping-tracking',
+      name: 'Ping Tracking Drill',
+      cue: '"Stay on the ping. Never let crosshair drop below it."',
+      where: 'Valorant range. Place a ping on a wall at head height. Burst fire onto it — crosshair must never drop below the ping. Reset count if it does.',
+      why: 'Reveals if you have the unconscious "U-shape" habit — dragging the crosshair down after shot 1. Most players do this without knowing. Once visible, it is fixable. Especially important for Vandal users where shot 2 position matters.'
+    },
+    {
+      id: 'mass-protocol-dm',
+      name: 'MASS Protocol DM',
+      cue: '"Move → Aim (small adjustment) → Stand Still → Shoot. Any flick kill = rep does not count."',
+      where: 'Ghost DM for 10–15 min. Every kill must follow the 4 steps. Track flick kills separately — they reveal how often you revert to the wrong habit.',
+      why: 'This is how Radiant+ players actually aim. Florescent hit headshots in 22 of 24 rounds without a single mouse flick — movement placed the crosshair, mouse only micro-adjusted. Flicking is compensating for bad positioning, not a primary strategy.'
+    },
+    {
+      id: 'sheriff-drill',
+      name: 'Sheriff Counter-Strafe Drill',
+      cue: '"Press A + click at the same moment. Same input, same frame."',
+      where: 'Valorant range. 100 bots on strafe. Equip Sheriff. Strafe D one unit, then press A + shoot simultaneously. The spread lines should cluster tight if timing is correct.',
+      why: 'The Sheriff has zero forgiveness — 20ms early = full miss. If you can consistently hit 1-unit strafe shots with the Sheriff, Vandal timing feels easy. Same principle as training with a heavier weight so the game weight feels light.'
+    },
+    {
+      id: 'strafe-shoot-style',
+      name: 'Strafe-and-Shoot Timing',
+      cue: '"Direction change is where the bullet goes straight. Shoot at the A→D crossover, not after."',
+      where: 'Valorant range 10 min, then Ghost DM. Strafe A/D continuously — fire only at the direction change, never while traveling in either direction. Phantom allows 2–3 bullets per window; Vandal allows 1.',
+      why: 'Shooting at the direction change — not after a full stop — fires accurately while you appear to be moving continuously. The enemy sees movement but your bullets land. This is the mechanical basis of the "always moving" playstyle used by n0ted and Primie.'
+    },
+    {
+      id: 'odin-head-height',
+      name: 'Odin Head-Height Calibration',
+      cue: '"Where did the bullet holes land? Pre-aim exactly that spot next time."',
+      where: 'Custom game, equip Odin (high ammo, marks walls clearly). Walk to 5 angles you struggle with in ranked. Fire 3–5 bullets at your best-guess head height. The bullet marks on the wall are your calibration reference.',
+      why: 'Guessing head level by even 5 pixels means your first shot misses without you understanding why. This drill gives you pixel-accurate visual references for your specific angles that you can memorize and pre-aim consistently.'
+    },
+    {
+      id: 'uncomfortable-flick',
+      name: 'Uncomfortable Position Flick',
+      cue: '"Game never resets your crosshair. Practice starts exactly where it lands."',
+      where: 'Kovaak or Valorant range. After killing a bot, do NOT recenter. Flick to next target from wherever crosshair stopped. 15+ reps per session.',
+      why: 'Standard aim training always resets to center — building a skill that only exists in controlled conditions. Ranked fights start with your crosshair displaced from the last angle cleared. This drill builds the skill the game actually demands.'
+    },
+    {
+      id: 'primie-burst-drill',
+      name: 'Primie Burst Drill (Shoot → Move)',
+      cue: '"Click and movement key at the same time. Same frame. Zero evaluation gap."',
+      where: 'Range first: fire 1 shot → tap D immediately. Then any DM: fire 1–4 bullets → strafe immediately. Count how many shots you stood still after.',
+      why: 'Standing still after any shot is the most common mechanical death in sub-Immortal. The enemy still has peeker\'s advantage and is tracking your static position while you check the kill feed. Left-click must become the trigger to move — automatically, every time.'
+    }
+  ],
+  movement: [
+    {
+      id: 'shoot-then-move',
+      name: 'Shoot-Then-Move (Zero Gap)',
+      cue: '"Left-click and a direction key at the exact same time. Every shot. No exceptions."',
+      where: 'Any DM. After every shot, a movement key must be pressed at the same moment. Count how many times you fire and stand still — those are the death traps.',
+      why: 'The enemy has peeker\'s advantage and is tracking you while you read the kill feed. Left-click is the trigger to move — not the end of the action. This reflex alone eliminates the most common death cause in sub-Immortal.'
+    },
+    {
+      id: 'anti-mirror-dodge',
+      name: 'Anti-Mirror Dodge',
+      cue: '"Enemy strafes left → you strafe right. Always opposite direction."',
+      where: 'Any DM. After each shot, observe enemy strafe direction and immediately move the opposite way. Drill this reaction as a reflex.',
+      why: 'Mirroring the enemy\'s strafe makes your relative motion zero — you appear static to their aim. Moving opposite forces them to reverse tracking direction, adding 100–150ms of cognitive delay. Makes you harder to hit without doing anything mechanically complex.'
+    },
+    {
+      id: 'deliberate-dm',
+      name: 'Deliberate DM (Gym Reps Protocol)',
+      cue: '"1-second pause before every angle. Believe someone is there. Wrong reps do not count."',
+      where: 'Any DM. Set up far from each angle — expose yourself to ONE enemy at a time. 1-second pause before every peek. Ignore your score. Replay any rep where you won via a flick or luck.',
+      why: 'Random DM reps build random habits. Slow deliberate peeking with perfect form in DM is what transfers to ranked. Speed is a result of correct mechanics repeating — not a separate thing to chase. This is Zasko\'s core DM methodology.'
+    },
+    {
+      id: 'dm-minimap-habit',
+      name: 'DM Minimap Respawn Habit',
+      cue: '"Respawn → do NOT move → look at minimap → identify red dots → then hunt."',
+      where: 'Any DM. Every single respawn: stay still during spawn shield, find every red dot on minimap, plan your route, then move. Every respawn is one rep.',
+      why: 'Radiants check the minimap at specific game states as a trained reflex — post-spawn, post-kill, post-cover. DM respawns are free repetitions of that exact reflex at zero risk. After 20+ sessions, this habit auto-fires in ranked without thought.'
+    },
+    {
+      id: 'lmb-to-cover',
+      name: 'LMB = Back to Cover',
+      cue: '"Fire is the trigger to move. Left-click + movement key. Same frame, every shot."',
+      where: 'Any DM or custom. Every time you fire, treat the shot as the trigger to immediately move toward the nearest cover. Make it one reflex, not two separate decisions.',
+      why: 'After any shot, you are stationary and exposed. The enemy is still tracking. Making movement automatic after every shot means you are never standing in the open after firing — every trade requires the enemy to flick to your new position.'
+    }
+  ],
+  mental: [
+    {
+      id: 'green-mode-lock',
+      name: 'Green Mode Lock (One Cue Rule)',
+      cue: '"Pick ONE cue before queuing. Apply it consciously in round 1. Then forget mechanics — play positions."',
+      where: 'Before ranked. Write your one cue on paper or in the Tracker. Apply it intentionally in round 1. For the rest of the game: play positions, reads, and macro — not mechanics.',
+      why: 'Thinking about crosshair placement mid-gunfight is called Pink Mode — it actively degrades motor execution that runs better automatically. One cue gives your analytical mind a job so it stops interfering with your body\'s execution.'
+    },
+    {
+      id: 'breath-reset',
+      name: 'Breath Before Swing',
+      cue: '"One slow exhale before every intentional peek. Not optional."',
+      where: 'Ranked or DM. Before every swing you consciously decide to take — exhale fully. Track how many times you forget to exhale. That number is your panic frequency.',
+      why: 'Elevated heart rate (120+ BPM) reduces fine motor precision by up to 80% through involuntary muscle tension. One diaphragmatic exhale activates the vagus nerve and drops heart rate 5–15 BPM in seconds. This is biology — not motivation advice.'
+    },
+    {
+      id: 'five-why-review',
+      name: '5-Why Post-Death Review',
+      cue: '"Why? Why? Why? Why? Why? — then write the root cause. Stop at the root."',
+      where: 'After VOD review. Pick one death. Ask "why did I die?" 5 times — each answer becomes the next question. Write the root cause (answer 5) in the Tracker.',
+      why: 'The first answer is always the symptom. The fifth answer is always the structural cause. Surface analysis produces surface improvements. Structural analysis changes how you actually play. One 5-Why session per review is more valuable than 30 minutes of passive rewatching.'
+    }
+  ]
+};
+
+/* Rotation index — cycles through drill pools across sessions */
+let drillRotationIndex = 0;
+
+function getRecommendedDrills(mode, timeSlot) {
+  let primaryPool, secondaryPool;
+  if (mode === 'ranked') {
+    primaryPool = DRILL_POOLS.peek;
+    secondaryPool = DRILL_POOLS.mental;
+  } else {
+    primaryPool = drillRotationIndex % 2 === 0 ? DRILL_POOLS.aim : DRILL_POOLS.movement;
+    secondaryPool = drillRotationIndex % 2 === 0 ? DRILL_POOLS.movement : DRILL_POOLS.aim;
+  }
+  const primary = primaryPool[drillRotationIndex % primaryPool.length];
+  const secondary = secondaryPool[(drillRotationIndex + 1) % secondaryPool.length];
+  drillRotationIndex++;
+  return { primary, secondary };
+}
+
 const SESSION_PLANS = {
   '15-ranked': {
     cautions: [
-      'Do NOT play more than one DM — CNS potentiation fades in 10 minutes, extra DMs waste the effect',
-      'Do NOT chase records or DM score — you are activating, not proving yourself',
-      'Do NOT extend this session "just a bit longer" — you will fatigue before ranked starts',
-      'Do NOT check social media between RAMP end and ranked queue'
+      'Do NOT play more than one DM — CNS warmup fades fast, extra DMs waste the effect',
+      'Do NOT chase DM score — you are activating the nervous system, not proving yourself',
+      'Do NOT extend beyond 15 min — you will fatigue before ranked starts',
+      'Do NOT check your phone between RAMP end and ranked queue'
     ],
     steps: [
-      { time: '0–3 min', title: 'Range — Raise', detail: 'Loose shooting at medium bots. Head height only. No pressure. Wake up the hands.' },
-      { time: '3–6 min', title: 'Range — Activate + Mobilize', detail: 'Ghost or Sheriff: slow tracking, micro-corrections. Wide swipes across the pad. Full arm range of motion.' },
-      { time: '6–13 min', title: 'Potentiate DM — ONE focus only', detail: 'Pick your DM weapon. One mechanical cue only. Do not try to win. Finish fresh.' },
-      { time: '13–15 min', title: 'Queue Immediately', detail: 'No delay. The CNS activation window is closing. Apply your one cue in the first round.' }
-    ],
-    cues: [
-      '"Two steps — stop — wait." (apply when peeking every single angle)',
-      '"Idle mouse. Keyboard moves, mouse waits." (crosshair discipline)',
-      '"Click and move. Same motion." (LMB = cover reflex)',
-      '"Gun out before the threshold." (Oh Shit Line in every round)'
+      { time: '0–3 min', title: 'RAMP — Raise', detail: 'Valorant range. Loose shots at medium bots. Head height only. No pressure — wake up the hands.' },
+      { time: '3–6 min', title: 'RAMP — Activate + Mobilize', detail: 'Ghost DM or range. Slow tracking shots, micro-corrections. Wide mouse swipes across the full pad to warm up arm range of motion.' },
+      { time: '6–13 min', title: 'Potentiate DM — your drill cue only', detail: 'DM with your chosen weapon. Apply only your ONE drill cue (shown above). Do not try to win. Stop while still feeling sharp — not exhausted.' },
+      { time: '13–15 min', title: 'Queue ranked immediately', detail: 'No delay. CNS activation window closes fast. Three deep breaths, recall your ONE cue, queue.' }
     ]
   },
   '15-training': {
     cautions: [
-      'This is warmup only — if you only have 15 min, go ranked day mode instead',
-      'Do NOT train new mechanics without a specific cue — vague practice builds vague habits'
+      '15 min is warmup territory only — switch to Ranked mode if you only have 15 min',
+      'Do NOT jump in without a specific cue in mind — vague practice builds vague habits'
     ],
     steps: [
-      { time: '0–5 min', title: 'Range — Full RAMP', detail: 'Raise → Activate → Mobilize at a relaxed pace. Focus on hand feel.' },
-      { time: '5–15 min', title: 'One drill only', detail: 'Pick ONE drill from the Drill Library. Apply it with full focus. Do not switch drills.' }
-    ],
-    cues: [
-      '"One drill. One cue. One session." — no scope creep'
+      { time: '0–5 min', title: 'RAMP — Raise + Activate', detail: 'Range: loose shots → tracking. Get hands warm. Do not rush.' },
+      { time: '5–15 min', title: 'Drill — high reps', detail: 'Your recommended drill (shown above). Apply the cue with full focus. Count reps. Do not switch drills mid-session.' }
     ]
   },
   '30-ranked': {
     cautions: [
-      'Do NOT add more drills because one session felt good — stick to ONE drill concept',
-      'Do NOT use a rifle for DM if drilling placement — Ghost or Sheriff only',
-      'Do NOT skip the review — 5 min of honest analysis outperforms 30 min of mindless play'
+      'Do NOT switch drills mid-session — stick to ONE mechanic so it has time to transfer',
+      'Do NOT use a rifle for DM if drilling crosshair placement — Ghost or Sheriff only',
+      'Do NOT skip the review — 5 honest minutes beats 30 mindless ones'
     ],
     steps: [
-      { time: '0–5 min', title: 'Range — RAMP (Raise + Activate + Mobilize)', detail: 'Bots at range, Ghost tracking, wide pad swipes. Don\'t rush this.' },
-      { time: '5–15 min', title: 'Drill Focus — ONE mechanic', detail: 'Choose from Drill Library. Apply that mechanic with deliberate repetition. Fail cleanly — errors are neuroplasticity triggers.' },
-      { time: '15–23 min', title: 'Potentiate DM — chosen weapon + same cue', detail: 'Transfer your drill concept into live DM. Use Ghost, Guardian, or Sheriff. One cue. Not playing to win.' },
-      { time: '23–28 min', title: 'Quick Review — 3–5 deaths', detail: 'Was it mechanical or tactical? Apply the 5-Why framework once. Don\'t spiral.' },
-      { time: '28–30 min', title: 'Pre-Ranked Reset', detail: 'Set ONE cue for ranked. Take 3 deep breaths. Queue.' }
-    ],
-    cues: [
-      '"Two steps, idle crosshair, stop before the target." (core peek cue)',
-      '"Yellow lines only — release first, then click." (stop timing)',
-      '"Exhale before every intentional swing." (composure)',
-      '"UFOs 2.5+ before I commit to any position." (macro)'
+      { time: '0–5 min', title: 'RAMP — full (all 4 phases)', detail: 'Range: loose bots → Ghost tracking → wide pad swipes → brief potentiate DM. Finish the full RAMP. Do not rush.' },
+      { time: '5–15 min', title: 'Drill A — deliberate reps', detail: 'Your primary drill (shown above). Slow, intentional reps — say the cue out loud before each one. Errors are good: they are the learning signal.' },
+      { time: '15–23 min', title: 'DM — same cue in live chaos', detail: 'Your chosen weapon. Carry only the drill cue. Ignore your score. Every kill should use the drill mechanic — if you win via a flick, that rep does not count.' },
+      { time: '23–28 min', title: 'Review — 3–5 deaths, honest', detail: 'Was each death mechanical (missed timing, bad stop) or tactical (positioning, info)? Apply 5-Why to ONE death. Write the root cause in the Tracker.' },
+      { time: '28–30 min', title: 'Pre-ranked reset', detail: 'ONE cue out loud or written. Three slow exhales. Visualize one round going correctly. Queue.' }
     ]
   },
   '30-training': {
     cautions: [
-      'Training day: no ranked pressure. Focus is on mechanics, not results',
-      'Do NOT play ranked after a hard training session — you\'ve used Pink mode, Green mode won\'t switch cleanly'
+      'Training day = no ranked. Pink mode (analytical) does not switch cleanly to Green mode — do not play ranked after',
+      'Do NOT practice more than 2 things — one mechanic drilled properly beats five touched once'
     ],
     steps: [
-      { time: '0–5 min', title: 'Range — Full RAMP', detail: 'All four phases at relaxed pace. No rushing the Potentiate today.' },
-      { time: '5–15 min', title: 'Drill Block A — Core mechanic', detail: 'One drill from Peek or Aim category. Full deliberate reps.' },
-      { time: '15–25 min', title: 'DM Transfer — same mechanic', detail: 'Guardian or Ghost DM. Apply the drill\'s cue in live chaos. Errors are good — triggers neuroplasticity.' },
-      { time: '25–30 min', title: 'Reflection + Off-PC plan', detail: '5-Why one death. Write one mistake and one success in Tracker.' }
-    ],
-    cues: [
-      '"I am training today. Errors are the point. Every mistake is a repetition."'
+      { time: '0–5 min', title: 'RAMP — all 4 phases', detail: 'All phases at a relaxed pace. Today you are not rushing to queue.' },
+      { time: '5–15 min', title: 'Drill A — deliberate reps', detail: 'Your primary drill (shown above). High reps. Say the cue out loud. The mistake IS the rep — fail, reset, repeat.' },
+      { time: '15–25 min', title: 'DM transfer — same mechanic', detail: 'Ghost or Guardian DM. Carry only the drill cue. Count kills that used the mechanic vs. kills that did not. Score is irrelevant.' },
+      { time: '25–30 min', title: 'Reflection + log', detail: 'Open Tracker. Write: 1 thing that worked, 1 thing to fix, cue for next session. Then 5 min idle (eyes closed, no phone) — consolidation.' }
     ]
   },
   '45-ranked': {
     cautions: [
-      'Do NOT warmup longer than 15 min before ranked — everything after that is training, not warmup',
-      'Do NOT do more than 2 drills — cognitive overload degrades transfer',
-      'Do NOT tilt on the first ranked loss — you\'ve trained, trust the process for a minimum 3-game sample'
+      'Stop warmup at 15 min no matter how good you feel — everything after is training, not warmup',
+      'Do NOT run more than 2 drills — cognitive overload degrades transfer to ranked',
+      'Do NOT tilt after the first loss — trust the process for a minimum 3-game sample'
     ],
     steps: [
-      { time: '0–5 min', title: 'Range — RAMP (full)', detail: 'Raise, Activate, Mobilize — all phases clean. Set the foundation.' },
-      { time: '5–15 min', title: 'Drill A — Primary mechanic', detail: 'Today\'s main skill. Deliberate, slow reps. Build the groove before speed.' },
-      { time: '15–25 min', title: 'Drill B — Secondary mechanic', detail: 'Only if Drill A felt solid. Otherwise continue Drill A. Confirm before upgrading.' },
-      { time: '25–33 min', title: 'Potentiate DM — chosen weapon', detail: 'Transfer both mechanics into live DM. Ghost, Guardian, or Sheriff. One primary cue.' },
-      { time: '33–38 min', title: 'Review — 3–5 kills + 3–5 deaths', detail: 'Were deaths mechanical or tactical? Were kills from training or luck? Be honest.' },
-      { time: '38–45 min', title: 'Pre-ranked reset', detail: 'ONE cue. Three breaths. Pele visualization of first round. Queue.' }
-    ],
-    cues: [
-      '"Two-step peek → accept crosshair → LMB to cover." (full core sequence)',
-      '"Exhale, text message, one cue — then chess." (mental stack)',
-      '"UFOs 2.5+ or I reposition. No death traps." (macro)'
+      { time: '0–5 min', title: 'RAMP — all 4 phases', detail: 'Raise, Activate, Mobilize, Potentiate — all four, full quality.' },
+      { time: '5–15 min', title: 'Drill A — primary mechanic', detail: 'Your primary drill (shown above). Slow, deliberate reps. Say the cue before each rep. Build the groove before building speed.' },
+      { time: '15–25 min', title: 'Drill B — secondary mechanic', detail: 'Your secondary drill (shown above). Only start B if A felt solid — otherwise continue A. Do not jump categories.' },
+      { time: '25–33 min', title: 'Potentiate DM — chosen weapon', detail: 'Transfer both mechanics into live DM. One primary cue only. Not playing to win — playing to carry the drill mechanic into chaos.' },
+      { time: '33–38 min', title: 'Review — kills + deaths', detail: 'Were kills from the drill mechanic or from flicking? Were deaths mechanical or tactical? Write one finding in the Tracker.' },
+      { time: '38–45 min', title: 'Pre-ranked reset', detail: 'ONE cue from Drill A. Three exhales. Visualize one round — the drill mechanic executed correctly. Queue.' }
     ]
   },
   '45-training': {
     cautions: [
       'No ranked today — honor the training day commitment',
-      'Do NOT practice 5 things — one or two mechanics, drilled deeply'
+      'Do NOT do more than 2 drills — depth beats breadth every time'
     ],
     steps: [
-      { time: '0–5 min', title: 'Range — Full RAMP', detail: 'Take your time through all 4 phases.' },
-      { time: '5–18 min', title: 'Drill Block A', detail: 'Core mechanic. High reps. Fail, reset, repeat. Errors are the neuroplasticity signal.' },
-      { time: '18–30 min', title: 'DM Transfer — Drill A in live chaos', detail: 'Use Ghost or Guardian. One cue only. Ignore DM score.' },
-      { time: '30–40 min', title: 'Drill Block B — secondary', detail: 'Second mechanic from same category. Don\'t jump categories in one session.' },
-      { time: '40–45 min', title: 'Log + Reflection', detail: 'Open Tracker. Write: 1 mistake, 1 success, cue rating. Then idle rest (no phone, 5 min).' }
-    ],
-    cues: [
-      '"Today is Pink mode. Analytical, deliberate, mistake-positive."'
+      { time: '0–5 min', title: 'RAMP — all 4 phases', detail: 'All phases, relaxed pace. No rush today.' },
+      { time: '5–18 min', title: 'Drill A — deep reps', detail: 'Your primary drill. High reps. Wrong reps do not count — redo them. The error IS the signal.' },
+      { time: '18–30 min', title: 'DM transfer — Drill A in chaos', detail: 'Ghost or Guardian DM. Only the drill cue matters. Score is irrelevant — count drill mechanic kills vs. non-mechanic kills.' },
+      { time: '30–40 min', title: 'Drill B — secondary', detail: 'Your secondary drill. Stay in the same category as Drill A where possible. Do not jump from aim to mental in one session.' },
+      { time: '40–45 min', title: 'Log + idle rest', detail: 'Open Tracker: write 1 mistake, 1 success, cue for next session. Then 5 min eyes closed, no phone — free consolidation.' }
     ]
   },
   '60-ranked': {
     cautions: [
-      'With 60 min, the temptation to over-train is high — still STOP warmup at 15 min',
-      'Do NOT VOD review more than 5 minutes before ranked — you\'ll bring Pink mode into Green session',
-      'Do NOT try 3+ drills — go deep on one or two'
+      'Still stop warmup at 15 min even with 60 min — over-warming burns CNS capacity before ranked',
+      'Do NOT VOD review more than 5 min before ranked — Pink mode does not switch off cleanly',
+      'Do NOT run 3+ drills — go deep on two'
     ],
     steps: [
-      { time: '0–5 min', title: 'Range — Full RAMP', detail: 'Complete all four RAMP phases with care. Finish feeling activated, not fatigued.' },
-      { time: '5–20 min', title: 'Drill A — Deep work', detail: 'Deliberate reps. Highest focus of the session. If you nail the drill, rest 60 seconds before continuing.' },
-      { time: '20–32 min', title: 'DM Transfer — Apply Drill A', detail: 'Ghost, Guardian, or Sheriff. One cue. No score pressure. Note errors for review.' },
-      { time: '32–40 min', title: 'Drill B or VOD prep', detail: 'If feeling sharp: add Drill B. If tired: switch to 8 min of VOD review of past ranked session.' },
-      { time: '40–50 min', title: 'Potentiate DM — match intensity', detail: 'Final DM at ranked pace. This is the last CNS primer. Queue within 10 min after this ends.' },
-      { time: '50–55 min', title: 'Pre-ranked mental prep', detail: 'Pele visualization: 1 round imagined in full. Set ONE cue. 3 deep breaths. Ready.' },
-      { time: '55–60 min', title: 'Queue', detail: 'Green mode. Trust the work. Play chess, not mechanics.' }
-    ],
-    cues: [
-      '"Today\'s cue: [your chosen drill cue]. Everything else is subconscious."'
+      { time: '0–5 min', title: 'RAMP — full, all 4 phases', detail: 'All phases with full quality. Finish feeling sharp and activated, not fatigued.' },
+      { time: '5–20 min', title: 'Drill A — deep focus', detail: 'Your primary drill (shown above). Maximum deliberate attention. If you hit the completion condition, rest 60 seconds, then continue.' },
+      { time: '20–32 min', title: 'DM transfer — Drill A', detail: 'Ghost, Guardian, or Sheriff. ONE cue only. Log mechanical errors for the review step. No score pressure.' },
+      { time: '32–40 min', title: 'Drill B or VOD', detail: 'If sharp: run Drill B (shown above). If tired: 8 min VOD — one clip, one death, one insight only. Do not do both.' },
+      { time: '40–50 min', title: 'Final DM — ranked pace', detail: 'Last CNS primer. Treat it like ranked speed — not warmup pace. Queue within 10 min of finishing.' },
+      { time: '50–55 min', title: 'Pre-ranked mental prep', detail: 'Eyes closed: visualize one full round with your drill mechanic executed correctly. ONE cue. Three exhales.' },
+      { time: '55–60 min', title: 'Queue', detail: 'Green mode. Trust the work. Play positions and chess — not mechanics.' }
     ]
   },
   '60-training': {
@@ -1009,37 +1160,28 @@ const SESSION_PLANS = {
       'Track everything in Tracker — 60 min without notes is 60 min half-wasted'
     ],
     steps: [
-      { time: '0–5 min', title: 'Range — Full RAMP', detail: 'Quality over speed on all four phases.' },
-      { time: '5–25 min', title: 'Drill A — Deep deliberate practice', detail: 'Core skill. High reps with full conscious attention. Pink mode at maximum. No rushing.' },
-      { time: '25–40 min', title: 'DM Block — Guardian + Ghost', detail: 'First 7 min Guardian (stop timing). Switch to Ghost for 8 min (placement). One cue per weapon.' },
-      { time: '40–50 min', title: 'Drill B — secondary mechanic', detail: 'Adjacent skill. Build on Drill A. Don\'t jump to a completely unrelated category.' },
-      { time: '50–55 min', title: 'VOD review — 5 min', detail: 'One VOD clip, one death. 5-Why. One insight written down. Stop there.' },
-      { time: '55–60 min', title: 'Tracker + Idle Rest', detail: 'Log the session. Then 5 min eyes closed — hippocampus consolidation begins.' }
-    ],
-    cues: [
-      '"Deep work mode. One thing, done properly."'
+      { time: '0–5 min', title: 'RAMP — all 4 phases', detail: 'Quality over speed on all phases.' },
+      { time: '5–25 min', title: 'Drill A — deep deliberate practice', detail: 'Your primary drill. Maximum conscious attention. Pink mode at full. No rushing past the completion condition.' },
+      { time: '25–40 min', title: 'DM block — Guardian + Ghost', detail: 'First 7 min: Guardian DM (trains stop timing — one clean shot per full stop, punishes any movement). Switch to Ghost for 8 min (trains placement and reading). Same drill cue for both.' },
+      { time: '40–50 min', title: 'Drill B — secondary', detail: 'Your secondary drill. Stay adjacent to Drill A in category. Build on what you drilled, not something completely unrelated.' },
+      { time: '50–55 min', title: 'VOD review — 5 min hard cap', detail: 'One clip. One death. 5-Why method. Write root cause in Tracker. Stop at 5 min — do not spiral.' },
+      { time: '55–60 min', title: 'Tracker + idle rest', detail: 'Log the session. Then 5 min eyes closed, no phone — hippocampus consolidates today\'s motor sequences.' }
     ]
   },
   'post-ranked': {
     cautions: [],
     steps: [
-      { time: '0–10 min', title: 'Idle Rest', detail: 'Eyes closed. No phone, no input. Your hippocampus is replaying today\'s motor sequences in reverse. This is free skill consolidation — do not skip it.' },
-      { time: '10–25 min', title: 'Mental Visualization', detail: 'Replay correct scenarios from today. Visualize the exact two-step peek done right, the breath before swing, the clean crosshair. 15 min of this = up to 35% additional skill gain. Upper motor neurons activate identically to physical practice.' },
-      { time: '25+ min', title: 'Prioritize Sleep', detail: 'Motor memory is consolidated in NREM2 (sleep spindles). Players who sleep 8h after training show 20–30% better accuracy next session. No sleep = no consolidation. This is where the skill actually gets stored.' }
-    ],
-    cues: [
-      '"Tonight\'s goal: consolidation. Rest is training."'
+      { time: '0–10 min', title: 'Idle rest — mandatory', detail: 'Eyes closed. No phone, no input. Your hippocampus is currently replaying today\'s motor sequences in reverse — this is how motor memory forms. Checking a screen disrupts this window.' },
+      { time: '10–25 min', title: 'Mental visualization', detail: 'Replay the correct versions of your drill from today — the two-step peek done right, the breath before swing, the clean stop-and-shoot. 15 min = up to 35% additional skill consolidation. Upper motor neurons activate identically to physical practice.' },
+      { time: '25+ min', title: 'Prioritize sleep', detail: 'Motor memory consolidates during NREM2 sleep (sleep spindles). 8h after training = 20–30% better accuracy next session. No sleep = no consolidation. This is where the skill actually gets stored.' }
     ]
   },
   'post-training': {
     cautions: [],
     steps: [
-      { time: '0–10 min', title: 'Idle Rest — mandatory', detail: 'No stimulus. Sit still with eyes closed. Let the hippocampus run its reverse replay of today\'s motor patterns.' },
-      { time: '10–20 min', title: 'Visualization Training', detail: 'Imagine the drill you trained today, done perfectly. Slow, deliberate mental reps. Same upper motor neurons activate as in physical practice.' },
-      { time: '20+ min', title: 'Sleep', detail: 'Everything you drilled today gets consolidated into permanent motor memory during NREM2. Protect this phase above all else.' }
-    ],
-    cues: [
-      '"The skill is being downloaded right now. Sleep is the transfer."'
+      { time: '0–10 min', title: 'Idle rest — mandatory', detail: 'No stimulus. Eyes closed. Let the hippocampus replay today\'s drill sequences. Checking your phone breaks this consolidation window.' },
+      { time: '10–20 min', title: 'Visualization', detail: 'Imagine the drill you just trained — done perfectly. Slow, deliberate mental reps. Upper motor neurons activate identically to physical practice. This is free training.' },
+      { time: '20+ min', title: 'Sleep', detail: 'Everything you drilled consolidates into permanent motor memory during NREM2. Protect sleep above all training decisions.' }
     ]
   }
 };
@@ -1119,12 +1261,15 @@ function generatePlan() {
   }
 
   const plan = SESSION_PLANS[key] || SESSION_PLANS['30-ranked'];
+  const mode = selectedMode || 'ranked';
+  const isPost = selectedTime === 'post';
+
   const planEl = document.getElementById('session-plan');
 
+  /* ── Cautions ── */
   const cautionList = document.getElementById('caution-list');
   cautionList.innerHTML = '';
   const cautionBlock = document.getElementById('caution-block');
-
   if (plan.cautions.length > 0) {
     cautionBlock.style.display = 'flex';
     plan.cautions.forEach(c => {
@@ -1136,6 +1281,69 @@ function generatePlan() {
     cautionBlock.style.display = 'none';
   }
 
+  /* ── Drill recommendation cards ── */
+  const drillRecBlock = document.getElementById('drill-rec-block');
+  const primaryCard = document.getElementById('drill-rec-primary');
+  const secondaryCard = document.getElementById('drill-rec-secondary');
+
+  if (!isPost) {
+    const { primary, secondary } = getRecommendedDrills(mode, selectedTime);
+
+    function drillCardHTML(drill, label) {
+      const drillObj = DRILLS.find(d => d.id === drill.id);
+      const drillLink = drillObj ? `<button class="drill-rec-open-btn" data-drill-id="${drill.id}">Open full drill →</button>` : '';
+      return `
+        <div class="drill-rec-label">${label}</div>
+        <div class="drill-rec-name">${drill.name}</div>
+        <div class="drill-rec-where"><strong>Where:</strong> ${drill.where}</div>
+        <div class="drill-rec-why"><strong>Why this today:</strong> ${drill.why}</div>
+        <div class="drill-rec-cue">Cue: ${drill.cue}</div>
+        ${drillLink}
+      `;
+    }
+
+    primaryCard.innerHTML = drillCardHTML(primary, 'PRIMARY DRILL');
+    drillRecBlock.style.display = 'block';
+
+    const needsSecondary = ['45', '60'].includes(selectedTime);
+    if (needsSecondary) {
+      secondaryCard.innerHTML = drillCardHTML(secondary, 'SECONDARY DRILL');
+      secondaryCard.style.display = 'block';
+    } else {
+      secondaryCard.style.display = 'none';
+    }
+
+    /* Wire up open-drill buttons */
+    drillRecBlock.querySelectorAll('.drill-rec-open-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const drill = DRILLS.find(d => d.id === btn.dataset.drillId);
+        if (drill) openDrillModal(drill);
+      });
+    });
+
+    /* Set cue card to the primary drill\'s cue */
+    document.getElementById('cue-text').textContent = primary.cue;
+  } else {
+    drillRecBlock.style.display = 'none';
+    document.getElementById('cue-text').textContent = mode === 'training'
+      ? '"The skill is being downloaded right now. Sleep is the transfer."'
+      : '"Tonight\'s goal: consolidation. Rest is training."';
+  }
+
+  /* ── DM weapon note ── */
+  const dmFocus = {
+    ghost: 'Ghost DM: trains crosshair placement and patience. Low recoil means errors show clearly — any miss is a movement or placement mistake, not recoil. Use for MASS Protocol and Deliberate DM.',
+    guardian: 'Guardian DM: trains stop timing and first-shot discipline. One-shot-kill means any movement = miss. Pure deadzone timing training. Best weapon for drilling stop timing.',
+    sheriff: 'Sheriff DM: trains composure and counter-strafe precision. High damage + slow fire rate = one mistake is immediately punishing. Use for the Sheriff Counter-Strafe drill and pressure rehearsal.',
+    vandal: 'Vandal DM: trains rhythm transfer. One bullet per dead-zone window (tight ~50ms timing). Use only when ready to transfer a mastered cue to your main weapon.'
+  };
+  const dmNoteEl = document.getElementById('dm-focus-note');
+  if (dmNoteEl && selectedDM) {
+    dmNoteEl.textContent = dmFocus[selectedDM] || '';
+    dmNoteEl.style.display = !isPost ? 'block' : 'none';
+  }
+
+  /* ── Plan steps ── */
   const stepsEl = document.getElementById('plan-steps');
   stepsEl.innerHTML = '';
   plan.steps.forEach(step => {
@@ -1150,25 +1358,6 @@ function generatePlan() {
     `;
     stepsEl.appendChild(div);
   });
-
-  // DM weapon note injection
-  const dmFocus = {
-    ghost: 'Ghost DM — crosshair placement and patience. Forgiving recoil trains idle crosshair habits. Move to headshot range.',
-    guardian: 'Guardian DM — stop timing and one-tap discipline. Punishes any movement. Pure deadzone training.',
-    sheriff: 'Sheriff DM — composure and pressure management. High stakes per shot trains breath control and anti-panic. Recommended 3x weekly by w0rthy.',
-    vandal: 'Vandal DM — rhythm transfer. Use when moving drill cues to your main weapon. One bullet per dead-zone window.'
-  };
-
-  const dmNoteEl = document.getElementById('dm-focus-note');
-  if (dmNoteEl && selectedDM) {
-    dmNoteEl.textContent = dmFocus[selectedDM] || '';
-    dmNoteEl.style.display = selectedTime !== 'post' ? 'block' : 'none';
-  }
-
-  const cues = plan.cues;
-  const cueText = document.getElementById('cue-text');
-  const randomCue = cues[Math.floor(Math.random() * cues.length)];
-  cueText.textContent = randomCue;
 
   planEl.style.display = 'block';
   planEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1429,148 +1618,159 @@ const DEATH_CAUSES = [
   {
     id: 'bad-peek',
     label: 'Bad Peek',
-    sublabel: 'overpeek, wrong timing',
+    sublabel: 'went wide too fast, no setup',
     questions: [
-      'Did you slice first or go straight to a wide swing?',
-      'Were you set up far enough from the wall?',
-      'Did you verbalize the angle before peeking?'
+      'Did you show just a sliver of your body first (slice) to get information before committing?',
+      'Were you standing far enough from the wall to see the enemy before they see you?',
+      'Did you say out loud what angle you were about to peek before you peeked it?'
     ],
-    framework: 'Two-Step Peek drill + Slice & Fall Back drill',
-    cue: 'Info first. Wide swing is the kill move, not the opener.'
+    explain: 'Slicing = briefly exposing just your gun/shoulder to force the enemy to reveal their position, then falling back without committing. Wide swing = the full commitment peek after you already know where they are. Going straight to wide swing with no setup is what gets you killed.',
+    framework: 'Practice: Two-Step Peek drill (2 steps, lift hand, wait) + Slice & Fall Back drill',
+    cue: 'Info first. The wide swing is the finishing move — never the opener.'
   },
   {
     id: 'crossfire',
     label: 'Crossfire / 2v1',
-    sublabel: 'multiple enemies',
+    sublabel: 'caught by two enemies at once',
     questions: [
-      'Did you UFOs-check your position before holding?',
-      'Was there a teammate to trade you (S in UFOs)?',
-      'Did you slice to gather info before committing?',
-      'Did you use utility to isolate the fight to 1v1?'
+      'Did you mentally score your position before holding it? (U=teammate utility, F=flash escape, O=off-angle, S=teammate to trade, E=escape route)',
+      'Was there a teammate positioned to trade your death if you died?',
+      'Did you expose yourself to two angles at once instead of isolating one fight?',
+      'Did you use any utility (flash, smoke) to isolate a 1v1 before committing?'
     ],
-    framework: 'UFOs Protocol + Info → Util → Commit',
-    cue: 'Never fight 2v1 without utility. The slice gives you intel to fall back.'
+    explain: 'UFOs is a 5-question position check: U=can a teammate use utility for me? F=can I dodge a flash? O=am I on an off-angle (unexpected spot)? S=can a teammate trade my death? E=do I have a cover escape? Score 0.5 per yes. Under 2.5/5 = bad spot, leave. Info→Util→Commit means: gather information first, throw utility at confirmed enemy position, then swing.',
+    framework: 'Practice: UFOs positioning check (Concepts tab) + Info → Util → Commit sequence',
+    cue: 'Never take a 2v1 without utility to isolate it. The slice tells you what you\'re walking into.'
   },
   {
     id: 'off-angle',
     label: 'Off-Angle',
-    sublabel: 'enemy in unexpected spot',
+    sublabel: 'enemy was in an unexpected spot',
     questions: [
-      'Did you verbalize expected enemy positions before peeking?',
-      'Were you in Shooter Mode or Non-Shooter Mode?',
-      'Did you check minimap (Driver\'s Protocol) before entering?'
+      'Before peeking, did you say out loud where you expected the enemy to be?',
+      'Were you fully focused on the fight (active mode) or just walking through?',
+      'Did you check the minimap in the last 2 seconds before entering that area?'
     ],
-    framework: "Driver's Protocol + Text Message Anticipation + OH SH*T Line",
-    cue: "Text yourself. If you didn't expect them there, you weren't prepared."
+    explain: 'Text Message Anticipation = before entering any space, mentally "send yourself a text" predicting where enemies are: "enemy could be on the left box" — when they appear there, it is a predicted event, not a surprise, so you react instead of panic. Active mode = gun out, crosshair at head level, full focus. Passive mode = running without focus. OH SH*T Line = the invisible boundary past which you can no longer escape — once you cross it, you must be in full active mode.',
+    framework: 'Practice: Mental visualization before entering (Concepts tab) + always check minimap before entering new space',
+    cue: 'If you didn\'t predict them there, you weren\'t mentally prepared for that space.'
   },
   {
     id: 'utility-death',
     label: 'Utility Death',
-    sublabel: 'flash, nade, etc',
+    sublabel: 'killed by flash, molly, or nade',
     questions: [
-      'Were you behind cover when it landed?',
-      'Did you check UFOs (F = flash-dodge available)?',
-      'Did crossing the OH SH*T Line trigger while animated/reloading?'
+      'Were you in a covered position when the utility landed?',
+      'Did you have a flash-dodge escape available before holding that spot? (F in UFOs: can you dodge a flash?)',
+      'Were you caught in an animation (reloading, planting) in open space?'
     ],
-    framework: 'UFOs Protocol + OH SH*T Line',
-    cue: "You can't dodge what you didn't see coming. Read the minimap first."
+    explain: 'UFOs F-check = before holding any position, ask "can I dodge a flash from here?" — if no, the position is incomplete. The OH SH*T Line is the point past which you can no longer retreat to safety: if you cross it while reloading or with gun away, you die to utility you cannot react to. Always have cover available and gun ready before crossing into contested space.',
+    framework: 'Practice: UFOs positioning check (Concepts tab) + never cross danger zones while reloading',
+    cue: 'You can\'t dodge what you didn\'t see coming. Check your escape cover before you hold any spot.'
   },
   {
     id: 'reposition-fail',
     label: 'Repositioning Failed',
-    sublabel: 'caught while moving',
+    sublabel: 'caught while moving between positions',
     questions: [
-      'Did you LMB → cover (shoot-then-move) or pause after shooting?',
-      'Did you anti-mirror dodge after the shot?',
-      'Were you crossing a high-threat zone without gun ready?'
+      'After firing your shot, did you instantly press a movement key — or did you pause to check the kill feed?',
+      'Did you strafe in the opposite direction of the enemy\'s strafe after the shot?',
+      'Did you have your gun ready and crosshair at head level while crossing open space?'
     ],
-    framework: 'LMB = Back to Cover + Anti-Mirror Dodge + OH SH*T Line',
-    cue: 'Every shot is the trigger to move. 0ms delay between click and movement key.'
+    explain: 'LMB = Back to Cover means: left-click (fire) is the trigger to immediately press a movement key toward cover — same frame, no delay. Anti-Mirror Dodge: if the enemy strafes left, you strafe right — this makes their tracking fail because you\'re moving against their aim direction. OH SH*T Line: the boundary where open space becomes dangerous — only cross it in full active mode with gun ready.',
+    framework: 'Practice: Shoot-Then-Move drill + Anti-Mirror Dodge drill (Drills tab)',
+    cue: 'Every shot = movement. Left-click and a direction key at the same time, every time.'
   },
   {
     id: 'info-disadvantage',
-    label: 'Peeked at Info Disadvantage',
-    sublabel: 'no info before committing',
+    label: 'Peeked Without Info',
+    sublabel: 'committed without knowing what was there',
     questions: [
-      'Did you verbalize what was there before peeking?',
-      'Did you send yourself a text message?',
-      'Did you use Driver\'s Protocol — check minimap before peeking?',
-      'Did you gather info via slice or teammate before committing?'
+      'Before peeking, did you say out loud what you expected to see (enemy position, angle)?',
+      'Did you check the minimap in the last 2 seconds before peeking to see teammate sightlines?',
+      'Did you show just a sliver (slice) first to force enemy reveal before fully committing?'
     ],
-    framework: "Text Message Anticipation + Driver's Protocol + Slice & Fall Back",
-    cue: 'You peeked into the unknown. Slice for info, then commit.'
+    explain: 'Text Message Anticipation = before every peek, mentally "send yourself a text" predicting the scenario: "someone is holding left box." If they\'re there — predicted, react calmly. If not — new information, adjust. Minimap check = teammates on the minimap give you information (enemy spotted, sounds heard) — use it as your scouting tool before committing. Slicing = flash-peek the corner with just your gun tip to force the enemy to reveal position, then fall back.',
+    framework: 'Practice: Slice & Fall Back drill + always verbalize the angle before every peek',
+    cue: 'Never peek into the unknown. Slice for information first, then commit with a plan.'
   },
   {
     id: 'missed-first',
     label: 'Missed First Shot',
-    sublabel: 'mechanics',
+    sublabel: 'first bullet didn\'t connect',
     questions: [
-      'Were you fully stopped before firing (deadzone timing)?',
-      'Was the shooting error graph yellow or blue at the moment of shot?',
-      'Did crosshair arrive before you stopped (Crosshair Acceptance Rule)?'
+      'Were you fully stopped — zero velocity — when you fired? (The shooting error indicator in Valorant should be yellow/closed, not blue/open)',
+      'Did you fire while still moving, or immediately after releasing the movement key?',
+      'Did your crosshair drift past the target and you fired anyway instead of resetting?'
     ],
-    framework: 'Deadzone Stop Timing drill + Crosshair Acceptance Rule',
-    cue: 'Release key → wait for yellow → click. In that exact order.'
+    explain: 'Deadzone Stop Timing = every weapon has a "dead zone" — a brief window after you fully stop where your first bullet is 100% accurate. Fire inside this window (when the error lines are yellow/closed) = hit. Fire early while still decelerating (lines still blue/open) = miss. Crosshair Acceptance Rule = if your crosshair overshoots the target, stop completely and make one clean small adjustment — never chase the target with a moving mouse.',
+    framework: 'Practice: Deadzone Stop Timing drill + Sheriff Counter-Strafe drill (Drills tab)',
+    cue: 'Release key → wait for yellow indicator → click. That exact order, every single shot.'
   },
   {
     id: 'panic-spray',
     label: 'Panic Spray',
-    sublabel: 'lost composure',
+    sublabel: 'lost composure, sprayed instead of tapping',
     questions: [
-      'Did you exhale before the fight started?',
-      'Were you in Green mode or were mechanics in your head?',
-      'Did the enemy appear unexpectedly (no text message sent)?'
+      'Did you take one slow exhale before peeking or entering that fight?',
+      'Were you thinking about your mechanics mid-fight (crosshair position, counter-strafing) instead of just playing?',
+      'Did the enemy appear where you didn\'t expect them, catching you off guard?'
     ],
-    framework: 'Breath Before Swing + Green Mode Lock + Text Message Anticipation',
-    cue: 'Panic = surprise. Text yourself before every round. Exhale before every swing.'
+    explain: 'Breath Before Swing = one diaphragmatic exhale before any high-stakes fight physically drops your heart rate 5-15 BPM, which restores fine motor control — this is biology, not a mental trick. Green Mode = performance mode where you trust your mechanics and play instinctively; the opposite is Pink Mode (analytical, for drills only). Thinking about mechanics mid-fight puts you in Pink Mode during Green time — this causes panic spray. Predicting enemy positions before the round (visualizing "they might be on left box") prevents surprise, which is the root cause of panic.',
+    framework: 'Practice: Breath Before Swing drill + Green Mode Lock drill (Drills tab)',
+    cue: 'Panic = surprise. Predict their position before every round. Exhale before every swing.'
   },
   {
     id: 'held-too-long',
     label: 'Held Too Long',
-    sublabel: 'should have repositioned',
+    sublabel: 'stayed in a bad position too long',
     questions: [
-      'Was your UFOs score above 2.5 for that position?',
-      'Did you have an escape route (E in UFOs)?',
-      'Did you know enemy count/location from minimap before holding?'
+      'Did you score your position before holding it? (U, F, O, S, E — under 2.5/5 means leave)',
+      'Did you have a clear escape route available when you decided to keep holding?',
+      'Did you know how many enemies were alive and where they were before holding?'
     ],
-    framework: "UFOs Protocol + Driver's Protocol + Numbers Game Framework",
-    cue: 'UFOs < 2.5 = death trap. Reposition before you\'re forced to.'
+    explain: 'UFOs position score: ask 5 yes/no questions about any spot — U=teammate utility coverage, F=flash escape, O=am I off-angle, S=teammate to trade me, E=escape cover available. Score 0.5 per yes. Under 2.5/5 = death trap, relocate before enemies force you out. Minimap check = before holding any position, look at minimap to confirm enemy count and approximate location — holding blind is gambling. Numbers Game = if you\'re outnumbered 2:1 or worse, the math says rotate or fall back, not hold.',
+    framework: 'Practice: UFOs Framework (Concepts tab) + always know enemy count before holding',
+    cue: 'UFOs under 2.5 = death trap. Leave before you\'re forced to — after is too late.'
   },
   {
     id: 'traded-out',
     label: 'Traded Out',
-    sublabel: 'teammate bait trade',
+    sublabel: 'died right after a teammate, or was the trade bait',
     questions: [
-      "Did you peek into a position your teammate couldn't trade?",
-      'Did you UFOs-check Support (S) before taking the fight?',
-      'Was this an on-angle fight where the enemy was pre-aimed?'
+      'Was there a teammate in a position to trade your death within 1-2 seconds?',
+      'Did you check that a teammate could actually reach you (S = Support in UFOs) before taking that fight?',
+      'Was the enemy pre-aiming your exact angle because it\'s a common spot they\'ve seen before?'
     ],
-    framework: 'UFOs Protocol + On-Angle vs. Off-Angle concept',
-    cue: 'A trade death is still a death. Make sure someone can answer it.'
+    explain: 'UFOs S-check = before taking any fight, ask "is there a teammate who can trade my death?" — if no, your death removes 1 player and gives 0 value. A trade death only has value if someone converts it into a kill within 2 seconds. On-angle = a position where enemies have pre-built crosshair placement from habits (common spots), meaning they\'re already aimed at you before they even see you. Off-angles = unexpected spots that remove their pre-aim advantage.',
+    framework: 'Practice: UFOs positioning check + move to off-angles (Concepts tab)',
+    cue: 'A trade death is worth something only if a teammate can answer it immediately. Check first.'
   },
   {
     id: 'overstayed',
     label: 'Overstayed Position',
-    sublabel: 'extracted value but didn\'t leave',
+    sublabel: 'got value, but didn\'t leave',
     questions: [
-      'Had you already gotten a kill or info from that position?',
-      'Did you have escape cover still available when you died?',
-      'Were multiple enemies already aware of your location?'
+      'Had you already gotten a kill or gathered useful information from that position?',
+      'Was your escape cover route still available, or had it been cut off?',
+      'Were multiple enemies already tracking your location when you died?'
     ],
-    framework: 'Overstaying Your Welcome concept + UFOs Escape check',
+    explain: 'Each position has a value timeline: it peaks when enemies first encounter you (surprise + off-angle advantage), then drops sharply once they know exactly where you are. After your first kill or info, the position is compromised — enemies will coordinate on your location. The Overstaying concept from the Concepts tab: your life = 2 points (body + position control). After extracting value, staying drops your contribution to near zero while your death risk stays at 100%.',
+    framework: 'Practice: Overstaying Your Welcome concept (Concepts tab) + check escape route after every kill',
     cue: 'Your value was already extracted. Every second after that was gambling your life for nothing.'
   },
   {
     id: 'no-plan',
     label: 'No Pre-Round Plan',
-    sublabel: 'autopiloting into the fight',
+    sublabel: 'ran into the round without a specific intention',
     questions: [
-      'Did you decide what fight you wanted before the round started?',
-      'Did you check buy phase round state (economy, team comp, enemy tendencies)?',
-      'Were you repeating the same play as last round automatically?'
+      'Before the round started, did you decide one specific fight you wanted — which angle, with what utility?',
+      'Did you assess the round state in buy phase (enemy economy, your team\'s comp, what worked last round)?',
+      'Were you automatically repeating the same play as the previous round without thinking?'
     ],
-    framework: 'Pre-Round Fight Planning + Autopilot Prevention concept',
-    cue: 'No plan means you showed up to a chess match without knowing what piece you are.'
+    explain: 'Pre-Round Fight Planning = during buy phase, decide one specific thing: "I will take mid control using a smoke, then peek short if mid is clear." A vague intention like "play aggressive" produces random results. Autopilot = running the same route, the same angle, the same timing as last round by default — enemies pattern-match this within 3 rounds and pre-aim it. Each round, the enemy economy, team positions, and tendencies change — your plan must change with it.',
+    framework: 'Practice: Pre-Round Fight Planning concept + Autopilot Prevention concept (Concepts tab)',
+    cue: 'No plan means random results regardless of your mechanics. 5 seconds in buy phase changes everything.'
   }
 ];
 
