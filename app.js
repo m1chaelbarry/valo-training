@@ -732,7 +732,7 @@ const CONCEPTS_BY_BLOCK = {
       {
         name: 'Pele Protocol (Pre-Round Visualization)',
         videoUrl: 'https://www.youtube.com/watch?v=-ufd8fmvZLA',
-        source: 'Fundamenty — "Protokół Pelé"',
+        source: 'Fundamenty — "Pele Protocol"',
         rankThreshold: 'all',
         why: 'Motor neuron research (Jeannerod, 2001) shows that visualization activates the same upper motor neurons as physical practice. Elite athletes like Pelé famously visualized every ball contact before matches. In FPS terms: visualizing the peek, the stop, the headshot primes the motor pathways so that when the situation occurs, the execution feels like recall rather than improvisation.',
         preview: 'During buy phase: close eyes, visualize the round. What angle will you hold? What will enemy do? Imagine the exact scenarios before they happen. "Be in the moment from the future." Motor neurons activate identically during visualization as during physical practice — it\'s free training.'
@@ -880,18 +880,18 @@ const CONCEPTS_BY_BLOCK = {
    DATA — SESSION PLANS
 ═══════════════════════════════════════════════ */
 /* ═══════════════════════════════════════════════
-   SKILL TREE — hierarchia umiejętności
-   Każda umiejętność ma:
-   - id, name, category, tier (1=fundament → 4=advanced)
-   - drillId: który drill trenuje tę umiejętność
-   - prereqs: [] id-ki umiejętności wymaganych wcześniej
-   - roiWeight: 1-5 (ile punktów rankingowych ta umiejętność odblokuje)
-   - conflict: null lub string wyjaśniający jak pogodzić z inną umiejętnością
-   - assessQuestion: jak ocenić czy ją masz
+   SKILL TREE — skill hierarchy
+   Each skill has:
+   - id, name, category, tier (1=foundation → 4=advanced)
+   - drillId: which drill trains this skill
+   - prereqs: [] ids of skills required first
+   - roiWeight: 1-5 (rank impact weight)
+   - conflict: null or string explaining how it relates to other skills
+   - assessQuestion: how to self-assess
 ═══════════════════════════════════════════════ */
 
 const SKILL_TREE = [
-  /* ── TIER 1: FUNDAMENTY (każdy poniżej Immortal potrzebuje) ── */
+  /* ── TIER 1: FOUNDATIONS (everyone below Immortal needs these) ── */
   {
     id: 'stop-timing',
     name: 'Stop Timing (first bullet accuracy)',
@@ -900,21 +900,21 @@ const SKILL_TREE = [
     drillId: 'deadzone-stop',
     prereqs: [],
     roiWeight: 5,
-    assessQuestion: 'Czy Twoje pierwsze strzały trafiają konsekwentnie gdy stoisz nieruchomo? (W zakresie, zatrzymaj się i strzelaj — ≥8/10 headshot)',
-    assessCriteria: 'Tak = masz. Nie / czasami = do treningu.',
+    assessQuestion: 'Do your first bullets connect consistently when fully stopped? (In the range: stop fully, shoot — ≥8/10 headshots.)',
+    assessCriteria: 'Yes = you have it. No / sometimes = needs training.',
     conflict: null,
     note: null
   },
   {
     id: 'crosshair-placement',
-    name: 'Crosshair Placement (głowa, nie ciało)',
+    name: 'Crosshair Placement (head level, not body)',
     category: 'aim',
     tier: 1,
     drillId: 'odin-head-height',
     prereqs: [],
     roiWeight: 5,
-    assessQuestion: 'Czy Twój celownik jest na głowie przez większość czasu gdy wchodzisz na kąt? (VOD review: patrz co celownik robi 0.5s przed peek)',
-    assessCriteria: 'Tak = masz. Celownik nisko / zgaduje = do treningu.',
+    assessQuestion: 'Is your crosshair at head level most of the time when entering an angle? (VOD review: watch where it sits 0.5s before the peek.)',
+    assessCriteria: 'Yes = you have it. Crosshair is low / guessing = needs training.',
     conflict: null,
     note: null
   },
@@ -926,23 +926,23 @@ const SKILL_TREE = [
     drillId: 'primie-burst-drill',
     prereqs: [],
     roiWeight: 5,
-    assessQuestion: 'Czy po każdym strzale natychmiast się ruszasz? (DM: policz ile razy stoisz po strzale — cel: 0/10 DM kills)',
-    assessCriteria: 'Stoisz <2 razy na 10 killów = masz. Częściej = do treningu.',
+    assessQuestion: 'Do you move immediately after every shot? (DM: count how many times you stand still after firing — goal: 0/10 kills.)',
+    assessCriteria: 'Stand still <2 times per 10 kills = you have it. More often = needs training.',
     conflict: null,
     note: null
   },
   {
     id: 'deliberate-dm',
-    name: 'Deliberate DM (celowa praktyka zamiast farm killów)',
+    name: 'Deliberate DM (structured reps, not kill farming)',
     category: 'movement',
     tier: 1,
     drillId: 'deliberate-dm',
     prereqs: [],
     roiWeight: 4,
-    assessQuestion: 'Czy w DM robisz 1-sekundową pauzę przed każdym kątem i peek z ustawieniem, nie z biegu?',
-    assessCriteria: 'Tak zawsze = masz. Grasz DM jak ranked = do treningu. (To fundament — bez niego inne DM drile nie działają)',
+    assessQuestion: 'In DM, do you pause 1 second before every angle and peek from a set position — not while running?',
+    assessCriteria: 'Yes, always = you have it. Playing DM like ranked = needs training. (This is the foundation — without it, other DM drills do not transfer.)',
     conflict: null,
-    note: 'KONTEKST: Deliberate DM to framework nadrzędny nad MASS Protocol i każdym innym ćwiczeniem w DM. Najpierw opanuj Deliberate DM, potem dodaj MASS Protocol jako technikę wewnątrz niego.'
+    note: 'CONTEXT: Deliberate DM is the master framework above MASS Protocol and every other DM drill. Master Deliberate DM first, then add MASS Protocol as a technique inside it.'
   },
   {
     id: 'breath-control',
@@ -952,21 +952,21 @@ const SKILL_TREE = [
     drillId: 'breath-reset',
     prereqs: [],
     roiWeight: 4,
-    assessQuestion: 'Czy przed każdym intentional peek robisz wydech? (Nie "staram się" — czy robisz to automatycznie?)',
-    assertCriteria: 'Automatycznie = masz. Pamiętam gdy się staram = do treningu.',
+    assessQuestion: 'Do you exhale before every intentional peek? (Not "I try to" — does it happen automatically?)',
+    assessCriteria: 'Automatically = you have it. Only when consciously trying = needs training.',
     conflict: null,
     note: null
   },
   {
     id: 'one-cue-rule',
-    name: 'One Cue Rule (Green Mode przed ranked)',
+    name: 'One Cue Rule (Green Mode before ranked)',
     category: 'mental',
     tier: 1,
     drillId: 'green-mode-lock',
     prereqs: ['breath-control'],
     roiWeight: 4,
-    assessQuestion: 'Czy przed każdym rankede wpisujesz/mówisz JEDEN konkretny cue i stosujesz go w rundzie 1?',
-    assessCriteria: 'Tak, jeden cue, zawsze = masz. Queuje bez cue lub z wieloma = do treningu.',
+    assessQuestion: 'Before every ranked queue, do you write or say ONE specific cue and apply it consciously in round 1?',
+    assessCriteria: 'Yes, one cue, always = you have it. Queueing without a cue or with multiple = needs training.',
     conflict: null,
     note: null
   },
@@ -974,14 +974,14 @@ const SKILL_TREE = [
   /* ── TIER 2: PEEK MECHANICS ── */
   {
     id: 'two-step-peek',
-    name: 'Two-Step Peek (podstawa każdego peeka)',
+    name: 'Two-Step Peek (foundation of every peek)',
     category: 'peek',
     tier: 2,
     drillId: 'two-step-peek',
     prereqs: ['stop-timing'],
     roiWeight: 5,
-    assessQuestion: 'Czy każdy Twój peek to 2 kroki + stop + czekanie na celownik? Czy robisz to automatycznie bez myślenia?',
-    assessCriteria: '≥8/10 peeków to 2-step = masz. Wychodzisz z biegu / spontanicznie = do treningu.',
+    assessQuestion: 'Is every peek you take 2 steps + stop + wait for crosshair? Does this happen automatically without thinking?',
+    assessCriteria: '≥8/10 peeks are 2-step = you have it. Going wide from a run / spontaneously = needs training.',
     conflict: null,
     note: null
   },
@@ -993,47 +993,47 @@ const SKILL_TREE = [
     drillId: 'slice-fallback',
     prereqs: ['two-step-peek'],
     roiWeight: 4,
-    assessQuestion: 'Czy przed każdym wide swing robisz najpierw slice (tylko gun model)? Czy rzucasz się na wide swing bez info?',
-    assessCriteria: 'Zawsze slice first = masz. Idę na wide bez info = do treningu.',
+    assessQuestion: 'Before every wide swing, do you slice first (gun model only)? Do you ever wide swing without info?',
+    assessCriteria: 'Always slice first = you have it. Going wide without info = needs training.',
     conflict: null,
     note: null
   },
   {
     id: 'minimap-habit',
-    name: 'Minimap First (Driver\'s Protocol)',
+    name: 'Minimap First (Drivers Protocol)',
     category: 'mental',
     tier: 2,
     drillId: 'dm-minimap-habit',
     prereqs: ['deliberate-dm'],
     roiWeight: 4,
-    assessQuestion: 'Czy patrzysz na minimapę przed każdym wejściem w nową przestrzeń? (W DM: czy robisz to po każdym respawnie?)',
-    assessCriteria: 'Tak, odruchowo = masz. Patrzę na mapę po fakcie = do treningu.',
+    assessQuestion: 'Do you check the minimap before entering every new space? (In DM: do you do this after every respawn?)',
+    assessCriteria: 'Yes, as a reflex = you have it. Checking the map after the fact = needs training.',
     conflict: null,
     note: null
   },
   {
     id: 'head-level-angles',
-    name: 'Head-Level Pre-Aim (konkretne kąty na mapach)',
+    name: 'Head-Level Pre-Aim (calibrated angles per map)',
     category: 'aim',
     tier: 2,
     drillId: 'odin-head-height',
     prereqs: ['crosshair-placement'],
     roiWeight: 4,
-    assessQuestion: 'Czy masz skalibrowane poziomy głowy na ≥3 kluczowych kątach każdej mapy z Twojego pool?',
-    assessCriteria: 'Tak, nie zgaduję = masz. Ustawiam celownik w trakcie peeka = do treningu.',
+    assessQuestion: 'Do you have calibrated head levels memorized for ≥3 key angles on each map in your pool?',
+    assessCriteria: 'Yes, not guessing = you have it. Adjusting crosshair height mid-peek = needs training.',
     conflict: null,
     note: null
   },
   {
     id: 'lmb-cover',
-    name: 'LMB = Cover (strzał triggeruje ruch)',
+    name: 'LMB = Cover (shot triggers movement)',
     category: 'movement',
     tier: 2,
     drillId: 'lmb-to-cover',
     prereqs: ['shoot-then-move'],
     roiWeight: 3,
-    assessQuestion: 'Czy po strzale kierujesz się w stronę osłony automatycznie, nie tylko "z dala od wroga"?',
-    assessCriteria: 'Zawsze w kierunku cover = masz. Uciekam losowo = do treningu.',
+    assessQuestion: 'After every shot, do you move toward cover automatically — not just away from the enemy?',
+    assessCriteria: 'Always toward cover = you have it. Moving randomly = needs training.',
     conflict: null,
     note: null
   },
@@ -1041,13 +1041,13 @@ const SKILL_TREE = [
   /* ── TIER 3: INTERMEDIATE ── */
   {
     id: 'counter-strafe',
-    name: 'Counter-Strafe Timing (stop na strzał)',
+    name: 'Counter-Strafe Timing (stop before shot)',
     category: 'aim',
     tier: 3,
     drillId: 'sheriff-drill',
     prereqs: ['stop-timing', 'two-step-peek'],
     roiWeight: 4,
-    assessQuestion: 'Czy potrafisz trafiać headshoty Sheriffem z counter-strafe na dystansie medium w DM (≥5/10 konsekwentnie)?',
+    assessQuestion: 'Can you consistently hit headshots with the Sheriff using counter-strafe at medium range in DM (≥5/10)?',
     assessCriteria: '≥5/10 = masz. Mniej = do treningu.',
     conflict: null,
     note: null
@@ -1060,10 +1060,10 @@ const SKILL_TREE = [
     drillId: 'mass-protocol-dm',
     prereqs: ['crosshair-placement', 'deliberate-dm', 'shoot-then-move'],
     roiWeight: 4,
-    assessQuestion: 'Czy Twój celownik ląduje blisko głowy przez ruch (WASD) a nie przez korektę myszką?',
-    assessCriteria: 'Głównie ruch = masz. Flikuję do głowy z każdego miejsca = do treningu.',
-    conflict: 'WAŻNE: MASS Protocol NIE jest sprzeczny z Tension Fizzle. MASS = jak pozycjonujesz crosshair PRZED strzałem. Tension Fizzle = co robisz MYSZKą gdy flick jest jedyną opcją. Najpierw naucz się MASS (Tier 3), potem Tension Fizzle (Tier 4).',
-    note: 'Naucz się tego PRZED Strafe-and-Shoot. MASS buduje pozycjonowanie ruchem. Strafe-and-Shoot to zaawansowane rozszerzenie tego samego konceptu.'
+    assessQuestion: 'Does your crosshair land near the head through movement (WASD) rather than mouse correction?',
+    assessCriteria: 'Mainly movement = you have it. Flicking to head from everywhere = needs training.',
+    conflict: 'IMPORTANT: MASS Protocol is NOT in conflict with Tension Fizzle. MASS = how you position the crosshair BEFORE the shot (through movement). Tension Fizzle = what you do with the mouse when a flick is the only remaining option. Learn MASS first (Tier 3), then Tension Fizzle (Tier 4).',
+    note: 'Learn this BEFORE Strafe-and-Shoot. MASS builds crosshair positioning through movement. Strafe-and-Shoot is the advanced extension of the same concept.'
   },
   {
     id: 'anti-mirror',
@@ -1073,21 +1073,21 @@ const SKILL_TREE = [
     drillId: 'anti-mirror-dodge',
     prereqs: ['shoot-then-move', 'lmb-cover'],
     roiWeight: 3,
-    assessQuestion: 'Czy po strzale instynktownie strafujesz w przeciwną stronę niż wróg?',
-    assessCriteria: 'Instynktownie = masz. Nie myślę o tym = do treningu.',
+    assessQuestion: 'After shooting, do you instinctively strafe in the opposite direction to the enemy?',
+    assessCriteria: 'Instinctively = you have it. Not thinking about it = needs training.',
     conflict: null,
     note: null
   },
   {
     id: 'slice-wide-combo',
-    name: 'Slice → Wide Swing Combo (pełna sekwencja peeka)',
+    name: 'Slice → Wide Swing Combo (complete peek sequence)',
     category: 'peek',
     tier: 3,
     drillId: 'slice-wide-combo',
     prereqs: ['slice-fallback', 'two-step-peek'],
     roiWeight: 4,
-    assessQuestion: 'Czy Twój wide swing pojawia się tylko PO slice który dał Ci info? Czy comboisz to jako jedną sekwencję?',
-    assessCriteria: 'Zawsze sekwencja = masz. Wide swing bez slice = do treningu.',
+    assessQuestion: 'Does your wide swing only happen AFTER a slice that gave you information? Do you treat it as one complete sequence?',
+    assessCriteria: 'Always a full sequence = you have it. Wide swing without slice = needs training.',
     conflict: null,
     note: null
   },
@@ -1099,10 +1099,10 @@ const SKILL_TREE = [
     drillId: null,
     prereqs: ['one-cue-rule', 'minimap-habit'],
     roiWeight: 4,
-    assessQuestion: 'Czy przed każdym peek wypowiadasz (mentalnie lub na głos) gdzie spodziewasz się wroga?',
-    assessCriteria: 'Zawsze = masz. Wychodzę bez przewidywania = do treningu.',
+    assessQuestion: 'Before every peek, do you verbalize (mentally or aloud) where you expect the enemy to be?',
+    assessCriteria: 'Always = you have it. Peeking without predicting = needs training.',
     conflict: null,
-    note: 'Brak dedykowanego drill — praktykuj w każdej grze ranked jako nawyk. Połącz z One Cue Rule.'
+    note: 'No dedicated drill — practice as a habit in every ranked game. Combine with One Cue Rule.'
   },
   {
     id: 'ufos-check',
@@ -1112,10 +1112,10 @@ const SKILL_TREE = [
     drillId: null,
     prereqs: ['minimap-habit', 'text-message'],
     roiWeight: 4,
-    assessQuestion: 'Czy przed zajęciem każdej pozycji oceniasz: U-F-O-S (utility, flash, off-angle, support, escape)?',
-    assessCriteria: 'Tak, każda pozycja = masz. Stoję gdzie stoję bez oceny = do treningu.',
+    assessQuestion: 'Before holding any position, do you run the U-F-O-S check (Utility, Flash escape, Off-angle, Support, Escape route)?',
+    assessCriteria: 'Yes, every position = you have it. Standing wherever without checking = needs training.',
     conflict: null,
-    note: 'Brak dedykowanego drill — ćwicz jako pre-round checklist. Wymaga minimap-habit żeby UFOs miało sens.'
+    note: 'No dedicated drill — practice as a pre-round checklist. Requires minimap-habit first for UFOs to be actionable.'
   },
 
   /* ── TIER 4: ADVANCED (Immortal+) ── */
@@ -1127,10 +1127,10 @@ const SKILL_TREE = [
     drillId: 'strafe-shoot-style',
     prereqs: ['counter-strafe', 'mass-protocol'],
     roiWeight: 3,
-    assessQuestion: 'Czy potrafisz trafić headshot Phantomem strzelając na zmianie kierunku strafe (A→D) bez pełnego stopu?',
-    assessCriteria: '≥6/10 = masz. Mniej = do treningu (ale nie trenuj tego przed Tier 3).',
-    conflict: 'WAŻNE: Strafe-and-Shoot to ROZSZERZENIE Deadzone Stop, nie alternatywa. Strafe-and-Shoot używasz gdy chcesz wyglądać na ruszającego się ALE strzelasz w momencie chwilowego zerowania prędkości na zmianie kierunku — to samo okno co Deadzone Stop, tylko bez pełnego stopu. Vandal: 1 bullet na okno. Phantom: 2-3. NIE mieszaj z Tension Fizzle (flik) — to różne narzędzia do różnych sytuacji.',
-    note: 'Nie trenuj zanim nie opanujesz counter-strafe i MASS Protocol. Strafe-and-Shoot wygląda jak ruch, ale fizycznie to stop w innym opakowaniu.'
+    assessQuestion: 'Can you hit headshots with the Phantom by shooting at the A→D direction change without a full stop?',
+    assessCriteria: '≥6/10 = you have it. Less = needs training (do not train before Tier 3 is solid).',
+    conflict: 'IMPORTANT: Strafe-and-Shoot is an EXTENSION of Deadzone Stop, not an alternative. You shoot at the exact A→D direction change — the same near-zero velocity window as a full stop, just packaged inside continuous strafe motion. Vandal: 1 bullet per window. Phantom: 2-3. Do NOT mix with Tension Fizzle (flick) — these are different tools for different scenarios.',
+    note: 'Do not train until counter-strafe and MASS Protocol are solid. Strafe-and-Shoot looks like movement but physically it is a stop in a different wrapper.'
   },
   {
     id: 'tension-fizzle',
@@ -1140,9 +1140,9 @@ const SKILL_TREE = [
     drillId: 'uncomfortable-flick',
     prereqs: ['mass-protocol', 'counter-strafe'],
     roiWeight: 2,
-    assessQuestion: 'Czy podczas koniecznego flieka rozluźniasz grip na końcu ruchu (fizzle) zamiast trzymać tensję?',
-    assessCriteria: 'Tak, czuję różnicę = masz. Nie rozróżniam = do treningu (ale Tier 4 — trenuj po MASS Protocol).',
-    conflict: 'WAŻNE: Tension Fizzle NIE zastępuje MASS Protocol. MASS = jak stawiasz crosshair przed strzałem (przez ruch). Tension Fizzle = co robisz gdy już MUSISZ fliknąć (crosshair nie jest na głowie i nie masz czasu na MASS). To techniki dla różnych scenariuszy, nie sprzeczne — ale kolejność nauki jest ważna: MASS najpierw.',
+    assessQuestion: 'When a flick is necessary, do you release grip tension at the moment of arrival (fizzle) instead of holding it?',
+    assessCriteria: 'Yes, I feel the difference = you have it. Cannot distinguish = needs training (Tier 4 — train after MASS Protocol).',
+    conflict: 'IMPORTANT: Tension Fizzle does NOT replace MASS Protocol. MASS = how you place the crosshair before the shot (through movement). Tension Fizzle = what you do when you MUST flick (crosshair is off-target and there is no time for MASS). These are tools for different scenarios, not conflicting — but the learning order matters: MASS first.',
     note: null
   },
   {
@@ -1153,21 +1153,21 @@ const SKILL_TREE = [
     drillId: 'kovaak-game-transfer',
     prereqs: ['mass-protocol', 'deliberate-dm'],
     roiWeight: 3,
-    assessQuestion: 'Czy po sesji Kovaak stosjesz jeden konkretny feeling z treningu w pierwszej rundzie ranked?',
-    assessCriteria: 'Tak, świadomie = masz. Kovaak i ranked to dla mnie oddzielne = do treningu.',
+    assessQuestion: 'After a Kovaak session, do you carry one specific feeling from training into the first round of ranked?',
+    assessCriteria: 'Yes, consciously = you have it. Kovaak and ranked feel separate = needs training.',
     conflict: null,
     note: null
   },
   {
     id: 'pause-peek-adv',
-    name: 'Pause-Peek (priming kąta — zaawansowany timing)',
+    name: 'Pause-Peek (priming the angle — advanced timing)',
     category: 'peek',
     tier: 4,
     drillId: 'pause-peek',
     prereqs: ['slice-wide-combo', 'two-step-peek'],
     roiWeight: 3,
-    assessQuestion: 'Czy robisz chwilowy stop przy wejściu w kąt (0.1s pauza przed swing) i strzelasz w oknie stopu?',
-    assessCriteria: 'Tak, rytm 3-beatowy = masz. Biegę przez kąt = do treningu.',
+    assessQuestion: 'Do you make a brief stop at the entry point of an angle (0.1s pause before swing) and shoot within that stop window?',
+    assessCriteria: 'Yes, 3-beat rhythm = you have it. Running through the angle = needs training.',
     conflict: null,
     note: null
   }
@@ -2273,7 +2273,7 @@ initDeathLogger();
 ═══════════════════════════════════════════════ */
 
 const TIER_LABELS = {
-  1: 'TIER 1 — Fundament (każdy sub-Immortal)',
+  1: 'TIER 1 — Foundation (everyone below Immortal)',
   2: 'TIER 2 — Core Mechanics',
   3: 'TIER 3 — Intermediate',
   4: 'TIER 4 — Advanced (Immortal+)'
@@ -2281,7 +2281,7 @@ const TIER_LABELS = {
 
 const CATEGORY_LABELS = {
   aim: 'Aim',
-  movement: 'Ruch',
+  movement: 'Movement',
   peek: 'Peek',
   mental: 'Mental'
 };
@@ -2320,20 +2320,20 @@ function renderSkillsTab() {
       html += `<div class="skill-card ${state !== 'null' ? 'assessed-' + state : ''} ${locked ? 'skill-locked' : ''}" data-skill-id="${skill.id}">
         <div class="skill-card-header">
           <span class="skill-cat-badge cat-${skill.category}">${CATEGORY_LABELS[skill.category]}</span>
-          <span class="skill-roi" title="ROI — ile to wpływa na ranka">${roi}</span>
+          <span class="skill-roi" title="ROI — rank impact weight (5 stars = highest impact)">${roi}</span>
         </div>
         <p class="skill-card-name">${skill.name}</p>
-        ${locked ? `<p class="skill-locked-msg">🔒 Odblokuje się po: ${prereqNames.join(', ')}</p>` : ''}
+        ${locked ? `<p class="skill-locked-msg">🔒 Unlocks after: ${prereqNames.join(', ')}</p>` : ''}
         ${!locked ? `<p class="skill-assess-q">${skill.assessQuestion}</p>
         <p class="skill-assess-criteria">${skill.assessCriteria}</p>` : ''}
-        ${skill.conflict ? `<div class="skill-conflict-note"><strong>⚠ Jak to się łączy z innymi:</strong> ${skill.conflict}</div>` : ''}
+        ${skill.conflict ? `<div class="skill-conflict-note"><strong>⚠ How this relates to other skills:</strong> ${skill.conflict}</div>` : ''}
         ${skill.note ? `<div class="skill-note">${skill.note}</div>` : ''}
         ${!locked ? `<div class="skill-btn-row">
-          <button class="skill-btn skill-btn-yes ${state === 'yes' ? 'active' : ''}" data-id="${skill.id}" data-val="yes">✓ Mam to</button>
-          <button class="skill-btn skill-btn-unsure ${state === 'unsure' ? 'active' : ''}" data-id="${skill.id}" data-val="unsure">~ Czasami</button>
-          <button class="skill-btn skill-btn-no ${state === 'no' ? 'active' : ''}" data-id="${skill.id}" data-val="no">✗ Brakuje</button>
+          <button class="skill-btn skill-btn-yes ${state === 'yes' ? 'active' : ''}" data-id="${skill.id}" data-val="yes">✓ I have this</button>
+          <button class="skill-btn skill-btn-unsure ${state === 'unsure' ? 'active' : ''}" data-id="${skill.id}" data-val="unsure">~ Sometimes</button>
+          <button class="skill-btn skill-btn-no ${state === 'no' ? 'active' : ''}" data-id="${skill.id}" data-val="no">✗ Missing</button>
         </div>` : ''}
-        ${skill.drillId ? `<button class="skill-open-drill-btn" data-drill-id="${skill.drillId}">Otwórz drill →</button>` : ''}
+        ${skill.drillId ? `<button class="skill-open-drill-btn" data-drill-id="${skill.drillId}">Open drill →</button>` : ''}
       </div>`;
     });
 
@@ -2382,8 +2382,8 @@ function updateSkillProgress() {
   const block = document.getElementById('skill-progress-block');
   if (block) {
     block.style.display = assessed > 0 ? 'block' : 'none';
-    document.getElementById('skill-progress-label').textContent = `${assessed} / ${total} ocenionych`;
-    document.getElementById('skill-mastery-pct').textContent = `${pct}% opanowane`;
+    document.getElementById('skill-progress-label').textContent = `${assessed} / ${total} assessed`;
+    document.getElementById('skill-mastery-pct').textContent = `${pct}% mastered`;
     document.getElementById('skill-progress-bar').style.width = pct + '%';
   }
 }
@@ -2400,12 +2400,12 @@ function renderSkillPlan() {
   // TRAIN NOW
   const nowEl = document.getElementById('skill-plan-now');
   if (plan.trainNow.length === 0) {
-    nowEl.innerHTML = '<p class="skill-plan-empty">Wszystko opanowane na tym poziomie — czas na Tier 4.</p>';
+    nowEl.innerHTML = '<p class="skill-plan-empty">All skills at this level mastered — time for Tier 4.</p>';
   } else {
     nowEl.innerHTML = plan.trainNow.map((s, i) => {
       const drill = s.drillId ? DRILLS.find(d => d.id === s.drillId) : null;
-      const priority = i === 0 ? 'PRIORYTET #1' : i === 1 ? 'PRIORYTET #2' : 'PRIORYTET #3';
-      const tierLabel = { 1: 'Fundament', 2: 'Core', 3: 'Intermediate', 4: 'Advanced' }[s.tier];
+      const priority = i === 0 ? 'PRIORITY #1' : i === 1 ? 'PRIORITY #2' : 'PRIORITY #3';
+      const tierLabel = { 1: 'Foundation', 2: 'Core', 3: 'Intermediate', 4: 'Advanced' }[s.tier];
       return `<div class="skill-plan-card priority-${i + 1}">
         <div class="skill-plan-card-top">
           <span class="skill-plan-priority">${priority}</span>
@@ -2415,8 +2415,8 @@ function renderSkillPlan() {
         <p class="skill-plan-assess">${s.assessQuestion}</p>
         ${s.conflict ? `<div class="skill-plan-conflict">⚠ ${s.conflict}</div>` : ''}
         ${drill ? `<p class="skill-plan-drill">Drill: <strong>${drill.name}</strong>
-          <button class="skill-plan-open-btn" data-drill-id="${s.drillId}">Otwórz →</button>
-        </p>` : `<p class="skill-plan-drill">Ćwicz jako nawyk w każdej grze ranked</p>`}
+          <button class="skill-plan-open-btn" data-drill-id="${s.drillId}">Open →</button>
+        </p>` : `<p class="skill-plan-drill">Practice as a habit in every ranked game</p>`}
       </div>`;
     }).join('');
 
@@ -2450,7 +2450,7 @@ function renderSkillPlan() {
         });
       return `<div class="skill-queued-item">
         <span class="skill-queued-name">${s.name}</span>
-        <span class="skill-queued-blocker">Czeka na: ${prereqNames.join(', ')}</span>
+        <span class="skill-queued-blocker">Waiting for: ${prereqNames.join(', ')}</span>
       </div>`;
     }).join('');
   } else {
