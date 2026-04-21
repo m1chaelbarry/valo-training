@@ -1381,6 +1381,15 @@ const DRILL_POOLS = {
 let drillRotationIndex = 0;
 
 function getRecommendedDrills(mode, timeSlot) {
+  // If the user has assessed skills, drive recommendations from their skill gaps.
+  // Otherwise fall back to the fixed rotation.
+  const anyAssessed = SKILL_TREE && SKILL_TREE.some(s => skillState && skillState[s.id] !== null);
+
+  if (anyAssessed) {
+    return getDrillsFromSkillGaps(mode);
+  }
+
+  // ── Fallback: rotation-based (no skill data yet) ──
   let primaryPool, secondaryPool;
   if (mode === 'ranked') {
     primaryPool = DRILL_POOLS.peek;
@@ -1392,7 +1401,75 @@ function getRecommendedDrills(mode, timeSlot) {
   const primary = primaryPool[drillRotationIndex % primaryPool.length];
   const secondary = secondaryPool[(drillRotationIndex + 1) % secondaryPool.length];
   drillRotationIndex++;
-  return { primary, secondary };
+  return { primary, secondary, source: 'rotation' };
+}
+
+function getDrillsFromSkillGaps(mode) {
+  // Build the same priority list as getTrainingPlan()
+  const plan = getTrainingPlan();
+  const topSkills = plan.trainNow; // up to 3 skills needing work
+
+  // Map each priority skill to a DRILL_POOLS entry by drillId
+  function findPoolDrill(drillId) {
+    if (!drillId) return null;
+    const allPools = [
+      ...DRILL_POOLS.peek,
+      ...DRILL_POOLS.aim,
+      ...DRILL_POOLS.movement,
+      ...DRILL_POOLS.mental
+    ];
+    return allPools.find(d => d.id === drillId) || null;
+  }
+
+  // Find first skill gap that has a drill and matches mode preference
+  // Ranked days: prefer peek/mental. Training days: prefer aim/movement (but use whatever is top priority)
+  let primarySkill = null;
+  let secondarySkill = null;
+
+  // For ranked: try to find a peek/mental gap first, but if Tier 1 fundamentals are missing, use those
+  const modePreference = mode === 'ranked'
+    ? ['peek', 'mental', 'aim', 'movement']
+    : ['aim', 'movement', 'peek', 'mental'];
+
+  // Sort top skills by mode preference order
+  const sorted = [...topSkills].sort((a, b) => {
+    const ai = modePreference.indexOf(a.category);
+    const bi = modePreference.indexOf(b.category);
+    // Tier 1 always comes first regardless of mode
+    if (a.tier === 1 && b.tier !== 1) return -1;
+    if (b.tier === 1 && a.tier !== 1) return 1;
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  });
+
+  for (const skill of sorted) {
+    const drill = findPoolDrill(skill.drillId);
+    if (!primarySkill && drill) {
+      primarySkill = { drill, skill };
+    } else if (!secondarySkill && drill && skill !== primarySkill?.skill) {
+      secondarySkill = { drill, skill };
+      break;
+    }
+  }
+
+  // If no drill found via skill gaps (e.g. all gap skills are habit-only), fall back to rotation
+  if (!primarySkill) {
+    const allPools = mode === 'ranked'
+      ? [...DRILL_POOLS.peek, ...DRILL_POOLS.mental]
+      : [...DRILL_POOLS.aim, ...DRILL_POOLS.movement];
+    return {
+      primary: allPools[drillRotationIndex % allPools.length],
+      secondary: allPools[(drillRotationIndex + 1) % allPools.length],
+      source: 'rotation-fallback'
+    };
+  }
+
+  return {
+    primary: primarySkill.drill,
+    secondary: secondarySkill ? secondarySkill.drill : null,
+    primarySkillName: primarySkill.skill.name,
+    secondarySkillName: secondarySkill ? secondarySkill.skill.name : null,
+    source: 'skill-gap'
+  };
 }
 
 const SESSION_PLANS = {
@@ -1623,12 +1700,20 @@ function generatePlan() {
   const secondaryCard = document.getElementById('drill-rec-secondary');
 
   if (!isPost) {
-    const { primary, secondary } = getRecommendedDrills(mode, selectedTime);
+    const rec = getRecommendedDrills(mode, selectedTime);
+    const { primary, secondary, source, primarySkillName, secondarySkillName } = rec;
 
-    function drillCardHTML(drill, label) {
+    const anyAssessed = SKILL_TREE && SKILL_TREE.some(s => skillState && skillState[s.id] !== null);
+
+    function drillCardHTML(drill, label, skillName) {
+      if (!drill) return '';
       const drillObj = DRILLS.find(d => d.id === drill.id);
       const drillLink = drillObj ? `<button class="drill-rec-open-btn" data-drill-id="${drill.id}">Open full drill →</button>` : '';
+      const skillBadge = skillName
+        ? `<div class="drill-rec-skill-badge">Training gap: ${skillName}</div>`
+        : '';
       return `
+        ${skillBadge}
         <div class="drill-rec-label">${label}</div>
         <div class="drill-rec-name">${drill.name}</div>
         <div class="drill-rec-where"><strong>Where:</strong> ${drill.where}</div>
@@ -1638,12 +1723,35 @@ function generatePlan() {
       `;
     }
 
-    primaryCard.innerHTML = drillCardHTML(primary, 'PRIMARY DRILL');
+    // If no skills assessed yet — show nudge above the drill card
+    const nudgeEl = document.getElementById('drill-rec-nudge');
+    if (nudgeEl) {
+      if (!anyAssessed) {
+        nudgeEl.style.display = 'block';
+      nudgeEl.innerHTML = `<span class="drill-rec-nudge-text">This drill is from the default rotation. <button class="nudge-skills-btn" id="nudge-skills-btn">Assess your skills →</button> to get drills matched to your actual gaps.</span>`;
+      } else {
+        nudgeEl.style.display = 'none';
+      }
+      // Wire nudge button
+      const nudgeBtn = document.getElementById('nudge-skills-btn');
+      if (nudgeBtn) {
+        nudgeBtn.onclick = () => {
+          document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+          const skillsTab = document.querySelector('[data-view="skills"]');
+          if (skillsTab) { skillsTab.classList.add('active'); skillsTab.click(); }
+          const skillsView = document.getElementById('view-skills');
+          if (skillsView) skillsView.classList.add('active');
+        };
+      }
+    }
+
+    primaryCard.innerHTML = drillCardHTML(primary, 'PRIMARY DRILL', source === 'skill-gap' ? primarySkillName : null);
     drillRecBlock.style.display = 'block';
 
     const needsSecondary = ['45', '60'].includes(selectedTime);
     if (needsSecondary) {
-      secondaryCard.innerHTML = drillCardHTML(secondary, 'SECONDARY DRILL');
+      secondaryCard.innerHTML = drillCardHTML(secondary, 'SECONDARY DRILL', source === 'skill-gap' ? secondarySkillName : null);
       secondaryCard.style.display = 'block';
     } else {
       secondaryCard.style.display = 'none';

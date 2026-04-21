@@ -1859,3 +1859,43 @@ a, button, [role='button'], input, textarea, select {
   border-color: var(--accent);
   color: var(--accent);
 }
+
+/* ── Session planner: skill-gap context ── */
+.drill-rec-nudge {
+  background: rgba(255,200,0,0.06);
+  border: 1px solid rgba(255,200,0,0.2);
+  border-radius: 8px;
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-3);
+  font-size: 0.78rem;
+  color: #c8a020;
+  line-height: 1.5;
+}
+.drill-rec-nudge-text { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+.nudge-skills-btn {
+  background: none;
+  border: 1px solid rgba(255,200,0,0.4);
+  color: #e0b800;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 2px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.nudge-skills-btn:hover { background: rgba(255,200,0,0.1); }
+
+.drill-rec-skill-badge {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(255,70,85,0.1);
+  border: 1px solid rgba(255,70,85,0.25);
+  border-radius: 4px;
+  padding: 2px 8px;
+  display: inline-block;
+  margin-bottom: var(--space-2);
+}
