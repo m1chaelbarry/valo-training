@@ -877,8 +877,14 @@ function initDeathLogger() {
 
 function renderCauseButtons() {
   const grid = document.getElementById('death-cause-grid');
-  if (!grid || grid.children.length > 0) return; // already rendered
+  if (!grid) return;
+  // Re-render if data is loaded but grid is empty (or was rendered with empty data)
+  if (grid.children.length > 0 && appState.DEATH_CAUSES.length > 0) return; // already rendered with real data
   grid.innerHTML = '';
+  if (appState.DEATH_CAUSES.length === 0) {
+    grid.innerHTML = '<p style="color:var(--text-muted);font-size:var(--text-sm);grid-column:1/-1">Loading causes...</p>';
+    return;
+  }
   appState.DEATH_CAUSES.forEach(cause => {
     const btn = document.createElement('button');
     btn.className = 'death-cause-btn';
