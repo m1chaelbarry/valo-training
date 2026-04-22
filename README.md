@@ -24,7 +24,7 @@ No framework or build step is required.
 Because the app loads local JSON via `fetch`, run it through a local HTTP server (not `file://`).
 
 ```bash
-cd /home/runner/work/valo-training/valo-training
+cd valo-training
 python3 -m http.server 8000
 ```
 
