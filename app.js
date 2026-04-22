@@ -66,14 +66,11 @@ function switchView(view) {
     item.classList.toggle('active', item.dataset.view === view);
   });
   // Show/hide views
-  document.querySelectorAll('.view').forEach(v => v.style.display = 'none');
+  document.querySelectorAll('.view').forEach(v => { v.style.display = 'none'; v.classList.remove('active'); });
   const viewEl = document.getElementById('view-' + view);
   if (viewEl) {
     viewEl.style.display = 'block';
     viewEl.classList.add('active');
-    // Remove then re-add active for animation
-    viewEl.classList.remove('active');
-    requestAnimationFrame(() => viewEl.classList.add('active'));
   }
   // Close mobile menu
   document.getElementById('sidebar')?.classList.remove('open');
@@ -742,6 +739,8 @@ function renderConcepts() {
     const el = document.getElementById('concepts-' + key);
     if (!el) return;
     const items = appState.CONCEPTS_BY_BLOCK[key] || [];
+    // Skip re-render if already populated — preserves expanded state
+    if (el.children.length > 0 && items.length > 0) return;
     el.innerHTML = '';
     items.forEach((concept, idx) => {
       const learned = appState.learnedConcepts.has(concept.id || (key + '-' + idx));
