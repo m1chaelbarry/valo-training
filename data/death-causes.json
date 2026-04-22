@@ -1,0 +1,159 @@
+[
+  {
+    "id": "bad-peek",
+    "label": "Bad Peek",
+    "sublabel": "went wide too fast, no setup",
+    "questions": [
+      "Did you show just a sliver of your body first (slice) to get information before committing?",
+      "Were you standing far enough from the wall to see the enemy before they see you?",
+      "Did you say out loud what angle you were about to peek before you peeked it?"
+    ],
+    "explain": "Slicing = briefly exposing just your gun/shoulder to force the enemy to reveal their position, then falling back without committing. Wide swing = the full commitment peek after you already know where they are. Going straight to wide swing with no setup is what gets you killed.",
+    "framework": "Practice: Two-Step Peek drill (2 steps, lift hand, wait) + Slice & Fall Back drill",
+    "cue": "Info first. The wide swing is the finishing move — never the opener."
+  },
+  {
+    "id": "crossfire",
+    "label": "Crossfire / 2v1",
+    "sublabel": "caught by two enemies at once",
+    "questions": [
+      "Did you mentally score your position before holding it? (U=teammate utility, F=flash escape, O=off-angle, S=teammate to trade, E=escape route)",
+      "Was there a teammate positioned to trade your death if you died?",
+      "Did you expose yourself to two angles at once instead of isolating one fight?",
+      "Did you use any utility (flash, smoke) to isolate a 1v1 before committing?"
+    ],
+    "explain": "UFOs is a 5-question position check: U=can a teammate use utility for me? F=can I dodge a flash? O=am I on an off-angle (unexpected spot)? S=can a teammate trade my death? E=do I have a cover escape? Score 0.5 per yes. Under 2.5/5 = bad spot, leave. Info→Util→Commit means: gather information first, throw utility at confirmed enemy position, then swing.",
+    "framework": "Practice: UFOs positioning check (Concepts tab) + Info → Util → Commit sequence",
+    "cue": "Never take a 2v1 without utility to isolate it. The slice tells you what you're walking into."
+  },
+  {
+    "id": "off-angle",
+    "label": "Off-Angle",
+    "sublabel": "enemy was in an unexpected spot",
+    "questions": [
+      "Before peeking, did you say out loud where you expected the enemy to be?",
+      "Were you fully focused on the fight (active mode) or just walking through?",
+      "Did you check the minimap in the last 2 seconds before entering that area?"
+    ],
+    "explain": "Text Message Anticipation = before entering any space, mentally \"send yourself a text\" predicting where enemies are: \"enemy could be on the left box\" — when they appear there, it is a predicted event, not a surprise, so you react instead of panic. Active mode = gun out, crosshair at head level, full focus. Passive mode = running without focus. OH SH*T Line = the invisible boundary past which you can no longer escape — once you cross it, you must be in full active mode.",
+    "framework": "Practice: Mental visualization before entering (Concepts tab) + always check minimap before entering new space",
+    "cue": "If you didn't predict them there, you weren't mentally prepared for that space."
+  },
+  {
+    "id": "utility-death",
+    "label": "Utility Death",
+    "sublabel": "killed by flash, molly, or nade",
+    "questions": [
+      "Were you in a covered position when the utility landed?",
+      "Did you have a flash-dodge escape available before holding that spot? (F in UFOs: can you dodge a flash?)",
+      "Were you caught in an animation (reloading, planting) in open space?"
+    ],
+    "explain": "UFOs F-check = before holding any position, ask \"can I dodge a flash from here?\" — if no, the position is incomplete. The OH SH*T Line is the point past which you can no longer retreat to safety: if you cross it while reloading or with gun away, you die to utility you cannot react to. Always have cover available and gun ready before crossing into contested space.",
+    "framework": "Practice: UFOs positioning check (Concepts tab) + never cross danger zones while reloading",
+    "cue": "You can't dodge what you didn't see coming. Check your escape cover before you hold any spot."
+  },
+  {
+    "id": "reposition-fail",
+    "label": "Repositioning Failed",
+    "sublabel": "caught while moving between positions",
+    "questions": [
+      "After firing your shot, did you instantly press a movement key — or did you pause to check the kill feed?",
+      "Did you strafe in the opposite direction of the enemy's strafe after the shot?",
+      "Did you have your gun ready and crosshair at head level while crossing open space?"
+    ],
+    "explain": "LMB = Back to Cover means: left-click (fire) is the trigger to immediately press a movement key toward cover — same frame, no delay. Anti-Mirror Dodge: if the enemy strafes left, you strafe right — this makes their tracking fail because you're moving against their aim direction. OH SH*T Line: the boundary where open space becomes dangerous — only cross it in full active mode with gun ready.",
+    "framework": "Practice: Shoot-Then-Move drill + Anti-Mirror Dodge drill (Drills tab)",
+    "cue": "Every shot = movement. Left-click and a direction key at the same time, every time."
+  },
+  {
+    "id": "info-disadvantage",
+    "label": "Peeked Without Info",
+    "sublabel": "committed without knowing what was there",
+    "questions": [
+      "Before peeking, did you say out loud what you expected to see (enemy position, angle)?",
+      "Did you check the minimap in the last 2 seconds before peeking to see teammate sightlines?",
+      "Did you show just a sliver (slice) first to force enemy reveal before fully committing?"
+    ],
+    "explain": "Text Message Anticipation = before every peek, mentally \"send yourself a text\" predicting the scenario: \"someone is holding left box.\" If they're there — predicted, react calmly. If not — new information, adjust. Minimap check = teammates on the minimap give you information (enemy spotted, sounds heard) — use it as your scouting tool before committing. Slicing = flash-peek the corner with just your gun tip to force the enemy to reveal position, then fall back.",
+    "framework": "Practice: Slice & Fall Back drill + always verbalize the angle before every peek",
+    "cue": "Never peek into the unknown. Slice for information first, then commit with a plan."
+  },
+  {
+    "id": "missed-first",
+    "label": "Missed First Shot",
+    "sublabel": "first bullet didn't connect",
+    "questions": [
+      "Were you fully stopped — zero velocity — when you fired? (The shooting error indicator in Valorant should be yellow/closed, not blue/open)",
+      "Did you fire while still moving, or immediately after releasing the movement key?",
+      "Did your crosshair drift past the target and you fired anyway instead of resetting?"
+    ],
+    "explain": "Deadzone Stop Timing = every weapon has a \"dead zone\" — a brief window after you fully stop where your first bullet is 100% accurate. Fire inside this window (when the error lines are yellow/closed) = hit. Fire early while still decelerating (lines still blue/open) = miss. Crosshair Acceptance Rule = if your crosshair overshoots the target, stop completely and make one clean small adjustment — never chase the target with a moving mouse.",
+    "framework": "Practice: Deadzone Stop Timing drill + Sheriff Counter-Strafe drill (Drills tab)",
+    "cue": "Release key → wait for yellow indicator → click. That exact order, every single shot."
+  },
+  {
+    "id": "panic-spray",
+    "label": "Panic Spray",
+    "sublabel": "lost composure, sprayed instead of tapping",
+    "questions": [
+      "Did you take one slow exhale before peeking or entering that fight?",
+      "Were you thinking about your mechanics mid-fight (crosshair position, counter-strafing) instead of just playing?",
+      "Did the enemy appear where you didn't expect them, catching you off guard?"
+    ],
+    "explain": "Breath Before Swing = one diaphragmatic exhale before any high-stakes fight physically drops your heart rate 5-15 BPM, which restores fine motor control — this is biology, not a mental trick. Green Mode = performance mode where you trust your mechanics and play instinctively; the opposite is Pink Mode (analytical, for drills only). Thinking about mechanics mid-fight puts you in Pink Mode during Green time — this causes panic spray. Predicting enemy positions before the round (visualizing \"they might be on left box\") prevents surprise, which is the root cause of panic.",
+    "framework": "Practice: Breath Before Swing drill + Green Mode Lock drill (Drills tab)",
+    "cue": "Panic = surprise. Predict their position before every round. Exhale before every swing."
+  },
+  {
+    "id": "held-too-long",
+    "label": "Held Too Long",
+    "sublabel": "stayed in a bad position too long",
+    "questions": [
+      "Did you score your position before holding it? (U, F, O, S, E — under 2.5/5 means leave)",
+      "Did you have a clear escape route available when you decided to keep holding?",
+      "Did you know how many enemies were alive and where they were before holding?"
+    ],
+    "explain": "UFOs position score: ask 5 yes/no questions about any spot — U=teammate utility coverage, F=flash escape, O=am I off-angle, S=teammate to trade me, E=escape cover available. Score 0.5 per yes. Under 2.5/5 = death trap, relocate before enemies force you out. Minimap check = before holding any position, look at minimap to confirm enemy count and approximate location — holding blind is gambling. Numbers Game = if you're outnumbered 2:1 or worse, the math says rotate or fall back, not hold.",
+    "framework": "Practice: UFOs Framework (Concepts tab) + always know enemy count before holding",
+    "cue": "UFOs under 2.5 = death trap. Leave before you're forced to — after is too late."
+  },
+  {
+    "id": "traded-out",
+    "label": "Traded Out",
+    "sublabel": "died right after a teammate, or was the trade bait",
+    "questions": [
+      "Was there a teammate in a position to trade your death within 1-2 seconds?",
+      "Did you check that a teammate could actually reach you (S = Support in UFOs) before taking that fight?",
+      "Was the enemy pre-aiming your exact angle because it's a common spot they've seen before?"
+    ],
+    "explain": "UFOs S-check = before taking any fight, ask \"is there a teammate who can trade my death?\" — if no, your death removes 1 player and gives 0 value. A trade death only has value if someone converts it into a kill within 2 seconds. On-angle = a position where enemies have pre-built crosshair placement from habits (common spots), meaning they're already aimed at you before they even see you. Off-angles = unexpected spots that remove their pre-aim advantage.",
+    "framework": "Practice: UFOs positioning check + move to off-angles (Concepts tab)",
+    "cue": "A trade death is worth something only if a teammate can answer it immediately. Check first."
+  },
+  {
+    "id": "overstayed",
+    "label": "Overstayed Position",
+    "sublabel": "got value, but didn't leave",
+    "questions": [
+      "Had you already gotten a kill or gathered useful information from that position?",
+      "Was your escape cover route still available, or had it been cut off?",
+      "Were multiple enemies already tracking your location when you died?"
+    ],
+    "explain": "Each position has a value timeline: it peaks when enemies first encounter you (surprise + off-angle advantage), then drops sharply once they know exactly where you are. After your first kill or info, the position is compromised — enemies will coordinate on your location. The Overstaying concept from the Concepts tab: your life = 2 points (body + position control). After extracting value, staying drops your contribution to near zero while your death risk stays at 100%.",
+    "framework": "Practice: Overstaying Your Welcome concept (Concepts tab) + check escape route after every kill",
+    "cue": "Your value was already extracted. Every second after that was gambling your life for nothing."
+  },
+  {
+    "id": "no-plan",
+    "label": "No Pre-Round Plan",
+    "sublabel": "ran into the round without a specific intention",
+    "questions": [
+      "Before the round started, did you decide one specific fight you wanted — which angle, with what utility?",
+      "Did you assess the round state in buy phase (enemy economy, your team's comp, what worked last round)?",
+      "Were you automatically repeating the same play as the previous round without thinking?"
+    ],
+    "explain": "Pre-Round Fight Planning = during buy phase, decide one specific thing: \"I will take mid control using a smoke, then peek short if mid is clear.\" A vague intention like \"play aggressive\" produces random results. Autopilot = running the same route, the same angle, the same timing as last round by default — enemies pattern-match this within 3 rounds and pre-aim it. Each round, the enemy economy, team positions, and tendencies change — your plan must change with it.",
+    "framework": "Practice: Pre-Round Fight Planning concept + Autopilot Prevention concept (Concepts tab)",
+    "cue": "No plan means random results regardless of your mechanics. 5 seconds in buy phase changes everything."
+  }
+]

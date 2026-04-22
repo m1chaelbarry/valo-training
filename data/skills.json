@@ -1,0 +1,318 @@
+[
+  {
+    "id": "stop-timing",
+    "name": "Stop Timing (first bullet accuracy)",
+    "category": "aim",
+    "tier": 1,
+    "drillId": "deadzone-stop",
+    "prereqs": [],
+    "roiWeight": 5,
+    "assessQuestion": "Do your first bullets connect consistently when fully stopped? (In the range: stop fully, shoot — ≥8/10 headshots.)",
+    "assessCriteria": "Yes = you have it. No / sometimes = needs training.",
+    "conflict": null,
+    "note": null
+  },
+  {
+    "id": "crosshair-placement",
+    "name": "Crosshair Placement (head level, not body)",
+    "category": "aim",
+    "tier": 1,
+    "drillId": "odin-head-height",
+    "prereqs": [],
+    "roiWeight": 5,
+    "assessQuestion": "Is your crosshair at head level most of the time when entering an angle? (VOD review: watch where it sits 0.5s before the peek.)",
+    "assessCriteria": "Yes = you have it. Crosshair is low / guessing = needs training.",
+    "conflict": null,
+    "note": null
+  },
+  {
+    "id": "shoot-then-move",
+    "name": "Shoot-Then-Move (zero gap)",
+    "category": "movement",
+    "tier": 1,
+    "drillId": "primie-burst-drill",
+    "prereqs": [],
+    "roiWeight": 5,
+    "assessQuestion": "Do you move immediately after every shot? (DM: count how many times you stand still after firing — goal: 0/10 kills.)",
+    "assessCriteria": "Stand still <2 times per 10 kills = you have it. More often = needs training.",
+    "conflict": null,
+    "note": null
+  },
+  {
+    "id": "deliberate-dm",
+    "name": "Deliberate DM (structured reps, not kill farming)",
+    "category": "movement",
+    "tier": 1,
+    "drillId": "deliberate-dm",
+    "prereqs": [],
+    "roiWeight": 4,
+    "assessQuestion": "In DM, do you pause 1 second before every angle and peek from a set position — not while running?",
+    "assessCriteria": "Yes, always = you have it. Playing DM like ranked = needs training. (This is the foundation — without it, other DM drills do not transfer.)",
+    "conflict": null,
+    "note": "CONTEXT: Deliberate DM is the master framework above MASS Protocol and every other DM drill. Master Deliberate DM first, then add MASS Protocol as a technique inside it."
+  },
+  {
+    "id": "breath-control",
+    "name": "Breath Control (fizjologia, nie mindset)",
+    "category": "mental",
+    "tier": 1,
+    "drillId": "breath-reset",
+    "prereqs": [],
+    "roiWeight": 4,
+    "assessQuestion": "Do you exhale before every intentional peek? (Not \"I try to\" — does it happen automatically?)",
+    "assessCriteria": "Automatically = you have it. Only when consciously trying = needs training.",
+    "conflict": null,
+    "note": null
+  },
+  {
+    "id": "one-cue-rule",
+    "name": "One Cue Rule (Green Mode before ranked)",
+    "category": "mental",
+    "tier": 1,
+    "drillId": "green-mode-lock",
+    "prereqs": [
+      "breath-control"
+    ],
+    "roiWeight": 4,
+    "assessQuestion": "Before every ranked queue, do you write or say ONE specific cue and apply it consciously in round 1?",
+    "assessCriteria": "Yes, one cue, always = you have it. Queueing without a cue or with multiple = needs training.",
+    "conflict": null,
+    "note": null
+  },
+  {
+    "id": "two-step-peek",
+    "name": "Two-Step Peek (foundation of every peek)",
+    "category": "peek",
+    "tier": 2,
+    "drillId": "two-step-peek",
+    "prereqs": [
+      "stop-timing"
+    ],
+    "roiWeight": 5,
+    "assessQuestion": "Is every peek you take 2 steps + stop + wait for crosshair? Does this happen automatically without thinking?",
+    "assessCriteria": "≥8/10 peeks are 2-step = you have it. Going wide from a run / spontaneously = needs training.",
+    "conflict": null,
+    "note": null
+  },
+  {
+    "id": "slice-fallback",
+    "name": "Slice & Fall Back (informacja przed commitment)",
+    "category": "peek",
+    "tier": 2,
+    "drillId": "slice-fallback",
+    "prereqs": [
+      "two-step-peek"
+    ],
+    "roiWeight": 4,
+    "assessQuestion": "Before every wide swing, do you slice first (gun model only)? Do you ever wide swing without info?",
+    "assessCriteria": "Always slice first = you have it. Going wide without info = needs training.",
+    "conflict": null,
+    "note": null
+  },
+  {
+    "id": "minimap-habit",
+    "name": "Minimap First (Drivers Protocol)",
+    "category": "mental",
+    "tier": 2,
+    "drillId": "dm-minimap-habit",
+    "prereqs": [
+      "deliberate-dm"
+    ],
+    "roiWeight": 4,
+    "assessQuestion": "Do you check the minimap before entering every new space? (In DM: do you do this after every respawn?)",
+    "assessCriteria": "Yes, as a reflex = you have it. Checking the map after the fact = needs training.",
+    "conflict": null,
+    "note": null
+  },
+  {
+    "id": "head-level-angles",
+    "name": "Head-Level Pre-Aim (calibrated angles per map)",
+    "category": "aim",
+    "tier": 2,
+    "drillId": "odin-head-height",
+    "prereqs": [
+      "crosshair-placement"
+    ],
+    "roiWeight": 4,
+    "assessQuestion": "Do you have calibrated head levels memorized for ≥3 key angles on each map in your pool?",
+    "assessCriteria": "Yes, not guessing = you have it. Adjusting crosshair height mid-peek = needs training.",
+    "conflict": null,
+    "note": null
+  },
+  {
+    "id": "lmb-cover",
+    "name": "LMB = Cover (shot triggers movement)",
+    "category": "movement",
+    "tier": 2,
+    "drillId": "lmb-to-cover",
+    "prereqs": [
+      "shoot-then-move"
+    ],
+    "roiWeight": 3,
+    "assessQuestion": "After every shot, do you move toward cover automatically — not just away from the enemy?",
+    "assessCriteria": "Always toward cover = you have it. Moving randomly = needs training.",
+    "conflict": null,
+    "note": null
+  },
+  {
+    "id": "counter-strafe",
+    "name": "Counter-Strafe Timing (stop before shot)",
+    "category": "aim",
+    "tier": 3,
+    "drillId": "sheriff-drill",
+    "prereqs": [
+      "stop-timing",
+      "two-step-peek"
+    ],
+    "roiWeight": 4,
+    "assessQuestion": "Can you consistently hit headshots with the Sheriff using counter-strafe at medium range in DM (≥5/10)?",
+    "assessCriteria": "≥5/10 = masz. Mniej = do treningu.",
+    "conflict": null,
+    "note": null
+  },
+  {
+    "id": "mass-protocol",
+    "name": "MASS Protocol (ruch → celownik, nie odwrotnie)",
+    "category": "aim",
+    "tier": 3,
+    "drillId": "mass-protocol-dm",
+    "prereqs": [
+      "crosshair-placement",
+      "deliberate-dm",
+      "shoot-then-move"
+    ],
+    "roiWeight": 4,
+    "assessQuestion": "Does your crosshair land near the head through movement (WASD) rather than mouse correction?",
+    "assessCriteria": "Mainly movement = you have it. Flicking to head from everywhere = needs training.",
+    "conflict": "IMPORTANT: MASS Protocol is NOT in conflict with Tension Fizzle. MASS = how you position the crosshair BEFORE the shot (through movement). Tension Fizzle = what you do with the mouse when a flick is the only remaining option. Learn MASS first (Tier 3), then Tension Fizzle (Tier 4).",
+    "note": "Learn this BEFORE Strafe-and-Shoot. MASS builds crosshair positioning through movement. Strafe-and-Shoot is the advanced extension of the same concept."
+  },
+  {
+    "id": "anti-mirror",
+    "name": "Anti-Mirror Dodge (strafe przeciwny do wroga)",
+    "category": "movement",
+    "tier": 3,
+    "drillId": "anti-mirror-dodge",
+    "prereqs": [
+      "shoot-then-move",
+      "lmb-cover"
+    ],
+    "roiWeight": 3,
+    "assessQuestion": "After shooting, do you instinctively strafe in the opposite direction to the enemy?",
+    "assessCriteria": "Instinctively = you have it. Not thinking about it = needs training.",
+    "conflict": null,
+    "note": null
+  },
+  {
+    "id": "slice-wide-combo",
+    "name": "Slice → Wide Swing Combo (complete peek sequence)",
+    "category": "peek",
+    "tier": 3,
+    "drillId": "slice-wide-combo",
+    "prereqs": [
+      "slice-fallback",
+      "two-step-peek"
+    ],
+    "roiWeight": 4,
+    "assessQuestion": "Does your wide swing only happen AFTER a slice that gave you information? Do you treat it as one complete sequence?",
+    "assessCriteria": "Always a full sequence = you have it. Wide swing without slice = needs training.",
+    "conflict": null,
+    "note": null
+  },
+  {
+    "id": "text-message",
+    "name": "Text Message Anticipation (przewidywanie przed peek)",
+    "category": "mental",
+    "tier": 3,
+    "drillId": null,
+    "prereqs": [
+      "one-cue-rule",
+      "minimap-habit"
+    ],
+    "roiWeight": 4,
+    "assessQuestion": "Before every peek, do you verbalize (mentally or aloud) where you expect the enemy to be?",
+    "assessCriteria": "Always = you have it. Peeking without predicting = needs training.",
+    "conflict": null,
+    "note": "No dedicated drill — practice as a habit in every ranked game. Combine with One Cue Rule."
+  },
+  {
+    "id": "ufos-check",
+    "name": "UFOs Position Check (ocena pozycji przed holdowaniem)",
+    "category": "mental",
+    "tier": 3,
+    "drillId": null,
+    "prereqs": [
+      "minimap-habit",
+      "text-message"
+    ],
+    "roiWeight": 4,
+    "assessQuestion": "Before holding any position, do you run the U-F-O-S check (Utility, Flash escape, Off-angle, Support, Escape route)?",
+    "assessCriteria": "Yes, every position = you have it. Standing wherever without checking = needs training.",
+    "conflict": null,
+    "note": "No dedicated drill — practice as a pre-round checklist. Requires minimap-habit first for UFOs to be actionable."
+  },
+  {
+    "id": "strafe-shoot",
+    "name": "Strafe-and-Shoot (strzelanie na zmianie kierunku)",
+    "category": "aim",
+    "tier": 4,
+    "drillId": "strafe-shoot-style",
+    "prereqs": [
+      "counter-strafe",
+      "mass-protocol"
+    ],
+    "roiWeight": 3,
+    "assessQuestion": "Can you hit headshots with the Phantom by shooting at the A→D direction change without a full stop?",
+    "assessCriteria": "≥6/10 = you have it. Less = needs training (do not train before Tier 3 is solid).",
+    "conflict": "IMPORTANT: Strafe-and-Shoot is an EXTENSION of Deadzone Stop, not an alternative. You shoot at the exact A→D direction change — the same near-zero velocity window as a full stop, just packaged inside continuous strafe motion. Vandal: 1 bullet per window. Phantom: 2-3. Do NOT mix with Tension Fizzle (flick) — these are different tools for different scenarios.",
+    "note": "Do not train until counter-strafe and MASS Protocol are solid. Strafe-and-Shoot looks like movement but physically it is a stop in a different wrapper."
+  },
+  {
+    "id": "tension-fizzle",
+    "name": "Tension Fizzle (technika flieka gdy flick konieczny)",
+    "category": "aim",
+    "tier": 4,
+    "drillId": "uncomfortable-flick",
+    "prereqs": [
+      "mass-protocol",
+      "counter-strafe"
+    ],
+    "roiWeight": 2,
+    "assessQuestion": "When a flick is necessary, do you release grip tension at the moment of arrival (fizzle) instead of holding it?",
+    "assessCriteria": "Yes, I feel the difference = you have it. Cannot distinguish = needs training (Tier 4 — train after MASS Protocol).",
+    "conflict": "IMPORTANT: Tension Fizzle does NOT replace MASS Protocol. MASS = how you place the crosshair before the shot (through movement). Tension Fizzle = what you do when you MUST flick (crosshair is off-target and there is no time for MASS). These are tools for different scenarios, not conflicting — but the learning order matters: MASS first.",
+    "note": null
+  },
+  {
+    "id": "kovaak-transfer",
+    "name": "Kovaak → Game Transfer (przeniesienie aimtrainu do gry)",
+    "category": "aim",
+    "tier": 4,
+    "drillId": "kovaak-game-transfer",
+    "prereqs": [
+      "mass-protocol",
+      "deliberate-dm"
+    ],
+    "roiWeight": 3,
+    "assessQuestion": "After a Kovaak session, do you carry one specific feeling from training into the first round of ranked?",
+    "assessCriteria": "Yes, consciously = you have it. Kovaak and ranked feel separate = needs training.",
+    "conflict": null,
+    "note": null
+  },
+  {
+    "id": "pause-peek-adv",
+    "name": "Pause-Peek (priming the angle — advanced timing)",
+    "category": "peek",
+    "tier": 4,
+    "drillId": "pause-peek",
+    "prereqs": [
+      "slice-wide-combo",
+      "two-step-peek"
+    ],
+    "roiWeight": 3,
+    "assessQuestion": "Do you make a brief stop at the entry point of an angle (0.1s pause before swing) and shoot within that stop window?",
+    "assessCriteria": "Yes, 3-beat rhythm = you have it. Running through the angle = needs training.",
+    "conflict": null,
+    "note": null
+  }
+]

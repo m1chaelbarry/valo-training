@@ -1,0 +1,555 @@
+[
+  {
+    "id": "two-step-peek",
+    "category": "peek",
+    "name": "Two-Step Peek",
+    "videoUrl": "https://www.youtube.com/watch?v=a0qO_CDr1GE",
+    "short": "Exactly two committed steps, hand off mouse, preemptive stop.",
+    "source": "Zasko — \"In one call.. he learnt to fight like an IMMORTAL\"",
+    "why": "Two steps is the exact threshold where you reach maximum horizontal speed without triggering the footstep-sound warning or bullet spread penalty. Any more steps means you're decelerating through the shot window with a moving crosshair. The preemptive stop ensures you are at rest before the enemy enters your screen — which turns the fight into a free reaction shot for you rather than a scramble to adjust.",
+    "error": "Micro-steps / jitter before the stop. Moving the mouse while strafing (blending motion and aim). Rushing through to 3+ steps.",
+    "explanation": "Set up FAR from the wall — further than feels natural. Take EXACTLY two full, committed sideways steps using A or D only. Remove all fingers from movement keys BEFORE your crosshair reaches the enemy position. The crosshair must be idle (completely still) during the two steps. Only micro-adjust AFTER full stop. Verbalize the angle you are set up for before every rep: say \"I'm set up for logs / catwalk / top box...\" out loud. This forces deliberate intent.",
+    "cue": "\"Two steps, lift, wait.\" Verbalize your target angle before each rep.",
+    "condition": "10 consecutive angles with zero mouse movement during the step phase. On VOD replay, your opponent should see instant death with no warning.",
+    "location": "Custom game, any map — showers / catwalk / B main",
+    "tags": [
+      "Core",
+      "Beginner",
+      "Ghost DM"
+    ]
+  },
+  {
+    "id": "idle-crosshair",
+    "category": "peek",
+    "name": "Idle Crosshair (Hand-Off-Mouse) Drill",
+    "videoUrl": "https://www.youtube.com/watch?v=a0qO_CDr1GE",
+    "short": "Walk to angle, physically remove hand from mouse, peek, replace.",
+    "source": "Zasko — \"You're Making Gunfights WAY Harder Than They Should Be\" / \"In one call..\"",
+    "why": "Blending mouse movement with strafing creates a curved, unpredictable crosshair path that misses most of the time. Your brain defaults to this habit under pressure. Physically lifting the hand breaks the neural loop completely, forcing the crosshair to land based on your pre-aim position alone — which is how Radiant-level peeking actually works.",
+    "error": "Dragging crosshair while moving. Multiple micro-adjustments. Fidgeting after stop.",
+    "explanation": "Walk up to an angle in custom game. Place crosshair at head height pointing into the wall. Physically lift your mouse hand off the mouse completely. Take your two steps. Peek. Place hand back on mouse only AFTER the peek is complete. This sounds extreme — that's the point. It eliminates the blend of motion and aim that plagues 90% of players. The hand-off forces you to rely on positioning and pre-aim rather than reflexive mouse dragging. Do 15+ reps this way. Then reintroduce the mouse gently for micro-correction only.",
+    "cue": "\"Hand off the mouse until stopped.\"",
+    "condition": "You need at most ONE small mouse movement per kill. If you're making 3+ corrections per fight, restart the rep.",
+    "location": "Custom game (any map) — slow, deliberate",
+    "tags": [
+      "Core",
+      "Aim",
+      "Ghost DM",
+      "Range"
+    ]
+  },
+  {
+    "id": "slice-fallback",
+    "category": "peek",
+    "name": "Slice & Fall Back",
+    "videoUrl": "https://www.youtube.com/watch?v=a0qO_CDr1GE",
+    "short": "Peek close to wall, gather info, fall back instantly — zero commitment.",
+    "source": "Zasko — \"Get-Out-Of-Jail-Free Slice\" / \"How To ACTUALLY Move In Valorant\"",
+    "why": "Committing to a wide swing without information is statistically bad: if two enemies are holding, you die. The slice gives you a free data point with near-zero risk because staying close to the wall means you're only exposed for a fraction of a second. Think of it as a Jett dash you can do with any agent — you see enemy position, then fall back without taking damage.",
+    "error": "Standing too far from the wall during the slice. Not pre-stopping before clearing. Committing to a full wide swing on first peek.",
+    "explanation": "The slice is your information peek — not your kill peek. Stand CLOSE to the wall. Preemptively stop BEFORE your crosshair clears the corner. This gives you the mini-Jett-dash effect: if 3 enemies are holding, you fall back with zero damage taken. Only commit a wide swing after you confirm: (1) there is one enemy, and (2) their crosshair has been baited tight by your slice. Drill: slice → info → duck back → wide swing with broken enemy crosshair. Practice on one angle for 10+ reps until fallback is reflexive.",
+    "cue": "\"Close to wall, stop early, gather only.\"",
+    "condition": "5 consecutive angles where you fall back cleanly without taking damage on the slice.",
+    "location": "Custom game, any map",
+    "tags": [
+      "Peek",
+      "Intermediate",
+      "Ghost DM"
+    ]
+  },
+  {
+    "id": "slice-wide-combo",
+    "category": "peek",
+    "name": "Slice → Wide Swing Combo",
+    "videoUrl": "https://www.youtube.com/watch?v=a0qO_CDr1GE",
+    "short": "Open with slice (info + condition), follow with wide swing (kill).",
+    "source": "Zasko — \"you're killing your own aim\" / \"if you keep peeking like this, you will NOT rank up\"",
+    "why": "The slice forces the enemy to commit their crosshair tight to where you appeared. When you then wide swing, their crosshair is displaced — they must flick to re-acquire you. This buys you 100–200ms of free aim time. Radiants do not go straight to the wide swing because they understand it removes the information and conditioning advantage. The combo converts a 50/50 duel into a structured kill.",
+    "error": "Going straight to wide swing with zero info. Re-peeking same way twice. Rushing the wide swing before enemy is conditioned.",
+    "explanation": "Combo A: slice close → enemy expects re-slice → wide swing out (their crosshair is tight, yours is wide). Combo B: slice → miss → wait 1 second → wide swing (they expected a re-slice, you broke their pattern). Combo C: slice → kill → wide swing quickly (second enemy expects static hold, you go wide). Wide swing technique: face against wall → explode out with conviction → have crosshair on head BEFORE stopping → stop → shoot within 10ms max. Practice on one angle with a friend or custom bots. Drill each combo 10 reps before moving to the next.",
+    "cue": "\"Slice to condition. Wide to kill. Never skip the setup.\"",
+    "condition": "10 wide swings where crosshair is on head BEFORE the stop — zero flicks after stopping.",
+    "location": "Custom game with friend, or bots",
+    "tags": [
+      "Peek",
+      "Intermediate",
+      "Any DM"
+    ]
+  },
+  {
+    "id": "sage-wall-peek",
+    "category": "peek",
+    "name": "Sage Wall Peek Drill",
+    "videoUrl": "https://www.youtube.com/watch?v=Ku-n1bAV01Q",
+    "short": "Exactly 1–2 shadow steps from a Sage wall — trains silent, precise exposure.",
+    "source": "w0rthyTV — \"Movement & Peeking Mastery, How To Fix It\"",
+    "why": "The Sage wall acts as a hard constraint: it physically prevents you from over-exposing while also giving you a surface to practice precise step counts. 1–2 steps is the \"shadow zone\" in Valorant's engine — no footstep audio fires, direction change gives 100% accuracy. The wall enforces this envelope without relying on your own self-discipline.",
+    "error": "More than 2 steps (shooting error goes blue). Diagonal movement (WA or WD). Standing still after shot.",
+    "explanation": "In the practice range, erect a Sage wall. Position yourself behind it with bots spread in front. Peek in and out using exactly 1–2 steps per direction — no more. 1–2 steps in Valorant is the \"shadow step\" zone: silent, full accuracy on direction change. Start with the rightmost bot and work progressively left, forcing you to expose tighter and tighter angles. Enable the shooting error indicator — lines must stay yellow. Never blue. Upgrade: add pre-fire movement (switch direction keys going back INTO wall while still maintaining aim line).",
+    "cue": "\"One, two, out — one, two, back.\"",
+    "condition": "5 full passes across all bots with shooting error staying yellow every time.",
+    "location": "Practice range (enable shooting error graph)",
+    "tags": [
+      "Movement",
+      "Beginner",
+      "Range"
+    ]
+  },
+  {
+    "id": "teammate-angle-drill",
+    "category": "peek",
+    "name": "Teammate Angle Drill",
+    "videoUrl": "https://www.youtube.com/watch?v=qaSCdJRuYRs",
+    "short": "Friend holds common angles statically. You practice peeking with correct timing.",
+    "source": "w0rthyTV — \"You Move Like A Bot (Movement Guide)\"",
+    "why": "Bots in the range don't have reaction times and never punish your technique — they only test your aim. A human defender forces you to win through movement timing and angle mechanics, not just mechanical skill. If you win by out-aiming instead of out-moving, the drill isn't teaching you what you need to improve.",
+    "error": "Using diagonal movement (WA/WD). Jiggling instead of committing. Winning by aim instead of movement timing.",
+    "explanation": "Have a friend hold a common angle without moving or repositioning. You practice peeking it with correct technique: straight-line single-key movement, pause-peek entry, shadow steps, correct head-height pre-aim. Friend fires as fast as possible. Your goal is not to win by out-aiming — it's to win because your movement timing and technique make you harder to hit. Occasionally have the friend play off-angles to expose bad crosshair placement habits. Progress: if you win 60%+ of engagements, move to harder angles.",
+    "cue": "\"Straight line, not diagonal. Technique wins, not aim.\"",
+    "condition": "Win 60%+ of engagements through technique (not out-aiming) across 20-30 reps per angle.",
+    "location": "Custom game, any map — 3-5 common angles per session",
+    "tags": [
+      "Peek",
+      "Intermediate"
+    ]
+  },
+  {
+    "id": "pause-peek",
+    "category": "peek",
+    "name": "Pause-Peek (Priming the Angle)",
+    "videoUrl": "https://www.youtube.com/watch?v=MkWKcQDznfM",
+    "short": "Run up to angle, brief prime stop, then swing. Used by TenZ, Florescent.",
+    "source": "w0rthyTV — \"How To Hit CLEAN One Taps\"",
+    "why": "Running at full speed requires ~2 seconds of deceleration before reaching accurate stop. Pause-peeking removes that deceleration delay by briefly stopping at the entry point — you are already at near-zero velocity when you swing, so your first bullet is accurate from frame 1. The enemy still sees a fast peek because you built momentum before the pause.",
+    "error": "Running straight into open angle with no pause (shooting error terrible). Exposing more than half your body. Stopping too far back (too slow).",
+    "explanation": "Running at full speed then stopping takes ~2 extra seconds for full deceleration before you can shoot accurately. The pause-peek solves this: run up → brief stop at the entry point → swing out. The brief stop means you're shooting from near-stillness with maximum first-shot accuracy, while the momentum from the short run keeps your peek speed high. Drill: on a common angle like A main or catwalk, run up to the entry line, pause-peek, shoot, return. Aim for half-body or less exposed. Repeat 10-15 reps per angle. Watch your shooting error indicator — lines must go yellow on your swing.",
+    "cue": "\"Run up. Here. Out.\" (3-beat rhythm)",
+    "condition": "Pause visible in VOD. Shooting error shows yellow on swing. Half-body or less exposed per rep.",
+    "location": "Custom game, common map angles (catwalk, A main, B main)",
+    "tags": [
+      "Peek",
+      "Intermediate"
+    ]
+  },
+  {
+    "id": "five-step-warmup",
+    "category": "aim",
+    "name": "5-Step 45-Min Aim Warm-Up",
+    "videoUrl": "https://www.youtube.com/watch?v=TYJK849HVuA",
+    "short": "Progressive range warm-up from static flicks to cover peeking.",
+    "source": "w0rthyTV — \"Best Way To Warm Up / Improve Aim In VALORANT\"",
+    "why": "Motor skills warm up in layers: fine motor control (finger precision) needs to activate before gross motor (full arm movement), and both need to be online before reactive tasks (live DM). Skipping straight to DM is like sprinting before stretching — you're practicing with degraded hardware. The 25-perfect-burst milestone exists because your nervous system needs confirmation of the pattern before it locks in.",
+    "error": "Rushing through steps. Moving to medium/hard before accuracy is solid on easy. Skipping the 25-perfect-burst step.",
+    "explanation": "Total: 45 minutes. Only progress Easy → Medium → Hard when accuracy is solid at current level. Step 1 (Easy bots, standing still): slow flicks to bot heads, 1 bullet each — feel the sensitivity, feel the head connection. Step 2 (Wall burst drill): stop-strafe into a wall (hold A → release → press D = full stop), fire a precise burst. Must achieve 25 PERFECT bursts in a row — reset count if any burst is imperfect. Step 3 (Counter-strafe into bots, Easy): apply step 2 movement to live bots. Stop-strafe → shoot heads. Do until comfortable. Step 4 (Peek from cover): peek straight out from behind wall, shoot head, return. Close range. Step 5 (Distance variation): same as step 4 but vary target distance — feel how accuracy changes (close = burst/tap OK; far = tap only).",
+    "cue": "\"Accuracy first. Speed comes on its own.\"",
+    "condition": "Complete all 5 steps through Hard mode within 45 minutes with consistent accuracy at each.",
+    "location": "Practice range",
+    "tags": [
+      "Aim",
+      "Beginner",
+      "Range",
+      "Warmup"
+    ]
+  },
+  {
+    "id": "ping-tracking",
+    "category": "aim",
+    "name": "Ping Tracking Drill",
+    "videoUrl": "https://www.youtube.com/watch?v=dnX-3-QXRwI",
+    "short": "Ping wall at head level, burst/tap onto it while moving — no drops below.",
+    "source": "w0rthyTV — \"THE AIM Mistake You Don't Know About\"",
+    "why": "Most players unconsciously apply a downward mouse drag during bursts — a habit from tracking body shots rather than head shots. This creates the \"U-shape\" pattern where the crosshair drops below the head after shot 2 or 3. The ping gives you an external reference point that reveals this habit instantly, because any U-shape is visually obvious against a static marker.",
+    "error": "Crosshair drops below the ping (U-shape error). Pulling down on mouse during single taps. Not waiting for gun reset between bursts.",
+    "explanation": "Place a ping on a wall at head level in the range or custom game. Move side to side, burst fire onto each ping — NEVER drop below it. Tap mode: one bullet per ping. Burst mode: 2-3 bullets, full stop, wait for gun animation to reset (crosshair returns to first-bullet position), then burst again. If crosshair drops below the ping → U-shape problem identified → restart, keep higher. This trains you to stop the \"pull-down\" reflex that most players incorrectly apply even to single-tap shots.",
+    "cue": "\"Stay on the ping. Never go below.\"",
+    "condition": "Zero crosshair drops below the ping across 50 taps or 20 bursts in a full session.",
+    "location": "Practice range or custom game",
+    "tags": [
+      "Aim",
+      "Beginner",
+      "Range"
+    ]
+  },
+  {
+    "id": "yoru-head-level",
+    "category": "aim",
+    "name": "Yoru Clone Head-Level Study",
+    "videoUrl": "https://www.youtube.com/watch?v=EqWREHL4PCE",
+    "short": "Place Yoru clone at each angle to see exact head level. Memorize visually.",
+    "source": "w0rthyTV — \"THE AIM Mistake You Don't Know About\"",
+    "why": "Head level is not constant — it changes based on terrain height, distance, and angle geometry. Guessing head level even by 5 pixels means your first shot misses without you understanding why. The Yoru clone gives a pixel-accurate reference that you can then commit to muscle memory through repeated visualization, which is more durable than conscious adjustment mid-fight.",
+    "error": "Guessing head level. Not memorizing — just checking once and forgetting. Only doing it on maps you already play well.",
+    "explanation": "In custom game with Yoru selected: place the clone at an angle you struggle with. The clone's head shows the exact pixel to pre-aim for that specific angle at that specific distance. Memorize: \"Head level for this angle is HERE.\" Repeat for 5-10 commonly fought angles per session. Focus on your 3-map pool — not every map. Over time, your crosshair placement will become muscle memory rather than guesswork. This directly addresses the U-shape problem by teaching you where head level actually is before you ever start the fight.",
+    "cue": "\"Where's the head level here? Lock it in.\"",
+    "condition": "Can pre-place crosshair without conscious thought at memorized angles in ranked.",
+    "location": "Custom game, any map",
+    "tags": [
+      "Aim",
+      "Beginner",
+      "Range"
+    ]
+  },
+  {
+    "id": "deadzone-stop",
+    "category": "aim",
+    "name": "Deadzone Stop Timing",
+    "videoUrl": "https://www.youtube.com/watch?v=edIzYSYt7Bw",
+    "short": "Shoot in the 50–160ms window when character speed drops to zero.",
+    "source": "w0rthyTV / n0ted — \"Counter-Strafe Matters\" / Fundamenty research",
+    "why": "Valorant's accuracy system ties bullet spread directly to movement speed. While moving at full speed, spread can be 3-4x wider than standing still. The accuracy window opens the instant your velocity crosses near-zero — not when you feel stopped. This is why counter-strafing helps: it accelerates velocity back through zero, shortening the dead zone window from ~89ms to ~50ms. Training this timing is not optional — it's the physical basis of every duel.",
+    "error": "Shooting while still moving (blue error lines). Waiting too long after stop. Jitter from over-counter-strafing.",
+    "explanation": "In Valorant, your character reaches full accuracy when movement speed drops to near-zero. This happens either by releasing the movement key (~89ms for Vandal) or counter-strafing (pressing opposite key, ~50ms). The difference is only ~20ms — use whichever keeps your crosshair stable. Enable the shooting error graph in the range. Strafe A, release or counter-strafe D, shoot ONLY when lines are yellow. For the Sheriff drill (from n0ted): strafe exactly 1 unit, immediately press counter-strafe key + click simultaneously. If timing is correct, blue accuracy lines cluster tightly. Progress to 2-unit strafes once 1-unit is consistent.",
+    "cue": "\"Release — wait for yellow — click.\"",
+    "condition": "Guardian DM: aim for >60% first-bullet headshots in 5-minute session. Sheriff: hit 1-unit strafe shots consistently before progressing.",
+    "location": "Range (error graph on), then Guardian DM or Sheriff in-game",
+    "tags": [
+      "Core",
+      "Movement",
+      "Guardian DM",
+      "Sheriff DM"
+    ]
+  },
+  {
+    "id": "tension-budget",
+    "category": "aim",
+    "name": "Tension Fizzle (Explosive Launch + Float)",
+    "videoUrl": "https://www.youtube.com/watch?v=28yvjExaR80",
+    "short": "Flick starts high tension. On arrival, physically release grip to \"float\".",
+    "source": "Zasko — \"3 Reasons You Keep Whiffing\" / \"why calm aim is the biggest lie\"",
+    "why": "High grip tension during a flick is correct for the launch phase — it generates speed. But maintaining that tension on arrival causes the mouse to overshoot the target because your grip is still pushing. Releasing grip as you arrive converts from \"power mode\" to \"precision mode\" mid-flick. This is the actual mechanism behind what pros describe as \"floaty\" or \"calm\" aim — it's not relaxation, it's tension release at the right moment. IMPORTANT: Tension Fizzle is for situations where a flick is your only option — crosshair is far from target with no time to MASS-position. It does NOT replace MASS Protocol. Train MASS first (Tier 3). Use Tension Fizzle when MASS was not possible.",
+    "error": "Maintaining high grip tension through the entire flick. Over-flicking past the target. Holding grip tight near target = overflick oscillation.",
+    "explanation": "There are two phases to every flick. Phase 1 (launch): explosive, directed — high grip tension is correct here. Phase 2 (arrival): as your crosshair approaches the target, physically release your grip and let the mouse \"float.\" Holding high tension through arrival = over-flick. The correction that most pros describe as \"floaty\" or \"calm\" aim is actually this tension release at phase 2. Practice in Kovaak \"Adjust Track\" or \"Aim Chainer\" — when target changes direction, resist the impulse to hard-flick back. Place crosshair gently. Grip tight → release. Grip tight → release. Repeat.",
+    "cue": "\"Explosive launch. Float on arrival.\"",
+    "condition": "No hard overflick when target changes direction unexpectedly across 10 consecutive reps.",
+    "location": "Kovaak (Adjust Track / Aim Chainer), then Valorant range strafing bots",
+    "tags": [
+      "Aim",
+      "Intermediate",
+      "Any DM"
+    ]
+  },
+  {
+    "id": "n0ted-warmup-protocol",
+    "category": "aim",
+    "name": "n0ted 3-Exercise Kovaak Warmup",
+    "videoUrl": "https://www.youtube.com/watch?v=IcJqOkxYFoc",
+    "short": "Micro-adjust → flick prediction → strafe tracking. 30-40 min in Kovaak.",
+    "source": "n0ted — \"Radiant University EP.2 N0ted's Warmup\"",
+    "why": "The three exercises target three different neural subsystems: micro-adjustments train fine motor precision, flick prediction trains temporal anticipation (where the target will be), and strafe tracking with the edge technique trains your ability to use your own body movement as an aiming tool. Doing all three before ranked primes every relevant subsystem rather than just whichever one you feel like warming up.",
+    "error": "Skipping exercise 1 (rushing to harder content). Chasing score instead of rep quality. Not micro-correcting after overflicks.",
+    "explanation": "Playlist: search \"KovaaKsBottingJumboBattlepass\" in Kovaak online playlists (or bit.ly/N0ted). Three exercises, 10-20 min each. Exercise 1 (Micro-Adjust Horizontal Lines): slow start, side-to-side along horizontal line, aim HIGHER than default, increase speed gradually, after every overflick — micro-correct (the correction is the rep). Cue: \"Flick then micro-correct.\" Exercise 2 (Flick Prediction on Bot Spawn): stay at back of range, wait and listen for bot audio cue, flick to where you PREDICT bot will be — perfect horizontal line to head level, micro-adjust if overshot. Use Sheriff (no bullet spam) for accountability. Cue: \"First flick correct, or micro-correct. Two acceptable outcomes.\" Exercise 3 (Strafe Tracking with Edge Technique): strafe left-right while tracking bot head, place crosshair on the OPPOSITE edge of head from your strafe direction — the movement brings crosshair onto head naturally. Cue: \"Edge of head, opposite side of your movement.\"",
+    "cue": "\"Micro-correct every miss. The correction IS the rep.\"",
+    "condition": "Can apply same feeling in Valorant range immediately after session. ~80% accuracy target per exercise.",
+    "location": "Kovaak Aim Trainer — KovaaKsBottingJumboBattlepass playlist",
+    "tags": [
+      "Aim",
+      "Intermediate",
+      "Range",
+      "Warmup"
+    ]
+  },
+  {
+    "id": "sheriff-drill",
+    "category": "aim",
+    "name": "Sheriff Counter-Strafe Drill",
+    "videoUrl": "https://www.youtube.com/watch?v=edIzYSYt7Bw",
+    "short": "1-unit strafe, counter-strafe + shoot simultaneously. No forgiveness.",
+    "source": "n0ted — \"Counter-Strafe Matters.. MORE THAN YOU THINK\"",
+    "why": "The Sheriff exposes every timing error because it has no forgiveness: a shot 20ms early is a full miss. When you can hit consistent 1-unit strafe shots with the Sheriff, the same timing with a Vandal feels trivially easy. This is the same principle as training with a heavier weight so the game weight feels lighter. The Sheriff drill trains your nervous system to fire at the exact millisecond of velocity zero.",
+    "error": "Shooting before counter-strafe is registered. Strafing more than 1 unit (too much deceleration time). Using Vandal/Phantom as a crutch instead.",
+    "explanation": "Setup: Valorant range, 100 bots on strafe, equip Sheriff. Step 1: strafe exactly 1 unit (press D). Step 2: immediately press A (counter-strafe) + click/shoot at the same time as pressing A. Step 3: if timing is correct, blue accuracy lines cluster tightly around your shot. Repeat the rhythm: D press → A press + shoot → D press → A press + shoot. Progress to 2-unit strafes only after 1-unit is consistent. If you can hit this drill with the Sheriff, Vandal and Phantom will feel like cheating. The Sheriff removes all forgiveness — every timing error is immediately visible as a miss.",
+    "cue": "\"Press A + click. Same input. Same time.\"",
+    "condition": "Hit 10 consecutive 1-unit strafe shots with the Sheriff before progressing to 2-unit.",
+    "location": "Valorant practice range (shooting error graph on)",
+    "tags": [
+      "Aim",
+      "Intermediate",
+      "Sheriff DM"
+    ]
+  },
+  {
+    "id": "strafe-shoot-style",
+    "category": "aim",
+    "name": "Strafe-and-Shoot Timing Drill",
+    "videoUrl": "https://www.youtube.com/watch?v=ZRUq_kmDBPc",
+    "short": "Fire 1–2 bullets at each direction change. A→D window. Never spray.",
+    "source": "n0ted — \"*No Bs* How to STRAFE & SHOOT n0ted style\"",
+    "why": "Continuous movement while shooting seems impossible in Valorant because most players try to shoot between direction changes. n0ted's method is the opposite: shoot at the direction change — precisely because that's the moment of minimum velocity. The enemy sees you moving continuously but your bullets are hitting. This is a technical exploit of Valorant's movement accuracy curve that becomes a real skill gap against players still trying to full-stop. NOTE: This is NOT a separate technique from Deadzone Stop — it is the same accuracy window (velocity ~zero at direction change) packaged inside strafe motion. Learn Deadzone Stop first. Counter-Strafe second. Strafe-and-Shoot last.",
+    "error": "Firing while still building to max speed. Pressing W+D or W+A together (slows you). Spraying more than 2 bullets per window. Lifting fingers from keyboard.",
+    "explanation": "This trains n0ted's signature shoot-while-strafing method. Build to max speed before engaging (strafe A or D only — never W+A or W+D). At the direction change (A→D or D→A): fire 1-2 bullets within ~50-100ms of the key press. This is the \"dead zone\" — the moment of minimum velocity when bullets are accurate. Never lift fingers from keyboard — the transition from A to D is a simultaneous press, not a lift-and-move. Phantom: allows 2-3 bullets per window. Vandal: 1 bullet max per window (tight timing). After shooting, continue strafing — never hold still. Practice in range for 10 min, then apply in Ghost DM.",
+    "cue": "\"D to A is where the bullet goes straight. Shoot at the change.\"",
+    "condition": "In Ghost DM: all kills via 1-2 shot bursts at direction changes — zero standing-still shots.",
+    "location": "Valorant range → Ghost DM",
+    "tags": [
+      "Aim",
+      "Advanced",
+      "Ghost DM"
+    ]
+  },
+  {
+    "id": "uncomfortable-flick",
+    "category": "aim",
+    "name": "Uncomfortable Position Flick Drill",
+    "videoUrl": "https://www.youtube.com/watch?v=gR-JNjFg9B8",
+    "short": "After kill, stay in that crosshair position. Next rep is from there.",
+    "source": "n0ted — \"Radiant University EP.3 The TRUTH on Why YOU Keep WHIFFING\"",
+    "why": "Ranked games never give you comfortable starting positions — enemies appear when your crosshair is already displaced from clearing the last angle. Standard aim training always resets to center, so your \"comfortable\" flick is a skill that only exists in training. By removing the reset, you build the exact skill the game actually demands: accurate flicks from unpredictable starting angles.",
+    "error": "Always resetting crosshair to center after each kill. Only practicing close-range, comfortable positions. Chasing score instead of angle variety.",
+    "explanation": "Most players practice flicks from comfortable close-range positions. Real games happen at mid-to-long range from unexpected angles. Drill: in Kovaak or range, after killing a bot, do NOT re-center your crosshair. Stay exactly where it landed. When the next bot spawns, you must flick from that uncomfortable angle. Phase 1 (Wrist Domination): pick a physical reference (edge of mousepad), flick as fast as possible for 180° sweeps — full wrist motion, don't care about misses, let wrist teach itself. Phase 2 (Straight Lines): after wrist exercise, transition to precise straight horizontal lines, full wrist, no rushing. Phase 3 (Uncomfortable positions): the main drill — follow bot spawn without resetting.",
+    "cue": "\"The game won't let you reset. Practice shouldn't either.\"",
+    "condition": "Complete 15+ reps at varied crosshair positions without a single center-reset.",
+    "location": "Kovaak — any aim scenario, or Valorant range",
+    "tags": [
+      "Aim",
+      "Intermediate",
+      "Range"
+    ]
+  },
+  {
+    "id": "target-transitions",
+    "category": "aim",
+    "name": "Target Transitions (Delusional Trust)",
+    "videoUrl": "https://www.youtube.com/watch?v=8YRiCtEByHA",
+    "short": "Assume T1 is dead. Snap to T2 with zero delay — before kill animation.",
+    "source": "Zasko — \"Mada Makes Fragging EFFORTLESS\"",
+    "why": "Waiting 150–200ms for the kill animation before engaging the next target is one of the most measurable performance gaps between high-Immortal and Radiant. Mada's \"delusional trust\" framework flips the logic: assume the first shot worked, move on instantly. Even if you missed, you are now in a better position for target 2. The 150ms saved on every multi-kill compounds across every round you play.",
+    "error": "Waiting 150–200ms to visually confirm the first kill before switching. This delay costs the second fight.",
+    "explanation": "When facing multiple enemies: shoot target 1, ASSUME it's dead, snap to target 2 immediately. Do not wait for the kill animation or audio cue. Mada's protocol: shoot first target → assume kill → immediately aim second (removes 150-200ms wait). Practice in custom: face two dummy positions, fire one shot at the first, immediately flick to the second. The crosshair should reach T2 before T1's death animation plays. Build the reflex of fire → move → evaluate, not fire → evaluate → move.",
+    "cue": "\"Fire and forget. Next target immediately.\"",
+    "condition": "3 double-kills in DM within 5 minutes where your crosshair reaches T2 before T1 death animation plays.",
+    "location": "Custom game or chaotic DM",
+    "tags": [
+      "Aim",
+      "Advanced"
+    ]
+  },
+  {
+    "id": "mass-protocol-dm",
+    "category": "aim",
+    "name": "MASS Protocol DM",
+    "videoUrl": "https://www.youtube.com/watch?v=6j24Kextt0k",
+    "short": "Every kill: Move → Aim → Stand Still → Shoot. No exceptions.",
+    "source": "w0rthyTV — \"How To Aim Like Florescent\" / \"Why Your Movement Sucks Not Your Aim\"",
+    "why": "Florescent analysis showed that 22 of 24 rounds required no aim correction at all — the crosshair was already on the head from movement alone. Flicking is the symptom of arriving somewhere without your crosshair already prepared. MASS Protocol retrains the order of operations so movement does 90% of the aiming work and the remaining 10% is a tiny micro-adjustment, not a flick across the screen. MASS = how you position the crosshair BEFORE contact (through movement). Tension Fizzle = what you do when a flick is the only option left. Learn MASS first.",
+    "error": "Flick kills (crosshair was not pre-set by movement). Standing still and shooting. Winning the fight through aim rather than movement-based crosshair placement.",
+    "explanation": "MASS = Move, Aim, Stand Still, Shoot. This is w0rthy's framework for Florescent's mechanics: out of 24 rounds reviewed, only 2 were actual flicks (both from bad positioning). Step 1 Move: use WD keys to enter the fight, create angle, get to position — movement IS the aim (90% of winning). Step 2 Aim: small crosshair adjustment at relative head level. Step 3 Stand Still: stop momentum before firing (shadow step or full stop). Step 4 Shoot: tap or burst, not spray. Practice full DM sessions where every single kill follows MASS. Any flick kill = the rep didn't count.",
+    "cue": "\"Move first. Never flick. Movement places the crosshair.\"",
+    "condition": "Full DM session (10-15 min) where every kill is Move→Aim→Stop→Shoot. Flick kills noted and counted.",
+    "location": "Deathmatch, Ghost or Sheriff preferred",
+    "tags": [
+      "Aim",
+      "Core",
+      "Ghost DM",
+      "Sheriff DM"
+    ]
+  },
+  {
+    "id": "odin-head-height",
+    "category": "aim",
+    "name": "Odin Head-Height Calibration",
+    "videoUrl": "https://www.youtube.com/watch?v=1s9OR1Ckj-E",
+    "short": "Fire Odin burst at angle, run back, pre-aim the bullet holes — your exact head level.",
+    "source": "Zasko — \"3 Simple Ways To Improve Your Crosshair Placement\"",
+    "why": "Most crosshair placement errors come from imprecise head-level guesses that drift 10–20 pixels high or low depending on terrain. The Odin leaves a visible hole pattern at the exact height your crosshair was. Running back and pre-aiming that hole teaches you the correct absolute height for that angle through kinesthetic memory rather than abstract visual estimation.",
+    "error": "Doing this once and not repeating for different terrains. Using auto-fire instead of a controlled burst. Checking the holes from wrong distance.",
+    "explanation": "Setup: Custom game, any map, equip Odin (high ammo, clear wall marks). Step 1: Walk to the exact peek position you struggle with in ranked. Step 2: Aim at the wall in the direction the enemy would be. Step 3: Fire a controlled 3-5 bullet burst at head height (your best guess). Step 4: Run back to your normal approach distance. Step 5: Pre-aim the bullet hole you left — that is the calibrated head level for this angle. Repeat 5x per session on your 3-5 hardest angles. Transfer: in your next ranked game, recall the bullet-hole position before peeking.",
+    "cue": "\"Where did the holes land? Pre-aim that spot.\"",
+    "condition": "Can pre-aim 5 memorized angles within 1 second of approach without hesitation in ranked.",
+    "location": "Custom game, your 3-map pool",
+    "tags": [
+      "Aim",
+      "Beginner",
+      "Range"
+    ]
+  },
+  {
+    "id": "primie-burst-drill",
+    "category": "aim",
+    "name": "Primie Burst Drill (Shoot → Move, Zero Gap)",
+    "videoUrl": "https://www.youtube.com/watch?v=kJksoAh4Jcg",
+    "short": "Shoot, then move with literally zero milliseconds of pause between.",
+    "source": "Zasko — \"How To ACTUALLY Burst Like PRIMMIE\"",
+    "why": "Primie's signature style is not about accuracy — it's about never giving the enemy a static target. Every shot must trigger immediate movement, which forces the enemy to constantly readjust their aim. The 200ms pause most players have after shooting (waiting to see if they hit) is free standing-still time for the enemy to trade. Eliminating that pause is one of the highest-value mechanical changes you can make below Immortal.",
+    "error": "Pausing after each shot to evaluate the hit. Shooting then checking the kill feed. Bursting more than 4 bullets before moving (inaccuracy spikes after shot 4).",
+    "explanation": "The rule is simple: shoot → press a movement key at exactly the same time (0ms delay). Not \"shoot, check, move.\" Always. Even on misses. Practice in the Valorant range: fire 1 shot at a bot → immediately tap D or A. The movement key press must feel like part of the same action as the mouse click. Apply in DM: fire → move. Fire → move. Zero evaluation window. Build to speed: eventually you can burst 3-4 bullets then instantly strafe, giving the enemy a burst of fire that immediately disappears. Primie-style: burst limit is 4 bullets max — then directional change back to cover.",
+    "cue": "\"Click and move. Same frame. No checking.\"",
+    "condition": "Full DM session where you never stand still for 2+ frames after any shot.",
+    "location": "Valorant range → any DM",
+    "tags": [
+      "Aim",
+      "Core",
+      "Any DM"
+    ]
+  },
+  {
+    "id": "kovaak-transfer",
+    "category": "aim",
+    "name": "Kovaak → Game Transfer Protocol",
+    "videoUrl": "https://www.youtube.com/watch?v=yvRvu6pZ3EM",
+    "short": "Kovaak feel → range → custom → DM. Copy-paste the sensation at each step.",
+    "source": "Zasko — \"Fixing his SHAKY AIM in just 30 minutes\"",
+    "why": "Aim training in Kovaak builds isolated skill in an artificial environment. The transfer problem — where players can't replicate Kovaak performance in ranked — is caused by failing to bridge the contexts. Each step in this protocol reduces the novelty gap slightly: range is closer to real movement, custom removes DM chaos, DM adds enemies. The goal is to carry the exact physical sensation from step to step, not the score or results.",
+    "error": "Jumping straight from Kovaak to ranked with no bridge step. Treating each step as a separate activity instead of a continuous feeling transfer.",
+    "explanation": "Step 1 (Kovaak): pick ONE scenario type (flicking, tracking, or evasive). Run 10-15 min in free play. Focus on the physical sensation — how does your hand feel when you are doing it correctly? Name it: \"floaty,\" \"snappy,\" \"grounded.\" Step 2 (Valorant range): immediately open range and replicate that same feeling on bots. Do NOT adjust sensitivity or grip — copy the feeling. Step 3 (Custom game): play a custom game alone and find a fight where that feeling shows up naturally. Note the exact moment it clicks. Step 4 (DM): enter DM carrying that feeling. Treat first 2 minutes as a \"feeling check\" — am I doing it right? Step 5 (Ranked): the feeling is now the one cue you bring into ranked.",
+    "cue": "\"Copy the feeling, not the score. Feel it in each step.\"",
+    "condition": "Can describe in one sentence exactly what the correct physical feeling is. Can identify when you have it and when you don't in a DM session.",
+    "location": "Kovaak → practice range → custom → DM",
+    "tags": [
+      "Aim",
+      "Intermediate",
+      "Range"
+    ]
+  },
+  {
+    "id": "anti-mirror-dodge",
+    "category": "movement",
+    "name": "Anti-Mirror Dodge",
+    "videoUrl": "https://www.youtube.com/watch?v=wgQHZjy6TxA",
+    "short": "After shooting, strafe OPPOSITE to enemy movement. Never mirror.",
+    "source": "Zasko — \"why you're getting destroyed when angle holding\" / n0ted",
+    "why": "When you mirror the enemy's strafe direction, their tracking becomes trivially easy because your relative motion is zero — you appear static to their aim. Strafing opposite forces them to stop their current tracking motion and reverse direction, which adds a minimum 100–150ms cognitive delay. This is the mechanical basis for making yourself difficult to hit without doing anything mechanically complex.",
+    "error": "Standing still after missing. Mirroring the enemy's strafe (gives them a static target). Waiting for visual kill confirmation before moving.",
+    "explanation": "When holding an angle in the open and you miss your first shot: do NOT mirror the enemy's strafe. If they went right and you go right — that's mirroring, it's predictable. Go opposite (anti-mirror). This forces the enemy to recalibrate their aim track, resets their reaction time advantage, and keeps you evasive. Your LMB click must be INSTANTLY followed by a movement key — 0ms delay. Practice in DM: after every shot, immediately press a direction key. The direction should be opposite to enemy movement. No looking at kill feed. No hesitation.",
+    "cue": "\"Click — move opposite — reset.\"",
+    "condition": "5 consecutive duels in DM where every shot is followed by immediate lateral movement, opposite to enemy direction.",
+    "location": "Any DM",
+    "tags": [
+      "Movement",
+      "Intermediate"
+    ]
+  },
+  {
+    "id": "lmb-to-cover",
+    "category": "movement",
+    "name": "LMB = Back to Cover",
+    "videoUrl": "https://www.youtube.com/watch?v=wgQHZjy6TxA",
+    "short": "Every click is immediately followed by cover retreat. Reflexive.",
+    "source": "Zasko — \"Shoot-and-Fallback Reflex\" / \"How to ACTUALLY angle hold properly\"",
+    "why": "Standing still after firing is the single most common mechanical death in sub-Immortal. The enemy has peeker's advantage and is still tracking you while you are reading the kill feed. Treating LMB as the trigger for a movement key converts shooting from a static act to a dynamic one. After building this reflex, you are never in open space after a shot — which means every trade requires the enemy to flick to your new position.",
+    "error": "Standing still after firing. Waiting 200ms to see if you got the kill. Exposing yourself to trade kills.",
+    "explanation": "Program a hard mental reflex: Left Mouse Button = fire + immediately strafe to cover. These must happen in the same motion — 0ms delay between fire and retreat. Waiting to visually confirm the kill before moving costs 150–200ms and allows the enemy to trade you. If cover is unavailable, trigger the anti-mirror dodge instead. Practice in the range: fire 2 shots at a bot → immediately tap A or D to strafe before checking the result. Do NOT look at the kill feed. Drill this 50 times in range. Then apply in DM: every single shot triggers immediate movement, no exceptions.",
+    "cue": "\"Click and move. Same motion.\"",
+    "condition": "10 consecutive kills in DM where you never stand still for more than 200ms after firing.",
+    "location": "Range → Any DM",
+    "tags": [
+      "Peek",
+      "Core",
+      "Any Level"
+    ]
+  },
+  {
+    "id": "shoot-then-move",
+    "category": "movement",
+    "name": "Shoot-Then-Move (Zero Gap)",
+    "videoUrl": "https://www.youtube.com/watch?v=wgQHZjy6TxA",
+    "short": "Fire, then IMMEDIATELY press a movement key. Dead time = 0ms.",
+    "source": "Zasko — \"How To ACTUALLY Burst Like PRIMMIE\" / \"How To ACTUALLY Move In Valorant\"",
+    "why": "The 200ms post-shot pause is a deeply wired habit from FPS games where looking at the kill feed is necessary for economy decisions. In Valorant, that habit costs you survivability every single fight. By programming the \"shoot = move\" reflex, you automatically position yourself out of the pre-aimed crosshair of any trading enemy before they can react to your shot.",
+    "error": "Pausing after shot to check hit. Moving then stopping then moving (the 200ms linger habit). Not having a movement key ready before shooting.",
+    "explanation": "The most common mistake after firing: pause to evaluate. This 200ms gap is free time for the enemy to trade or reposition. The rule: fire, then INSTANTLY press a movement key. Not \"fire, check, then move.\" Not \"fire, see miss, then move.\" Always. Even if you got the kill — move. Practice: in Valorant range, fire at a bot → press D immediately → fire again → press A immediately. The motion is fire+move as one fluid impulse. Then apply in DM. Zasko calls this \"shoot then move, instantaneously; no checking bullet, no hesitation.\"",
+    "cue": "\"Shoot is the trigger for move. Same frame.\"",
+    "condition": "Full DM session where you never stand still for 2+ frames after shooting. Zero post-shot pauses.",
+    "location": "Range → Any DM",
+    "tags": [
+      "Movement",
+      "Core",
+      "Any DM"
+    ]
+  },
+  {
+    "id": "deliberate-dm",
+    "category": "movement",
+    "name": "Deliberate DM (Gym Reps Protocol)",
+    "videoUrl": "https://www.youtube.com/watch?v=8YRiCtEByHA",
+    "short": "Treat every DM peek like a ranked angle. 1-second pause. Far back. 1v1 only.",
+    "source": "Zasko — \"before you queue, PLEASE do this\" / w0rthyTV Measured Fights Protocol",
+    "why": "Mindless DM reinforces whatever habits you already have — including the bad ones. The 1-second pause before each angle is deliberate practice: it forces your brain into conscious mode where a new pattern can be laid down. Research shows motor learning requires focused attention to the correct form; automaticity comes after the pattern is installed, not before.",
+    "error": "Running around mindlessly. Fighting while exposed to multiple angles. Ignoring kills that were \"wrong\" reps. Chasing score.",
+    "explanation": "Deathmatch should be treated like structured gym reps — slow, deliberate, form-perfect angle clearing. Rules: (1) Tiny 1-second pause between every angle — believe someone is there before peeking. (2) Set up far back from each angle — expose yourself to ONE enemy at a time, not multiple. (3) Peek → micro-adjust → shoot — never move to next angle while mid-fight. (4) Ignore getting shot in the back — reset and maintain perfect form. (5) Wrong reps don't count — if you won via a flick or standing still, note it and replay the angle correctly. Zasko's daily session: Pre-DM visualizer (watch 2-5 min of a coach's DM recording) → warm-up DMs → 3 structured DMs post-comp with deliberate form.",
+    "cue": "Every angle: 1-second pause, believe someone's there, then peek. This is the FRAMEWORK for all DM — MASS Protocol and Sheriff drills happen inside this structure.",
+    "condition": "Can send a 5-min DM recording where every single peek has a visible pause and far-back setup.",
+    "location": "Deathmatch (any)",
+    "tags": [
+      "Movement",
+      "Core",
+      "Any DM",
+      "Warmup"
+    ]
+  },
+  {
+    "id": "dm-minimap-habit",
+    "category": "movement",
+    "name": "DM Minimap Respawn Habit",
+    "videoUrl": "https://www.youtube.com/watch?v=k8B7x5jH_lI",
+    "short": "Every respawn with shield: freeze, read minimap, identify 2+ red dots before moving.",
+    "source": "w0rthyTV — \"How Radiants Look At The Radar/Minimap\"",
+    "why": "Radiants check the minimap at specific game states as a reflex — post-respawn, post-cover, post-kill. The DM shield window is a controlled opportunity to practice the exact minimap-first reflex without ranking pressure. After 20+ sessions of this habit, you automatically check minimap at these same moments in ranked without conscious thought.",
+    "error": "Immediately running after respawn. Never checking minimap. Entering fights without knowing enemy positions.",
+    "explanation": "Every time you respawn in DM with the spawn shield active, DO NOT move. Use the shield time to look at the minimap and identify all visible red dots before you start hunting. This trains the exact skill needed in ranked: reading minimap before entering a fight. It forces the \"Passive Mode → Active Mode\" transition at every life. Build muscle memory of flicking to minimap at specific game states: post-spawn, post-kill, post-cover. After a full session of this, you'll automatically check the minimap in ranked without thinking.",
+    "cue": "\"Respawn → minimap → hunt.\"",
+    "condition": "Can name 2+ enemy positions from minimap before engaging on every single respawn during a DM session.",
+    "location": "Any deathmatch mode",
+    "tags": [
+      "Movement",
+      "Beginner",
+      "Any DM"
+    ]
+  },
+  {
+    "id": "breath-reset",
+    "category": "mental",
+    "name": "Breath Before Swing",
+    "videoUrl": "https://www.youtube.com/watch?v=4xCvMqSB6w8",
+    "short": "One deep exhale before every intentional peek. Drops heart rate on demand.",
+    "source": "w0rthyTV / Fundamenty — diaphragmatic regulation + Sheriff DM practice",
+    "why": "Elevated heart rate causes the muscles around your wrist and fingers to tighten involuntarily. At 120+ BPM this effect reduces fine motor precision by up to 80%. A single diaphragmatic exhale activates the vagus nerve, which drops heart rate by 5–15 BPM within seconds. This is a medical mechanism, not a mental trick — it physically restores the motor control you need for the shot.",
+    "error": "Elevated heart rate causes \"lifting\" — physical muscle tension that loses 80% of fine motor control. Panic = spray, jitter, over-flick.",
+    "explanation": "Before every intentional peek (not reactive fights), take one diaphragmatic exhale. Exhale slowly — 4-6 seconds. This activates the parasympathetic nervous system, drops heart rate by 5–15 bpm, and restores fine motor precision. Practice in Sheriff DM: take a breath before every single engagement for one full session. The high-stakes nature of the Sheriff (miss = lose the fight) makes composure immediately measurable. Zasko notes that exhaling just before the shot produces measurably better grouping. This becomes a drillable habit when practiced in Sheriff DM consistently over multiple sessions.",
+    "cue": "\"Exhale — then peek.\"",
+    "condition": "Full Sheriff DM session (10 min) with one breath before every fight. Note the composure difference versus your normal DM.",
+    "location": "Sheriff DM, ranked clutches",
+    "tags": [
+      "Mental",
+      "Any Level",
+      "Sheriff DM"
+    ]
+  },
+  {
+    "id": "green-mode-lock",
+    "category": "mental",
+    "name": "Green Mode Lock (One Cue Rule)",
+    "videoUrl": "https://www.youtube.com/watch?v=k1dXzO0RIBc",
+    "short": "Before ranked: choose exactly ONE cue. Apply it round 1. Then forget mechanics.",
+    "source": "Zasko — \"This Subtle Mistake WASTES So Much Time..\" / Green/Pink Mindset",
+    "why": "Motor skills (aiming, movement) are executed by your cerebellum and basal ganglia — not your prefrontal cortex (the conscious thinking part). Consciously analyzing aim technique mid-gunfight routes processing through the wrong brain region, which is always slower and degraded compared to automatic execution. Green mode is deliberately suppressing the prefrontal cortex so the faster, trained motor system can operate unimpeded.",
+    "error": "Bringing analytical (Pink) thinking into ranked games. Thinking about crosshair position mid-gunfight. Trying to apply 3+ cues at once.",
+    "explanation": "Green mindset = pure performance mode. Flow state, intuition, no conscious thought about mechanics. Pink mindset = analytical — for drills, VOD review, range. NEVER Pink during ranked. The fix: before queuing, choose exactly ONE cue from your current drill. Apply it consciously in round 1. Then go Green — play chess, not mechanics. Between rounds: mute game sound, breathe deep, loosen shoulders, release mouse tension. Reset to Green. If you find yourself thinking \"where is my crosshair?\" during a gunfight — you are in Pink during Green time. This must be practiced as a habit: one cue → trust → Green.",
+    "cue": "\"One cue before queue. Then forget mechanics — play chess.\"",
+    "condition": "Complete 3 ranked games without consciously analyzing aim technique mid-gunfight. Track this in your session log.",
+    "location": "Ranked",
+    "tags": [
+      "Mental",
+      "Core",
+      "Any Level"
+    ]
+  },
+  {
+    "id": "five-why-review",
+    "category": "mental",
+    "name": "5-Why Post-Death Review",
+    "videoUrl": "https://www.youtube.com/watch?v=8YRiCtEByHA",
+    "short": "After a confusing death: ask \"why?\" five times to reach the root cause.",
+    "source": "Zasko — \"You'll Never Rank Up Until You Fix This\"",
+    "why": "The first answer to \"why did I die?\" is almost always surface-level (\"I missed\") and addresses only the symptom, not the cause. Surface-level analysis leads to surface-level training decisions. The 5-Why technique, originally from Toyota's production system, consistently reaches the underlying structural problem within 5 layers. In Valorant this transforms \"I missed\" into actionable insights like \"I don't pre-visualize before peeking B main.\"",
+    "error": "Stopping at \"I missed\" or \"I peeked wrong.\" The surface answer is never the root cause.",
+    "explanation": "After each death in VOD review: ask \"why?\" five times. Example: Why did I die? → I missed the shot. Why did I miss? → I was moving when I fired. Why was I moving? → I panicked after hearing footsteps. Why did I panic? → I didn't pre-visualize the scenario. Why didn't I pre-visualize? → I wasn't in the right mental state before peeking. Root cause: missing pre-peek mental preparation, not aim. This transforms post-game review from blame (\"I missed\") into insight (\"I need to pre-visualize before pushing B\"). One death, five whys, one written insight per session.",
+    "cue": "\"Why? Why? Why? Why? Why? — then write the root.\"",
+    "condition": "Complete one 5-Why chain per VOD review session. Write the root cause in the Tracker. Over 5 sessions, patterns will emerge.",
+    "location": "Post-session VOD review",
+    "tags": [
+      "Mental",
+      "Intermediate",
+      "Any Level"
+    ]
+  }
+]

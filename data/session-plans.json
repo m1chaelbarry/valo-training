@@ -1,0 +1,306 @@
+{
+  "15-ranked": {
+    "cautions": [
+      "Do NOT play more than one DM — CNS warmup fades fast, extra DMs waste the effect",
+      "Do NOT chase DM score — you are activating the nervous system, not proving yourself",
+      "Do NOT extend beyond 15 min — you will fatigue before ranked starts",
+      "Do NOT check your phone between RAMP end and ranked queue"
+    ],
+    "steps": [
+      {
+        "time": "0–3 min",
+        "title": "RAMP — Raise",
+        "detail": "Valorant range. Loose shots at medium bots. Head height only. No pressure — wake up the hands."
+      },
+      {
+        "time": "3–6 min",
+        "title": "RAMP — Activate + Mobilize",
+        "detail": "Ghost DM or range. Slow tracking shots, micro-corrections. Wide mouse swipes across the full pad to warm up arm range of motion."
+      },
+      {
+        "time": "6–13 min",
+        "title": "Potentiate DM — your drill cue only",
+        "detail": "DM with your chosen weapon. Apply only your ONE drill cue (shown above). Do not try to win. Stop while still feeling sharp — not exhausted."
+      },
+      {
+        "time": "13–15 min",
+        "title": "Queue ranked immediately",
+        "detail": "No delay. CNS activation window closes fast. Three deep breaths, recall your ONE cue, queue."
+      }
+    ]
+  },
+  "15-training": {
+    "cautions": [
+      "15 min is warmup territory only — switch to Ranked mode if you only have 15 min",
+      "Do NOT jump in without a specific cue in mind — vague practice builds vague habits"
+    ],
+    "steps": [
+      {
+        "time": "0–5 min",
+        "title": "RAMP — Raise + Activate",
+        "detail": "Range: loose shots → tracking. Get hands warm. Do not rush."
+      },
+      {
+        "time": "5–15 min",
+        "title": "Drill — high reps",
+        "detail": "Your recommended drill (shown above). Apply the cue with full focus. Count reps. Do not switch drills mid-session."
+      }
+    ]
+  },
+  "30-ranked": {
+    "cautions": [
+      "Do NOT switch drills mid-session — stick to ONE mechanic so it has time to transfer",
+      "Do NOT use a rifle for DM if drilling crosshair placement — Ghost or Sheriff only",
+      "Do NOT skip the review — 5 honest minutes beats 30 mindless ones"
+    ],
+    "steps": [
+      {
+        "time": "0–5 min",
+        "title": "RAMP — full (all 4 phases)",
+        "detail": "Range: loose bots → Ghost tracking → wide pad swipes → brief potentiate DM. Finish the full RAMP. Do not rush."
+      },
+      {
+        "time": "5–15 min",
+        "title": "Drill A — deliberate reps",
+        "detail": "Your primary drill (shown above). Slow, intentional reps — say the cue out loud before each one. Errors are good: they are the learning signal."
+      },
+      {
+        "time": "15–23 min",
+        "title": "DM — same cue in live chaos",
+        "detail": "Your chosen weapon. Carry only the drill cue. Ignore your score. Every kill should use the drill mechanic — if you win via a flick, that rep does not count."
+      },
+      {
+        "time": "23–28 min",
+        "title": "Review — 3–5 deaths, honest",
+        "detail": "Was each death mechanical (missed timing, bad stop) or tactical (positioning, info)? Apply 5-Why to ONE death. Write the root cause in the Tracker."
+      },
+      {
+        "time": "28–30 min",
+        "title": "Pre-ranked reset",
+        "detail": "ONE cue out loud or written. Three slow exhales. Visualize one round going correctly. Queue."
+      }
+    ]
+  },
+  "30-training": {
+    "cautions": [
+      "Training day = no ranked. Pink mode (analytical) does not switch cleanly to Green mode — do not play ranked after",
+      "Do NOT practice more than 2 things — one mechanic drilled properly beats five touched once"
+    ],
+    "steps": [
+      {
+        "time": "0–5 min",
+        "title": "RAMP — all 4 phases",
+        "detail": "All phases at a relaxed pace. Today you are not rushing to queue."
+      },
+      {
+        "time": "5–15 min",
+        "title": "Drill A — deliberate reps",
+        "detail": "Your primary drill (shown above). High reps. Say the cue out loud. The mistake IS the rep — fail, reset, repeat."
+      },
+      {
+        "time": "15–25 min",
+        "title": "DM transfer — same mechanic",
+        "detail": "Ghost or Guardian DM. Carry only the drill cue. Count kills that used the mechanic vs. kills that did not. Score is irrelevant."
+      },
+      {
+        "time": "25–30 min",
+        "title": "Reflection + log",
+        "detail": "Open Tracker. Write: 1 thing that worked, 1 thing to fix, cue for next session. Then 5 min idle (eyes closed, no phone) — consolidation."
+      }
+    ]
+  },
+  "45-ranked": {
+    "cautions": [
+      "Stop warmup at 15 min no matter how good you feel — everything after is training, not warmup",
+      "Do NOT run more than 2 drills — cognitive overload degrades transfer to ranked",
+      "Do NOT tilt after the first loss — trust the process for a minimum 3-game sample"
+    ],
+    "steps": [
+      {
+        "time": "0–5 min",
+        "title": "RAMP — all 4 phases",
+        "detail": "Raise, Activate, Mobilize, Potentiate — all four, full quality."
+      },
+      {
+        "time": "5–15 min",
+        "title": "Drill A — primary mechanic",
+        "detail": "Your primary drill (shown above). Slow, deliberate reps. Say the cue before each rep. Build the groove before building speed."
+      },
+      {
+        "time": "15–25 min",
+        "title": "Drill B — secondary mechanic",
+        "detail": "Your secondary drill (shown above). Only start B if A felt solid — otherwise continue A. Do not jump categories."
+      },
+      {
+        "time": "25–33 min",
+        "title": "Potentiate DM — chosen weapon",
+        "detail": "Transfer both mechanics into live DM. One primary cue only. Not playing to win — playing to carry the drill mechanic into chaos."
+      },
+      {
+        "time": "33–38 min",
+        "title": "Review — kills + deaths",
+        "detail": "Were kills from the drill mechanic or from flicking? Were deaths mechanical or tactical? Write one finding in the Tracker."
+      },
+      {
+        "time": "38–45 min",
+        "title": "Pre-ranked reset",
+        "detail": "ONE cue from Drill A. Three exhales. Visualize one round — the drill mechanic executed correctly. Queue."
+      }
+    ]
+  },
+  "45-training": {
+    "cautions": [
+      "No ranked today — honor the training day commitment",
+      "Do NOT do more than 2 drills — depth beats breadth every time"
+    ],
+    "steps": [
+      {
+        "time": "0–5 min",
+        "title": "RAMP — all 4 phases",
+        "detail": "All phases, relaxed pace. No rush today."
+      },
+      {
+        "time": "5–18 min",
+        "title": "Drill A — deep reps",
+        "detail": "Your primary drill. High reps. Wrong reps do not count — redo them. The error IS the signal."
+      },
+      {
+        "time": "18–30 min",
+        "title": "DM transfer — Drill A in chaos",
+        "detail": "Ghost or Guardian DM. Only the drill cue matters. Score is irrelevant — count drill mechanic kills vs. non-mechanic kills."
+      },
+      {
+        "time": "30–40 min",
+        "title": "Drill B — secondary",
+        "detail": "Your secondary drill. Stay in the same category as Drill A where possible. Do not jump from aim to mental in one session."
+      },
+      {
+        "time": "40–45 min",
+        "title": "Log + idle rest",
+        "detail": "Open Tracker: write 1 mistake, 1 success, cue for next session. Then 5 min eyes closed, no phone — free consolidation."
+      }
+    ]
+  },
+  "60-ranked": {
+    "cautions": [
+      "Still stop warmup at 15 min even with 60 min — over-warming burns CNS capacity before ranked",
+      "Do NOT VOD review more than 5 min before ranked — Pink mode does not switch off cleanly",
+      "Do NOT run 3+ drills — go deep on two"
+    ],
+    "steps": [
+      {
+        "time": "0–5 min",
+        "title": "RAMP — full, all 4 phases",
+        "detail": "All phases with full quality. Finish feeling sharp and activated, not fatigued."
+      },
+      {
+        "time": "5–20 min",
+        "title": "Drill A — deep focus",
+        "detail": "Your primary drill (shown above). Maximum deliberate attention. If you hit the completion condition, rest 60 seconds, then continue."
+      },
+      {
+        "time": "20–32 min",
+        "title": "DM transfer — Drill A",
+        "detail": "Ghost, Guardian, or Sheriff. ONE cue only. Log mechanical errors for the review step. No score pressure."
+      },
+      {
+        "time": "32–40 min",
+        "title": "Drill B or VOD",
+        "detail": "If sharp: run Drill B (shown above). If tired: 8 min VOD — one clip, one death, one insight only. Do not do both."
+      },
+      {
+        "time": "40–50 min",
+        "title": "Final DM — ranked pace",
+        "detail": "Last CNS primer. Treat it like ranked speed — not warmup pace. Queue within 10 min of finishing."
+      },
+      {
+        "time": "50–55 min",
+        "title": "Pre-ranked mental prep",
+        "detail": "Eyes closed: visualize one full round with your drill mechanic executed correctly. ONE cue. Three exhales."
+      },
+      {
+        "time": "55–60 min",
+        "title": "Queue",
+        "detail": "Green mode. Trust the work. Play positions and chess — not mechanics."
+      }
+    ]
+  },
+  "60-training": {
+    "cautions": [
+      "No ranked — protect training day integrity",
+      "Track everything in Tracker — 60 min without notes is 60 min half-wasted"
+    ],
+    "steps": [
+      {
+        "time": "0–5 min",
+        "title": "RAMP — all 4 phases",
+        "detail": "Quality over speed on all phases."
+      },
+      {
+        "time": "5–25 min",
+        "title": "Drill A — deep deliberate practice",
+        "detail": "Your primary drill. Maximum conscious attention. Pink mode at full. No rushing past the completion condition."
+      },
+      {
+        "time": "25–40 min",
+        "title": "DM block — Guardian + Ghost",
+        "detail": "First 7 min: Guardian DM (trains stop timing — one clean shot per full stop, punishes any movement). Switch to Ghost for 8 min (trains placement and reading). Same drill cue for both."
+      },
+      {
+        "time": "40–50 min",
+        "title": "Drill B — secondary",
+        "detail": "Your secondary drill. Stay adjacent to Drill A in category. Build on what you drilled, not something completely unrelated."
+      },
+      {
+        "time": "50–55 min",
+        "title": "VOD review — 5 min hard cap",
+        "detail": "One clip. One death. 5-Why method. Write root cause in Tracker. Stop at 5 min — do not spiral."
+      },
+      {
+        "time": "55–60 min",
+        "title": "Tracker + idle rest",
+        "detail": "Log the session. Then 5 min eyes closed, no phone — hippocampus consolidates today's motor sequences."
+      }
+    ]
+  },
+  "post-ranked": {
+    "cautions": [],
+    "steps": [
+      {
+        "time": "0–10 min",
+        "title": "Idle rest — mandatory",
+        "detail": "Eyes closed. No phone, no input. Your hippocampus is currently replaying today's motor sequences in reverse — this is how motor memory forms. Checking a screen disrupts this window."
+      },
+      {
+        "time": "10–25 min",
+        "title": "Mental visualization",
+        "detail": "Replay the correct versions of your drill from today — the two-step peek done right, the breath before swing, the clean stop-and-shoot. 15 min = up to 35% additional skill consolidation. Upper motor neurons activate identically to physical practice."
+      },
+      {
+        "time": "25+ min",
+        "title": "Prioritize sleep",
+        "detail": "Motor memory consolidates during NREM2 sleep (sleep spindles). 8h after training = 20–30% better accuracy next session. No sleep = no consolidation. This is where the skill actually gets stored."
+      }
+    ]
+  },
+  "post-training": {
+    "cautions": [],
+    "steps": [
+      {
+        "time": "0–10 min",
+        "title": "Idle rest — mandatory",
+        "detail": "No stimulus. Eyes closed. Let the hippocampus replay today's drill sequences. Checking your phone breaks this consolidation window."
+      },
+      {
+        "time": "10–20 min",
+        "title": "Visualization",
+        "detail": "Imagine the drill you just trained — done perfectly. Slow, deliberate mental reps. Upper motor neurons activate identically to physical practice. This is free training."
+      },
+      {
+        "time": "20+ min",
+        "title": "Sleep",
+        "detail": "Everything you drilled consolidates into permanent motor memory during NREM2. Protect sleep above all training decisions."
+      }
+    ]
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "peek": [
+    {
+      "id": "two-step-peek",
+      "name": "Two-Step Peek",
+      "cue": "\"Two steps, lift hand, stop before crosshair arrives.\" Say the angle out loud before each rep.",
+      "where": "Custom game or Ghost DM. Pick ONE angle. Repeat 15–20 deliberate reps.",
+      "why": "Foundation of every peek — most players blend movement and aiming simultaneously, which is why first shots miss. This drill forces them apart. Until this is automatic, every other peek drill is built on sand."
+    },
+    {
+      "id": "idle-crosshair",
+      "name": "Idle Crosshair (Hand-Off-Mouse)",
+      "cue": "\"Keyboard moves. Hand completely off mouse until stopped.\"",
+      "where": "Custom game. Physically lift your mouse hand off the mouse, take two steps to peek, then put hand back only after you have stopped.",
+      "why": "Eliminates the most common mechanical habit: blending mouse movement with key movement. Feels extreme on purpose. If this feels impossible, that reveals exactly how bad the blend habit is."
+    },
+    {
+      "id": "slice-fallback",
+      "name": "Slice & Fall Back",
+      "cue": "\"Close to wall, stop early, expose only a sliver — then fall back. No commit yet.\"",
+      "where": "Ghost DM or custom. Stand close to the corner. Flash just your gun model around the edge, then fall back immediately. Never go wide on the first show.",
+      "why": "The slice is your information peek — not your kill peek. Going straight to a full wide swing is a coin flip. This drills the information-first habit that separates structured peeking from gambling."
+    },
+    {
+      "id": "slice-wide-combo",
+      "name": "Slice → Wide Swing Combo",
+      "cue": "\"Slice to bait their aim tight. Wide swing to catch them out of position.\"",
+      "where": "Custom game with a friend holding an angle. Full sequence: expose sliver → fall back → wide swing. 10 reps each combo variant.",
+      "why": "The slice baits the enemy crosshair narrow. The wide swing then catches them displaced. This is the complete peek sequence — slice for info and conditioning, wide for the kill."
+    },
+    {
+      "id": "pause-peek",
+      "name": "Pause-Peek (Priming the Angle)",
+      "cue": "\"Run up. Brief stop here. Then out.\" — 3-beat rhythm.",
+      "where": "Common ranked angles in custom or Ghost DM. Run to entry point, pause 0.1 seconds at entry, then swing out. Watch shooting error indicator — must be yellow, not blue.",
+      "why": "Running at full speed requires ~2 seconds of deceleration before you can shoot accurately. The pause removes that delay — you are already near-zero velocity when you swing, so your first bullet is accurate from frame 1."
+    }
+  ],
+  "aim": [
+    {
+      "id": "deadzone-stop",
+      "name": "Deadzone Stop Timing",
+      "cue": "\"Release key → wait for yellow lines → click. In that order. Never fire on blue.\"",
+      "where": "Valorant range. Enable shooting error graph (Settings → Gameplay → Show Bullet Spread Indicators). Strafe A or D, then stop — wait until the spread lines turn yellow before firing.",
+      "why": "Yellow lines = bullet goes exactly where aimed. Blue lines = bullet will miss. Most players fire while blue without knowing it. This drill builds the wait-for-yellow reflex that accurate first shots require — it is the single most impactful timing habit."
+    },
+    {
+      "id": "ping-tracking",
+      "name": "Ping Tracking Drill",
+      "cue": "\"Stay on the ping. Never let crosshair drop below it.\"",
+      "where": "Valorant range. Place a ping on a wall at head height. Burst fire onto it — crosshair must never drop below the ping. Reset count if it does.",
+      "why": "Reveals if you have the unconscious \"U-shape\" habit — dragging the crosshair down after shot 1. Most players do this without knowing. Once visible, it is fixable. Especially important for Vandal users where shot 2 position matters."
+    },
+    {
+      "id": "mass-protocol-dm",
+      "name": "MASS Protocol DM",
+      "cue": "\"Move → Aim (small adjustment) → Stand Still → Shoot. Any flick kill = rep does not count.\"",
+      "where": "Ghost DM for 10–15 min. Every kill must follow the 4 steps. Track flick kills separately — they reveal how often you revert to the wrong habit.",
+      "why": "This is how Radiant+ players actually aim. Florescent hit headshots in 22 of 24 rounds without a single mouse flick — movement placed the crosshair, mouse only micro-adjusted. Flicking is compensating for bad positioning, not a primary strategy. MASS = how you position the crosshair BEFORE contact (through movement). Tension Fizzle = what you do when a flick is the only option left. Learn MASS first."
+    },
+    {
+      "id": "sheriff-drill",
+      "name": "Sheriff Counter-Strafe Drill",
+      "cue": "\"Press A + click at the same moment. Same input, same frame.\"",
+      "where": "Valorant range. 100 bots on strafe. Equip Sheriff. Strafe D one unit, then press A + shoot simultaneously. The spread lines should cluster tight if timing is correct.",
+      "why": "The Sheriff has zero forgiveness — 20ms early = full miss. If you can consistently hit 1-unit strafe shots with the Sheriff, Vandal timing feels easy. Same principle as training with a heavier weight so the game weight feels light."
+    },
+    {
+      "id": "strafe-shoot-style",
+      "name": "Strafe-and-Shoot Timing",
+      "cue": "\"Direction change is where the bullet goes straight. Shoot at the A→D crossover, not after.\"",
+      "where": "Valorant range 10 min, then Ghost DM. Strafe A/D continuously — fire only at the direction change, never while traveling in either direction. Phantom allows 2–3 bullets per window; Vandal allows 1.",
+      "why": "Shooting at the direction change — not after a full stop — fires accurately while you appear to be moving continuously. The enemy sees movement but your bullets land. This is the mechanical basis of the \"always moving\" playstyle used by n0ted and Primie."
+    },
+    {
+      "id": "odin-head-height",
+      "name": "Odin Head-Height Calibration",
+      "cue": "\"Where did the bullet holes land? Pre-aim exactly that spot next time.\"",
+      "where": "Custom game, equip Odin (high ammo, marks walls clearly). Walk to 5 angles you struggle with in ranked. Fire 3–5 bullets at your best-guess head height. The bullet marks on the wall are your calibration reference.",
+      "why": "Guessing head level by even 5 pixels means your first shot misses without you understanding why. This drill gives you pixel-accurate visual references for your specific angles that you can memorize and pre-aim consistently."
+    },
+    {
+      "id": "uncomfortable-flick",
+      "name": "Uncomfortable Position Flick",
+      "cue": "\"Game never resets your crosshair. Practice starts exactly where it lands.\"",
+      "where": "Kovaak or Valorant range. After killing a bot, do NOT recenter. Flick to next target from wherever crosshair stopped. 15+ reps per session.",
+      "why": "Standard aim training always resets to center — building a skill that only exists in controlled conditions. Ranked fights start with your crosshair displaced from the last angle cleared. This drill builds the skill the game actually demands."
+    },
+    {
+      "id": "primie-burst-drill",
+      "name": "Primie Burst Drill (Shoot → Move)",
+      "cue": "\"Click and movement key at the same time. Same frame. Zero evaluation gap.\"",
+      "where": "Range first: fire 1 shot → tap D immediately. Then any DM: fire 1–4 bullets → strafe immediately. Count how many shots you stood still after.",
+      "why": "Standing still after any shot is the most common mechanical death in sub-Immortal. The enemy still has peeker's advantage and is tracking your static position while you check the kill feed. Left-click must become the trigger to move — automatically, every time."
+    }
+  ],
+  "movement": [
+    {
+      "id": "shoot-then-move",
+      "name": "Shoot-Then-Move (Zero Gap)",
+      "cue": "\"Left-click and a direction key at the exact same time. Every shot. No exceptions.\"",
+      "where": "Any DM. After every shot, a movement key must be pressed at the same moment. Count how many times you fire and stand still — those are the death traps.",
+      "why": "The enemy has peeker's advantage and is tracking you while you read the kill feed. Left-click is the trigger to move — not the end of the action. This reflex alone eliminates the most common death cause in sub-Immortal."
+    },
+    {
+      "id": "anti-mirror-dodge",
+      "name": "Anti-Mirror Dodge",
+      "cue": "\"Enemy strafes left → you strafe right. Always opposite direction.\"",
+      "where": "Any DM. After each shot, observe enemy strafe direction and immediately move the opposite way. Drill this reaction as a reflex.",
+      "why": "Mirroring the enemy's strafe makes your relative motion zero — you appear static to their aim. Moving opposite forces them to reverse tracking direction, adding 100–150ms of cognitive delay. Makes you harder to hit without doing anything mechanically complex."
+    },
+    {
+      "id": "deliberate-dm",
+      "name": "Deliberate DM (Gym Reps Protocol)",
+      "cue": "Every angle: 1-second pause, believe someone's there, then peek. This is the FRAMEWORK for all DM — MASS Protocol and Sheriff drills happen inside this structure.",
+      "where": "Any DM. Set up far from each angle — expose yourself to ONE enemy at a time. 1-second pause before every peek. Ignore your score. Replay any rep where you won via a flick or luck.",
+      "why": "Random DM reps build random habits. Slow deliberate peeking with perfect form in DM is what transfers to ranked. Speed is a result of correct mechanics repeating — not a separate thing to chase. This is Zasko's core DM methodology."
+    },
+    {
+      "id": "dm-minimap-habit",
+      "name": "DM Minimap Respawn Habit",
+      "cue": "\"Respawn → do NOT move → look at minimap → identify red dots → then hunt.\"",
+      "where": "Any DM. Every single respawn: stay still during spawn shield, find every red dot on minimap, plan your route, then move. Every respawn is one rep.",
+      "why": "Radiants check the minimap at specific game states as a trained reflex — post-spawn, post-kill, post-cover. DM respawns are free repetitions of that exact reflex at zero risk. After 20+ sessions, this habit auto-fires in ranked without thought."
+    },
+    {
+      "id": "lmb-to-cover",
+      "name": "LMB = Back to Cover",
+      "cue": "\"Fire is the trigger to move. Left-click + movement key. Same frame, every shot.\"",
+      "where": "Any DM or custom. Every time you fire, treat the shot as the trigger to immediately move toward the nearest cover. Make it one reflex, not two separate decisions.",
+      "why": "After any shot, you are stationary and exposed. The enemy is still tracking. Making movement automatic after every shot means you are never standing in the open after firing — every trade requires the enemy to flick to your new position."
+    }
+  ],
+  "mental": [
+    {
+      "id": "green-mode-lock",
+      "name": "Green Mode Lock (One Cue Rule)",
+      "cue": "\"Pick ONE cue before queuing. Apply it consciously in round 1. Then forget mechanics — play positions.\"",
+      "where": "Before ranked. Write your one cue on paper or in the Tracker. Apply it intentionally in round 1. For the rest of the game: play positions, reads, and macro — not mechanics.",
+      "why": "Thinking about crosshair placement mid-gunfight is called Pink Mode — it actively degrades motor execution that runs better automatically. One cue gives your analytical mind a job so it stops interfering with your body's execution."
+    },
+    {
+      "id": "breath-reset",
+      "name": "Breath Before Swing",
+      "cue": "\"One slow exhale before every intentional peek. Not optional.\"",
+      "where": "Ranked or DM. Before every swing you consciously decide to take — exhale fully. Track how many times you forget to exhale. That number is your panic frequency.",
+      "why": "Elevated heart rate (120+ BPM) reduces fine motor precision by up to 80% through involuntary muscle tension. One diaphragmatic exhale activates the vagus nerve and drops heart rate 5–15 BPM in seconds. This is biology — not motivation advice."
+    },
+    {
+      "id": "five-why-review",
+      "name": "5-Why Post-Death Review",
+      "cue": "\"Why? Why? Why? Why? Why? — then write the root cause. Stop at the root.\"",
+      "where": "After VOD review. Pick one death. Ask \"why did I die?\" 5 times — each answer becomes the next question. Write the root cause (answer 5) in the Tracker.",
+      "why": "The first answer is always the symptom. The fifth answer is always the structural cause. Surface analysis produces surface improvements. Structural analysis changes how you actually play. One 5-Why session per review is more valuable than 30 minutes of passive rewatching."
+    }
+  ]
+}
