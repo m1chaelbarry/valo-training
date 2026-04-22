@@ -397,10 +397,27 @@ function initSessionBuilder() {
       btn.classList.add('selected');
       selectedTime = btn.dataset.time;
       const isPost = selectedTime === 'post';
-      document.getElementById('mode-block').style.display = 'block';
-      document.getElementById('dm-block').style.display = (!isPost && selectedTime !== '15') ? 'block' : 'none';
-      document.getElementById('generate-block').style.display = 'none';
-      selectedMode = null;
+      const is15 = selectedTime === '15';
+
+      // 15 min = always ranked. Skip mode picker, show generate immediately.
+      if (is15) {
+        selectedMode = 'ranked';
+        document.getElementById('mode-block').style.display = 'none';
+        document.getElementById('dm-block').style.display = 'none';
+        document.getElementById('generate-block').style.display = 'block';
+      } else if (isPost) {
+        // Off-PC: need to know ranked/training day, no DM
+        selectedMode = null;
+        document.getElementById('mode-block').style.display = 'block';
+        document.getElementById('dm-block').style.display = 'none';
+        document.getElementById('generate-block').style.display = 'none';
+      } else {
+        // 30/45/60: show mode + DM, then generate
+        selectedMode = null;
+        document.getElementById('mode-block').style.display = 'block';
+        document.getElementById('dm-block').style.display = 'block';
+        document.getElementById('generate-block').style.display = 'none';
+      }
       document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('selected'));
       hidePlan();
     });
@@ -1092,27 +1109,25 @@ async function initApp() {
 
   const ok = await loadAllData();
   const loading = document.getElementById('app-loading');
-  if (loading) loading.style.display = 'none';
+  if (loading) loading.remove(); // fully remove, not just hide
 
   if (!ok) {
-    document.getElementById('main-content').innerHTML = `
-      <div style="padding:var(--space-16);text-align:center;color:var(--text-muted)">
-        <p>Failed to load training data. Please refresh the page.</p>
-      </div>`;
+    const mc = document.getElementById('main-content');
+    if (mc) mc.innerHTML = `<div style="padding:4rem 2rem;text-align:center;color:var(--text-muted)"><p>Failed to load training data. Please refresh the page.</p></div>`;
     return;
   }
 
-  // Render all views (hidden by default)
-  renderHome();
-  renderConcepts();
-  renderSkillsTab();
-  renderLogs();
-
-  // Wire up session builder and RAMP
+  // Wire up all interactive components BEFORE rendering
   initSessionBuilder();
   initRamp();
   initTracker();
   initDeathLogger();
+
+  // Render data-dependent views
+  renderHome();
+  renderConcepts();
+  renderSkillsTab();
+  renderLogs();
 
   // Show home view
   switchView('home');
