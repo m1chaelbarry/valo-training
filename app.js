@@ -38,7 +38,7 @@ function loadPersistedSkillState() {
     if (!parsed || typeof parsed !== 'object') return;
 
     appState.SKILL_TREE.forEach(skill => {
-      const value = Object.prototype.hasOwnProperty.call(parsed, skill.id) ? parsed[skill.id] : null;
+      const value = Object.hasOwn(parsed, skill.id) ? parsed[skill.id] : null;
       appState.skillState[skill.id] = VALID_SKILL_STATES.has(value) ? value : null;
     });
   } catch (err) {
