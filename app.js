@@ -740,10 +740,10 @@ function renderConcepts() {
     if (!el) return;
     const blockData = appState.CONCEPTS_BY_BLOCK[key];
     let items = [];
-    if (Array.isArray(blockData)) {
-      items = blockData;
-    } else if (Array.isArray(blockData?.items)) {
+    if (Array.isArray(blockData?.items)) {
       items = blockData.items;
+    } else if (Array.isArray(blockData)) {
+      items = blockData;
     }
     // Skip re-render if already populated — preserves expanded state
     if (el.children.length > 0 && items.length > 0) return;
