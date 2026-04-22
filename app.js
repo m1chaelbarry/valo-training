@@ -1,7 +1,6 @@
 /* ═══════════════════════════════════════════════
    PROTOCOL — Valorant Training System v6.0
-   Architecture: JSON data + in-memory state
-   No localStorage / sessionStorage / indexedDB
+   Architecture: JSON data + in-memory state (+ skill localStorage persistence)
 ═══════════════════════════════════════════════ */
 
 /* ═══ IN-MEMORY STATE (all persistence lives here) ═══ */
@@ -27,6 +26,33 @@ const appState = {
   onboardingDismissed: false,
   drillRotationIndex: 0,
 };
+
+const SKILL_STATE_STORAGE_KEY = 'valo-training.skillState.v1';
+const VALID_SKILL_STATES = new Set(['yes', 'no', 'unsure', null]);
+
+function loadPersistedSkillState() {
+  try {
+    const raw = localStorage.getItem(SKILL_STATE_STORAGE_KEY);
+    if (!raw) return;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object') return;
+
+    appState.SKILL_TREE.forEach(skill => {
+      const value = Object.prototype.hasOwnProperty.call(parsed, skill.id) ? parsed[skill.id] : null;
+      appState.skillState[skill.id] = VALID_SKILL_STATES.has(value) ? value : null;
+    });
+  } catch (err) {
+    console.warn('Failed to load persisted skill state:', err);
+  }
+}
+
+function persistSkillState() {
+  try {
+    localStorage.setItem(SKILL_STATE_STORAGE_KEY, JSON.stringify(appState.skillState));
+  } catch (err) {
+    console.warn('Failed to persist skill state:', err);
+  }
+}
 
 /* ═══ NAVIGATION ═══ */
 let currentView = 'home';
@@ -130,6 +156,7 @@ async function loadAllData() {
     appState.DEATH_CAUSES = deaths;
     // Init skill state
     skills.forEach(s => { appState.skillState[s.id] = null; });
+    loadPersistedSkillState();
     return true;
   } catch (err) {
     console.error('Data load failed:', err);
@@ -1000,6 +1027,7 @@ function renderSkillsTab() {
           const prevState = appState.skillState[skill.id];
           const newVal = btn.dataset.val;
           appState.skillState[skill.id] = prevState === newVal ? null : newVal;
+          persistSkillState();
           renderSkillsTab();
           renderSkillPlan();
           updateSkillProgress();
