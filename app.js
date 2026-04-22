@@ -739,9 +739,12 @@ function renderConcepts() {
     const el = document.getElementById('concepts-' + key);
     if (!el) return;
     const blockData = appState.CONCEPTS_BY_BLOCK[key];
-    const items = Array.isArray(blockData)
-      ? blockData
-      : (Array.isArray(blockData?.items) ? blockData.items : []);
+    let items = [];
+    if (Array.isArray(blockData)) {
+      items = blockData;
+    } else if (Array.isArray(blockData?.items)) {
+      items = blockData.items;
+    }
     // Skip re-render if already populated — preserves expanded state
     if (el.children.length > 0 && items.length > 0) return;
     el.innerHTML = '';
