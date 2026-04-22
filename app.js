@@ -738,12 +738,12 @@ function renderConcepts() {
   Object.keys(blocks).forEach(key => {
     const el = document.getElementById('concepts-' + key);
     if (!el) return;
-    const block = appState.CONCEPTS_BY_BLOCK[key];
+    const blockData = appState.CONCEPTS_BY_BLOCK[key];
     let items = [];
-    if (Array.isArray(block?.items)) {
-      items = block.items;
-    } else if (Array.isArray(block)) {
-      items = block;
+    if (Array.isArray(blockData?.items)) {
+      items = blockData.items;
+    } else if (Array.isArray(blockData)) {
+      items = blockData;
     }
     // Skip re-render if already populated — preserves expanded state
     if (el.children.length > 0 && items.length > 0) return;
