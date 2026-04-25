@@ -103,6 +103,7 @@ function switchView(view) {
   document.getElementById('sidebar-overlay')?.classList.remove('visible');
   // Re-render view-specific content
   if (view === 'home') renderHome();
+  if (view === 'getstarted') renderGetStarted();
   if (view === 'drills') renderDrills(currentDrillFilter);
   if (view === 'concepts') renderConcepts();
   if (view === 'skills') renderSkillsTab();
@@ -1174,3 +1175,360 @@ async function initApp() {
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
+
+/* ═══════════════════════════════════════════════
+   GET STARTED — ROI-ranked onboarding path
+═══════════════════════════════════════════════ */
+
+// Curated learning path — ordered by impact on rank, not topic order.
+// Each concept links to its source video and maps to a skill or drill.
+const ONBOARDING_STAGES = [
+  {
+    id: 'stage-1',
+    number: '01',
+    title: 'The Foundation — Why You Lose Duels',
+    subtitle: 'Most players lose fights before they peek. These 5 concepts explain why.',
+    timeEstimate: '~45 min of watching',
+    color: 'accent',
+    concepts: [
+      {
+        id: 'ob-angle-advantage',
+        name: 'Angle Advantage Rule',
+        why: 'The single highest-ROI concept in the game. Controlling how much of your body is exposed before you shoot decides most duels before they start.',
+        videoUrl: 'https://www.youtube.com/watch?v=eMk_GNeXE1I',
+        videoId: 'eMk_GNeXE1I',
+        source: 'w0rthy',
+        timestamp: '0:00',
+        relatedSkill: 'two-step-peek',
+        relatedDrill: 'two-step-peek',
+        tags: ['peeking', 'angles'],
+      },
+      {
+        id: 'ob-peekers-advantage',
+        name: "Peeker's Advantage — How It Works",
+        why: 'You will always be slightly late on defense. Understanding this stops you from over-holding and teaches you to use PA offensively instead of fighting it.',
+        videoUrl: 'https://www.youtube.com/watch?v=QNh0xj1EyH0',
+        videoId: 'QNh0xj1EyH0',
+        source: 'w0rthy',
+        timestamp: '0:00',
+        relatedSkill: 'two-step-peek',
+        relatedDrill: 'pause-peek',
+        tags: ['peeking', 'mechanics'],
+      },
+      {
+        id: 'ob-stop-timing',
+        name: 'Stop Timing (First Bullet Accuracy)',
+        why: 'ROI 5/5. Most aim problems are not crosshair placement — they are firing while moving. Fix this one habit and your hit rate improves immediately.',
+        videoUrl: 'https://www.youtube.com/watch?v=Ku-n1bAV01Q',
+        videoId: 'Ku-n1bAV01Q',
+        source: 'w0rthy',
+        timestamp: '0:00',
+        relatedSkill: 'stop-timing',
+        relatedDrill: 'deadzone-stop',
+        tags: ['aim', 'movement'],
+      },
+      {
+        id: 'ob-shadow-step',
+        name: 'Shadow Stepping (2-Step Rule)',
+        why: 'The mechanical foundation of every clean peek. Without this you are either spraying moving or stopping too early. This is the peek, executed correctly.',
+        videoUrl: 'https://www.youtube.com/watch?v=Ku-n1bAV01Q',
+        videoId: 'Ku-n1bAV01Q',
+        source: 'w0rthy',
+        timestamp: '2:30',
+        relatedSkill: 'two-step-peek',
+        relatedDrill: 'two-step-peek',
+        tags: ['movement', 'peeking'],
+      },
+      {
+        id: 'ob-crosshair-placement',
+        name: 'Crosshair Placement (Head Level Always)',
+        why: 'ROI 5/5. Every duel you aim at chest level, you need to correct upward while also counter-strafing. Placing crosshair at head height removes one entire correction.',
+        videoUrl: 'https://www.youtube.com/watch?v=wgQHZjy6TxA',
+        videoId: 'wgQHZjy6TxA',
+        source: 'n0ted',
+        timestamp: '0:00',
+        relatedSkill: 'crosshair-placement',
+        relatedDrill: 'odin-head-height',
+        tags: ['aim', 'crosshair'],
+      },
+    ],
+  },
+  {
+    id: 'stage-2',
+    number: '02',
+    title: 'The Mental Layer — Why You Choke',
+    subtitle: 'Mechanics are only half the game. These concepts address the mental blocks that cap your rank.',
+    timeEstimate: '~40 min of watching',
+    color: 'blue',
+    concepts: [
+      {
+        id: 'ob-green-pink',
+        name: 'Green / Pink Mindset',
+        why: 'The most practical mental framework in the game. Green = curious, adapting, learning. Pink = tilt, ego, excuses. You play exactly as well as you mentally allow yourself to.',
+        videoUrl: 'https://www.youtube.com/watch?v=k1dXzO0RIBc',
+        videoId: 'k1dXzO0RIBc',
+        source: 'Zasko III',
+        timestamp: '0:00',
+        relatedSkill: 'tension-fizzle',
+        relatedDrill: 'green-mode-lock',
+        tags: ['mental', 'mindset'],
+      },
+      {
+        id: 'ob-text-message',
+        name: 'Text Message Anticipation',
+        why: 'Most deaths happen because you react to a sound or movement without a plan. Text Message teaches you to pre-decide your response — turning panic into protocol.',
+        videoUrl: 'https://www.youtube.com/watch?v=28yvjExaR80',
+        videoId: '28yvjExaR80',
+        source: 'Zasko III',
+        timestamp: '0:00',
+        relatedSkill: 'text-message',
+        relatedDrill: 'text-message-drill',
+        tags: ['mental', 'decision-making'],
+      },
+      {
+        id: 'ob-breath-control',
+        name: 'Breath Control (Physiology, Not Mindset)',
+        why: 'ROI 4/5. Adrenaline physically tightens your hand and narrows your vision. A 2-second breath reset before a swing is not soft — it is a biological interrupt that removes tremor.',
+        videoUrl: 'https://www.youtube.com/watch?v=k1dXzO0RIBc',
+        videoId: 'k1dXzO0RIBc',
+        source: 'Zasko III',
+        timestamp: '3:00',
+        relatedSkill: 'breath-control',
+        relatedDrill: 'breath-reset',
+        tags: ['mental', 'mechanics'],
+      },
+      {
+        id: 'ob-pele-protocol',
+        name: 'Pele Protocol (Pre-Round Visualization)',
+        why: 'Visualization activates the same upper motor neurons as physical practice. 15 minutes of mental reps = measurable improvement the next session.',
+        videoUrl: 'https://www.youtube.com/watch?v=-ufd8fmvZLA',
+        videoId: '-ufd8fmvZLA',
+        source: 'Zasko III',
+        timestamp: '0:00',
+        relatedSkill: 'anti-mirror',
+        relatedDrill: 'visualization-drill',
+        tags: ['mental', 'preparation'],
+      },
+      {
+        id: 'ob-zero-excuses',
+        name: '0% Excuses / 100% Responsibility',
+        why: 'Every death has a mechanical or decisional root cause you could have controlled. The moment you find one excuse, you stop learning. This concept is the gatekeeper to all other improvement.',
+        videoUrl: 'https://www.youtube.com/watch?v=-ufd8fmvZLA',
+        videoId: '-ufd8fmvZLA',
+        source: 'Zasko III',
+        timestamp: '2:00',
+        relatedSkill: 'tension-fizzle',
+        tags: ['mental', 'accountability'],
+      },
+    ],
+  },
+  {
+    id: 'stage-3',
+    number: '03',
+    title: 'Game Sense — Why You Die in the Right Position',
+    subtitle: 'You can have perfect mechanics and still lose every round with bad positioning and information use.',
+    timeEstimate: '~35 min of watching',
+    color: 'success',
+    concepts: [
+      {
+        id: 'ob-ufos',
+        name: 'UFOs Positioning Framework',
+        why: 'The simplest high-impact game sense framework. Unfair Fucking Outstanding Spots — positions where you win the angle before the peek starts. Most players play fair angles by default.',
+        videoUrl: 'https://www.youtube.com/watch?v=3_0ajFbCcUA',
+        videoId: '3_0ajFbCcUA',
+        source: 'w0rthy',
+        timestamp: '0:00',
+        relatedSkill: 'ufos-check',
+        tags: ['game-sense', 'positioning'],
+      },
+      {
+        id: 'ob-drivers-protocol',
+        name: "Driver's Protocol (Awareness Modes)",
+        why: 'You cannot process minimap, util, and your crosshair simultaneously. This framework teaches you to switch between focused and ambient modes intentionally — like driving a car.',
+        videoUrl: 'https://www.youtube.com/watch?v=Plmts9TSpas',
+        videoId: 'Plmts9TSpas',
+        source: 'w0rthy',
+        timestamp: '0:00',
+        relatedSkill: 'minimap-habit',
+        relatedDrill: 'dm-minimap-habit',
+        tags: ['game-sense', 'awareness'],
+      },
+      {
+        id: 'ob-ohshit-line',
+        name: 'OH SH*T Line',
+        why: 'The line on any map where one more step means you are exposed to 3+ angles. Most players cross it without knowing. Knowing where your OH SH*T line is eliminates a class of avoidable deaths.',
+        videoUrl: 'https://www.youtube.com/watch?v=eMk_GNeXE1I',
+        videoId: 'eMk_GNeXE1I',
+        source: 'w0rthy',
+        timestamp: '4:00',
+        tags: ['game-sense', 'positioning'],
+      },
+      {
+        id: 'ob-info-utility',
+        name: 'Info → Utility → Commit',
+        why: 'Committing to a site without info is gambling. This 3-step framework ensures you always know why you are pushing — not just reacting to the clock.',
+        videoUrl: 'https://www.youtube.com/watch?v=a0qO_CDr1GE',
+        videoId: 'a0qO_CDr1GE',
+        source: 'OD26',
+        timestamp: '0:00',
+        tags: ['game-sense', 'macro'],
+      },
+      {
+        id: 'ob-shoot-move',
+        name: 'Shoot-Then-Move (Zero Gap)',
+        why: 'ROI 5/5. Every time you move before your bullet lands, you wasted the shot. The sequence is: stop → shoot → move. The gap between shoot and move should be zero.',
+        videoUrl: 'https://www.youtube.com/watch?v=edIzYSYt7Bw',
+        videoId: 'edIzYSYt7Bw',
+        source: 'w0rthy',
+        timestamp: '0:00',
+        relatedSkill: 'shoot-then-move',
+        relatedDrill: 'primie-burst-drill',
+        tags: ['aim', 'movement'],
+      },
+    ],
+  },
+];
+
+// In-memory watched state (persists as long as tab is open; saved to localStorage)
+const GS_STORAGE_KEY = 'valo-training.getstarted.v1';
+
+function loadWatchedState() {
+  try {
+    const raw = localStorage.getItem(GS_STORAGE_KEY);
+    if (!raw) return new Set();
+    const arr = JSON.parse(raw);
+    return Array.isArray(arr) ? new Set(arr) : new Set();
+  } catch { return new Set(); }
+}
+
+function saveWatchedState(watched) {
+  try { localStorage.setItem(GS_STORAGE_KEY, JSON.stringify([...watched])); } catch {}
+}
+
+let watchedConcepts = loadWatchedState();
+
+function getTotalConcepts() {
+  return ONBOARDING_STAGES.reduce((n, s) => n + s.concepts.length, 0);
+}
+
+function renderGetStarted() {
+  const stagesEl = document.getElementById('gs-stages');
+  if (!stagesEl) return;
+
+  stagesEl.innerHTML = '';
+
+  ONBOARDING_STAGES.forEach((stage, si) => {
+    const watchedInStage = stage.concepts.filter(c => watchedConcepts.has(c.id)).length;
+    const allDone = watchedInStage === stage.concepts.length;
+
+    const stageEl = document.createElement('div');
+    stageEl.className = 'gs-stage' + (allDone ? ' gs-stage-done' : '');
+    stageEl.innerHTML = `
+      <div class="gs-stage-header">
+        <div class="gs-stage-num gs-stage-num--${stage.color}">${stage.number}</div>
+        <div class="gs-stage-meta">
+          <h2 class="gs-stage-title">${stage.title}</h2>
+          <p class="gs-stage-subtitle">${stage.subtitle}</p>
+          <div class="gs-stage-footer">
+            <span class="gs-stage-time">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              ${stage.timeEstimate}
+            </span>
+            <span class="gs-stage-progress-text">${watchedInStage}/${stage.concepts.length} watched</span>
+          </div>
+        </div>
+        ${allDone ? '<div class="gs-stage-done-badge">✓ Complete</div>' : ''}
+      </div>
+      <div class="gs-stage-progress-wrap">
+        <div class="gs-stage-progress-bar gs-stage-bar--${stage.color}" style="width:${(watchedInStage/stage.concepts.length)*100}%"></div>
+      </div>
+      <div class="gs-cards" id="gs-cards-${stage.id}"></div>
+    `;
+    stagesEl.appendChild(stageEl);
+
+    const cardsEl = document.getElementById('gs-cards-' + stage.id);
+    stage.concepts.forEach((concept, ci) => {
+      const watched = watchedConcepts.has(concept.id);
+      const card = document.createElement('div');
+      card.className = 'gs-card' + (watched ? ' gs-card-watched' : '');
+      card.innerHTML = `
+        <div class="gs-card-inner">
+          <a class="gs-thumbnail" href="${concept.videoUrl}" target="_blank" rel="noopener" title="Watch on YouTube">
+            <img
+              src="https://img.youtube.com/vi/${concept.videoId}/mqdefault.jpg"
+              alt="${concept.name}"
+              loading="lazy"
+              onerror="this.parentElement.innerHTML='<div class=\\'gs-thumb-fallback\\'><svg width=\\"32\\" height=\\"32\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\"><polygon points=\\"5 3 19 12 5 21 5 3\\"/></svg></div>'"
+            />
+            <div class="gs-play-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            ${concept.timestamp && concept.timestamp !== '0:00' ? `<span class="gs-timestamp">${concept.timestamp}</span>` : ''}
+            ${watched ? '<div class="gs-watched-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>' : ''}
+          </a>
+          <div class="gs-card-body">
+            <div class="gs-card-source">${concept.source || ''}</div>
+            <h3 class="gs-card-name">${concept.name}</h3>
+            <p class="gs-card-why">${concept.why}</p>
+            <div class="gs-card-tags">${(concept.tags || []).map(t => `<span class="gs-tag">${t}</span>`).join('')}</div>
+            <div class="gs-card-actions">
+              <button class="gs-watch-btn ${watched ? 'watched' : ''}" data-id="${concept.id}">
+                ${watched
+                  ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Watched'
+                  : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg> Mark as watched'}
+              </button>
+              ${concept.relatedDrill ? `<button class="gs-drill-btn" data-drill="${concept.relatedDrill}">See drill →</button>` : ''}
+            </div>
+          </div>
+        </div>
+      `;
+
+      card.querySelector('.gs-watch-btn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        const id = concept.id;
+        if (watchedConcepts.has(id)) {
+          watchedConcepts.delete(id);
+        } else {
+          watchedConcepts.add(id);
+        }
+        saveWatchedState(watchedConcepts);
+        renderGetStarted();
+        updateGetStartedProgress();
+        updateNavBadges();
+      });
+
+      const drillBtn = card.querySelector('.gs-drill-btn');
+      if (drillBtn) {
+        drillBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const drill = appState.DRILLS.find(d => d.id === drillBtn.dataset.drill);
+          if (drill) openDrillModal(drill);
+          else switchView('drills');
+        });
+      }
+
+      cardsEl.appendChild(card);
+    });
+  });
+
+  updateGetStartedProgress();
+}
+
+function updateGetStartedProgress() {
+  const total = getTotalConcepts();
+  const watched = watchedConcepts.size;
+  const pct = total > 0 ? Math.round((watched / total) * 100) : 0;
+
+  const bar = document.getElementById('gs-progress-bar');
+  const sub = document.getElementById('gs-progress-subtitle');
+  const pctEl = document.getElementById('gs-progress-pct');
+  if (bar) bar.style.width = pct + '%';
+  if (sub) sub.textContent = `${watched} of ${total} concepts watched`;
+  if (pctEl) pctEl.textContent = pct + '%';
+
+  // Remove NEW badge from nav if user has started
+  if (watched > 0) {
+    const badge = document.getElementById('nav-badge-getstarted');
+    if (badge) badge.style.display = 'none';
+  }
+}
