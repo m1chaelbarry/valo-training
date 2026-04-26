@@ -790,8 +790,9 @@ function renderConcepts() {
         </div>
         <p class="concept-why">${concept.why || ''}</p>
         <div class="concept-body">
-          <p>${concept.explanation || ''}</p>
-          ${concept.videoUrl ? `<a class="concept-video-link" href="${concept.videoUrl}" target="_blank" rel="noopener">▶ Watch Source (${concept.timestamp || 'full video'})</a>` : ''}
+          ${concept.preview ? `<p>${concept.preview}</p>` : ''}
+          ${concept.source ? `<p class="concept-source-note">Source: ${concept.source}</p>` : ''}
+          ${concept.videoUrl ? `<a class="concept-video-link" href="${concept.videoUrl}" target="_blank" rel="noopener">▶ Watch source video</a>` : ''}
           <button class="concept-learned-btn ${learned ? 'active' : ''}" data-concept-id="${conceptId}">
             ${learned ? '✓ Learned — remove' : 'Mark as learned'}
           </button>
