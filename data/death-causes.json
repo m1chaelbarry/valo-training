@@ -155,5 +155,109 @@
     "explain": "Pre-Round Fight Planning = during buy phase, decide one specific thing: \"I will take mid control using a smoke, then peek short if mid is clear.\" A vague intention like \"play aggressive\" produces random results. Autopilot = running the same route, the same angle, the same timing as last round by default — enemies pattern-match this within 3 rounds and pre-aim it. Each round, the enemy economy, team positions, and tendencies change — your plan must change with it.",
     "framework": "Practice: Pre-Round Fight Planning concept + Autopilot Prevention concept (Concepts tab)",
     "cue": "No plan means random results regardless of your mechanics. 5 seconds in buy phase changes everything."
+  },
+  {
+    "id": "poisoned-angle",
+    "label": "Poisoned Angle",
+    "sublabel": "re-peeked the same way and got pre-aimed",
+    "questions": [
+      "Did you peek the exact same angle you peeked the round before, or earlier in the same round?",
+      "Did you use a different approach this time — close vs. wide, standing vs. crouching?",
+      "Did the enemy appear to already have their crosshair exactly where you emerged?"
+    ],
+    "explain": "Poisoned Angle = once an enemy has seen you peek from a position, that angle is \"poisoned\" — they now pre-aim the exact pixel you emerged from. Every subsequent peek from the same spot is a free kill for them. The fix is Angle Recycling: after any peek (hit or miss), change your approach on the next peek — go close if you went wide, crouch if you stood, come from a different wall distance. Never re-peek the same way twice in a row. (Source: Zasko III Video 22 — \"He Already Had INSANE Mechs\")",
+    "framework": "Practice: Slice → Wide Combo drill — always change your approach after first contact (Drills tab)",
+    "cue": "After any peek, the angle is poisoned. Change your approach — different height, different width, different wall distance."
+  },
+  {
+    "id": "shot-while-moving",
+    "label": "Shot While Moving",
+    "sublabel": "fired before fully stopping — bullets went wide",
+    "questions": [
+      "Did you fire immediately as you swung out, while still in motion?",
+      "Did you wait for the preemptive stop — letting go of the movement key BEFORE pulling the trigger?",
+      "Was your crosshair on the target's head before you stopped, or were you trying to aim while moving?"
+    ],
+    "explain": "Peak = 3 parts: Setup → Move → Stop → Aim+Shoot. The stop must happen BEFORE you pull the trigger. The correct order is: Peek → preemptively let go of movement key → see enemy → shoot. NOT: Peek → see enemy → stop → shoot. The stop is preemptive — you release the key in anticipation of where the enemy will be, not as a reaction to seeing them. Shooting while still decelerating = every bullet is inaccurate. 80 hours of shooting while moving = 80 hours of drilling a losing habit. (Source: Zasko III Video 28 — \"aim training is pointless if you don't do this\")",
+    "framework": "Practice: Two-Step Peek drill — hand off keyboard, then shoot (Drills tab)",
+    "cue": "Release key → see enemy → shoot. The stop comes before the trigger, not after."
+  },
+  {
+    "id": "wrong-hold-width",
+    "label": "Wrong Hold Width",
+    "sublabel": "held wide when enemy sliced, or held tight when they wide-swung",
+    "questions": [
+      "Did you hear footsteps or utility before they peeked? (footsteps = wide hold expected; silence = close hold expected)",
+      "Did the enemy appear at a different position than your crosshair was aiming?",
+      "Did you adapt your hold after the first contact, or keep holding the same width?"
+    ],
+    "explain": "Noise → Crosshair Rule: the sound enemies make before peeking tells you exactly how wide to hold. Footsteps/running/utility = team push = hold WIDE (they won't stop mid-rush to slice). Dead silence = solo lurker = hold TIGHT/CLOSE (they'll slice with 2 clean steps, not rush). Holding wide when a silent enemy slices = they appear at the wrong position and you miss. Holding tight when a rushing enemy wide-swings = they appear outside your crosshair. Read the sound, set your hold accordingly before they arrive. (Source: Zasko III Videos 1, 24, 27)",
+    "framework": "Practice: Angle Hold drill in Kovaak (Valorant Angle Hold V2) — practice both close and wide holds (Drills tab)",
+    "cue": "Hear footsteps? Hold wide. Hear nothing? Hold tight. Sound tells you their approach before they peek."
+  },
+  {
+    "id": "hesitated-post-spot",
+    "label": "Hesitated After Spotting",
+    "sublabel": "saw the enemy but paused before shooting",
+    "questions": [
+      "Did you move your crosshair after peeking to 'fix' placement instead of shooting immediately?",
+      "Did you pause to process whether to shoot before pulling the trigger?",
+      "Was your crosshair pre-aimed at the correct head height before you peeked — or were you reacting and chasing?"
+    ],
+    "explain": "Peak = Setup → Move → Aim+Shoot. After the preemptive stop, the only thing left is to shoot — zero additional crosshair adjustment, zero processing time. If your pre-aim was correct, there's nothing to think about. \"Ready Stance\" = like a tennis player or goalie receiving: preemptively still, launched instantly on stimulus. Moving your crosshair AFTER peeking adds 100-200ms and removes your first-mover advantage entirely. The enemy who pre-aimed gets the same time window you wasted deciding. (Source: Zasko III Video 18 — \"You're Making Gunfights WAY Harder\")",
+    "framework": "Practice: Hand-Off-Mouse Peak drill — set pre-aim, take hand off mouse, peek, hand back on, shoot (Drills tab)",
+    "cue": "If you had to move your crosshair after peeking, your pre-aim was wrong. Fix the pre-aim, not the reaction."
+  },
+  {
+    "id": "peekers-advantage-lost",
+    "label": "Lost Peeker's Advantage",
+    "sublabel": "held too long, enemy peeked you instead",
+    "questions": [
+      "Were you the one stationary while the enemy swung and moved?",
+      "Did you hesitate to take the initiative peek when you had the information to do so?",
+      "Were you in a static hold that an enemy could calculate, time, and wide-swing?"
+    ],
+    "explain": "Peeker's Advantage = the moving player sees the stationary player ~50-100ms earlier due to client-side rendering. When you hold static while an enemy wide-swings at you, they get the advantage — they're moving, you're still, so they see you first and shoot first. The counter is to either: (1) take the peek yourself before they can set up a swing, or (2) hold from an unexpected off-angle that breaks their expected timing. Static holders on common angles are prediction targets — enemies time their swing to your expected reaction. (Source: n0ted — Peeker's Advantage Abuse)",
+    "framework": "Practice: UFOs off-angle check (U-F-O-S-E) — if you're on an on-angle, relocate before getting swung (Concepts tab)",
+    "cue": "A static hold on a known angle is a timed death. Either take the initiative or move to an off-angle."
+  },
+  {
+    "id": "bodyshotted-no-counter",
+    "label": "Body-Shotted, Stood Still",
+    "sublabel": "took body damage but didn't immediately counter",
+    "questions": [
+      "When the first bullet hit your body, did you immediately crouch halfway (not fully down)?",
+      "Did you continue standing and taking further shots to the same body location?",
+      "Were you still trying to aim while being body-shot, without first making yourself harder to hit?"
+    ],
+    "explain": "When an enemy body-shots you, their crosshair is already aimed low (at your body). Staying upright means their next shot hits the same spot and kills you. The counter: as soon as you register a body hit, immediately crouch halfway (not all the way — a half-crouch). Reason: enemy aim is currently low; your downward movement makes their next shot overshoot upward past your head. This is a mechanical counter to their aim, not a way to improve your own accuracy. Do NOT crouch to shoot better — crouch to make their next shot miss. (Source: n0ted — \"How to Unfuck Your Aim — Part II\")",
+    "framework": "Practice: Incorporate half-crouch response into Deathmatch when body-hit — make it a reflex (Drills tab)",
+    "cue": "Body hit = half-crouch immediately. Their aim is low — move down, make their next shot go over your head."
+  },
+  {
+    "id": "left-side-angle",
+    "label": "Left-Side Angle Disadvantage",
+    "sublabel": "peeked from the left, gun model blocked your first shot",
+    "questions": [
+      "Were you peeking from the left side of a wall, exposing your body before your gun could aim?",
+      "Did you use a shoulder peek first to bait their shot before committing?",
+      "Could you have repositioned to peek from the right side instead, where your gun is exposed before your body?"
+    ],
+    "explain": "Left-Side Angle Disadvantage = because your gun model is on the right side of your screen, when you peek from the LEFT side of a wall, your body is exposed before your gun can aim at the enemy. When peeking from the RIGHT side, your gun peeks first. Practical fix: (1) Prefer right-side angles where possible; (2) For unavoidable left-side angles — use a Shoulder Peek Bait: strafe out halfway to show only your left shoulder, bait their shot, then immediately wide-swing as their crosshair moves back. Their recoil is mid-reset when you appear. (Source: n0ted — \"Shoulder Peek / Wide Swing Method\")",
+    "framework": "Practice: Shoulder Peek Bait drill — strafe left shoulder only, pull back, then wide swing immediately (Drills tab)",
+    "cue": "Left side = body before gun. Shoulder bait their shot first, then wide swing while their aim is resetting."
+  },
+  {
+    "id": "no-shoot-then-move",
+    "label": "Didn't Move After Shooting",
+    "sublabel": "shot and stood still — enemy returned fire",
+    "questions": [
+      "After firing your shot (hit, miss, or kill), did you immediately press a movement key with zero gap?",
+      "Did you pause to check if your bullet hit before deciding to move?",
+      "Did you strafe in the opposite direction of the enemy's strafe?"
+    ],
+    "explain": "Shoot-Then-Move = the moment you fire, you press a movement key simultaneously — zero gap, same frame. This applies whether you hit, missed, or killed. Checking the kill feed before moving is a gap where you stand still and die. Anti-Mirror rule: if the enemy strafed left, you strafe right — their crosshair is tracking leftward, so your rightward strafe makes their aim fail. The \"dead zone\" technique: after firing, glide in one direction continuously (no direction changes) — this makes tracking harder for the enemy because it requires sustained smooth aim instead of snapping to a stop. (Source: Zasko III Video 9 — \"How To ACTUALLY Burst Like PRIMMIE\")",
+    "framework": "Practice: Shoot-Then-Move drill — fire at target, move direction key simultaneously, zero gap (Drills tab)",
+    "cue": "Every shot = movement. No pause to check hit. Left-click and a direction key at the exact same time."
   }
 ]
