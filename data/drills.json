@@ -551,5 +551,42 @@
       "Intermediate",
       "Any Level"
     ]
+  },
+  {
+    "id": "angle-hold-kovaak",
+    "category": "aim",
+    "name": "Angle Hold — Noise-Based Width",
+    "videoUrl": "https://www.youtube.com/watch?v=eHFbWEQrbfY",
+    "short": "Hold close vs. wide based on enemy sound cues. Left-click = back to cover, always.",
+    "source": "Zasko — \"How to ACTUALLY angle hold properly\"",
+    "why": "Most angle-hold deaths happen because the player chose the wrong crosshair position for the situation. Footsteps = enemy is rushing and will wide-swing (hold wide). Silence = enemy is slicing carefully (hold close/tight). When you hold the wrong width, the enemy appears at the wrong position and you miss your first shot. After every shot — whether you hit, miss, or kill — pulling back to cover immediately prevents a trade death and resets you for the next angle.",
+    "error": "Holding wide by default regardless of enemy sound. Staying exposed after the shot to check the kill feed. Flicking to chase the enemy's head (adds 100-200ms vs. letting them walk into crosshair).",
+    "explanation": "Load Kovaak — search \"Valorant Angle Hold V2\". Set to free play mode, 10 minutes per side. STEP 1: Before each rep, decide: silence = hold close (crosshair at the near wall edge). Footstep sound = hold wide (crosshair at far edge). STEP 2: Relax your eyes on the crosshair dot — not the target. Use peripheral vision to detect when the enemy enters your crosshair. STEP 3: Click the moment enemy enters peripheral — do NOT flick to them. STEP 4: Immediately move to cover (press any movement key toward cover the same frame you click). Repeat: correct width read → peripheral click → instant cover.",
+    "cue": "\"Hear footsteps = wide. Hear nothing = tight. Click on timing, then cover immediately.\"",
+    "condition": "Zero flick adjustments: crosshair pre-placed, clicked on peripheral entry only. Zero lingering after shot: cover within one frame of clicking. 80%+ correct width reads per session.",
+    "location": "Kovaak — Valorant Angle Hold V2 scenario, free play mode",
+    "tags": [
+      "Core",
+      "Intermediate",
+      "Kovaak"
+    ]
+  },
+  {
+    "id": "shoulder-peek-bait",
+    "category": "peek",
+    "name": "Shoulder Peek Bait (Left-Side Counter)",
+    "videoUrl": "https://www.youtube.com/watch?v=edIzYSYt7Bw",
+    "short": "Bait the enemy shot with a shoulder peek, then wide swing while they reset aim.",
+    "source": "n0ted — \"Shoulder Peek / Wide Swing Method\"",
+    "why": "From a left-side angle, your body is exposed before your gun can aim — giving the enemy a free first shot. Standing and peeking normally is a mechanical disadvantage you cannot overcome with aim alone. The shoulder bait forces the enemy to commit their shot on your shoulder (missing your head), then while their crosshair is moving back to reset, you wide-swing with full body exposure — catching them mid-recoil with zero aim on you.",
+    "error": "Showing too much body on the shoulder peek (more than left shoulder). Hesitating between the shoulder pull-back and the wide swing — the gap must be instant. Wide-swinging first without the shoulder bait setup.",
+    "explanation": "STEP 1: Identify a left-side angle (wall on your right, enemy to the left). STEP 2: Strafe right (A key) just enough to expose your LEFT shoulder only — no more than shoulder-width. Hold for 0.2s maximum. STEP 3: Immediately strafe back left (D key) — pull the shoulder back. The enemy has now committed their shot or moved their aim. STEP 4: Without stopping, continue strafing left into a full wide swing. Your gun is already aimed at head height. STEP 5: Stop on the enemy's position and shoot in one motion. Chain drill: 5 shoulder baits left, 5 right-side normal peeks, alternate.",
+    "cue": "\"Show shoulder, pull back, then immediately keep going — wide swing in the same motion.\"",
+    "condition": "Enemy shot lands on shoulder area (not head) during bait. Your wide swing shot fires within 0.5 seconds of pulling shoulder back. Can execute in Deathmatch without thinking.",
+    "location": "Custom game — B main / showers / any left-side angle",
+    "tags": [
+      "Intermediate",
+      "Ghost DM"
+    ]
   }
 ]

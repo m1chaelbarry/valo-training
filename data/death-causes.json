@@ -62,7 +62,7 @@
       "Did you have your gun ready and crosshair at head level while crossing open space?"
     ],
     "explain": "LMB = Back to Cover means: left-click (fire) is the trigger to immediately press a movement key toward cover — same frame, no delay. Anti-Mirror Dodge: if the enemy strafes left, you strafe right — this makes their tracking fail because you're moving against their aim direction. OH SH*T Line: the boundary where open space becomes dangerous — only cross it in full active mode with gun ready.",
-    "framework": "Practice: Shoot-Then-Move drill + Anti-Mirror Dodge drill (Drills tab)",
+    "framework": "Practice: Shoot-Then-Move (Zero Gap) drill + Anti-Mirror Dodge drill (Drills tab)",
     "cue": "Every shot = movement. Left-click and a direction key at the same time, every time."
   },
   {
@@ -166,7 +166,7 @@
       "Did the enemy appear to already have their crosshair exactly where you emerged?"
     ],
     "explain": "Poisoned Angle = once an enemy has seen you peek from a position, that angle is \"poisoned\" — they now pre-aim the exact pixel you emerged from. Every subsequent peek from the same spot is a free kill for them. The fix is Angle Recycling: after any peek (hit or miss), change your approach on the next peek — go close if you went wide, crouch if you stood, come from a different wall distance. Never re-peek the same way twice in a row. (Source: Zasko III Video 22 — \"He Already Had INSANE Mechs\")",
-    "framework": "Practice: Slice → Wide Combo drill — always change your approach after first contact (Drills tab)",
+    "framework": "Practice: Slice → Wide Swing Combo drill — always change approach after first contact (Drills tab)",
     "cue": "After any peek, the angle is poisoned. Change your approach — different height, different width, different wall distance."
   },
   {
@@ -192,7 +192,7 @@
       "Did you adapt your hold after the first contact, or keep holding the same width?"
     ],
     "explain": "Noise → Crosshair Rule: the sound enemies make before peeking tells you exactly how wide to hold. Footsteps/running/utility = team push = hold WIDE (they won't stop mid-rush to slice). Dead silence = solo lurker = hold TIGHT/CLOSE (they'll slice with 2 clean steps, not rush). Holding wide when a silent enemy slices = they appear at the wrong position and you miss. Holding tight when a rushing enemy wide-swings = they appear outside your crosshair. Read the sound, set your hold accordingly before they arrive. (Source: Zasko III Videos 1, 24, 27)",
-    "framework": "Practice: Angle Hold drill in Kovaak (Valorant Angle Hold V2) — practice both close and wide holds (Drills tab)",
+    "framework": "Practice: Angle Hold — Noise-Based Width drill (Kovaak V2, free play, 10 min per side) (Drills tab)",
     "cue": "Hear footsteps? Hold wide. Hear nothing? Hold tight. Sound tells you their approach before they peek."
   },
   {
@@ -205,7 +205,7 @@
       "Was your crosshair pre-aimed at the correct head height before you peeked — or were you reacting and chasing?"
     ],
     "explain": "Peak = Setup → Move → Aim+Shoot. After the preemptive stop, the only thing left is to shoot — zero additional crosshair adjustment, zero processing time. If your pre-aim was correct, there's nothing to think about. \"Ready Stance\" = like a tennis player or goalie receiving: preemptively still, launched instantly on stimulus. Moving your crosshair AFTER peeking adds 100-200ms and removes your first-mover advantage entirely. The enemy who pre-aimed gets the same time window you wasted deciding. (Source: Zasko III Video 18 — \"You're Making Gunfights WAY Harder\")",
-    "framework": "Practice: Hand-Off-Mouse Peak drill — set pre-aim, take hand off mouse, peek, hand back on, shoot (Drills tab)",
+    "framework": "Practice: Idle Crosshair (Hand-Off-Mouse) Drill — pre-aim the angle, hand off mouse, peek, hand back on, shoot (Drills tab)",
     "cue": "If you had to move your crosshair after peeking, your pre-aim was wrong. Fix the pre-aim, not the reaction."
   },
   {
@@ -231,7 +231,7 @@
       "Were you still trying to aim while being body-shot, without first making yourself harder to hit?"
     ],
     "explain": "When an enemy body-shots you, their crosshair is already aimed low (at your body). Staying upright means their next shot hits the same spot and kills you. The counter: as soon as you register a body hit, immediately crouch halfway (not all the way — a half-crouch). Reason: enemy aim is currently low; your downward movement makes their next shot overshoot upward past your head. This is a mechanical counter to their aim, not a way to improve your own accuracy. Do NOT crouch to shoot better — crouch to make their next shot miss. (Source: n0ted — \"How to Unfuck Your Aim — Part II\")",
-    "framework": "Practice: Incorporate half-crouch response into Deathmatch when body-hit — make it a reflex (Drills tab)",
+    "framework": "Practice: Deliberate DM (Gym Reps Protocol) — during every DM session, add half-crouch reflex when body-hit as a mandatory response (Drills tab)",
     "cue": "Body hit = half-crouch immediately. Their aim is low — move down, make their next shot go over your head."
   },
   {
@@ -244,7 +244,7 @@
       "Could you have repositioned to peek from the right side instead, where your gun is exposed before your body?"
     ],
     "explain": "Left-Side Angle Disadvantage = because your gun model is on the right side of your screen, when you peek from the LEFT side of a wall, your body is exposed before your gun can aim at the enemy. When peeking from the RIGHT side, your gun peeks first. Practical fix: (1) Prefer right-side angles where possible; (2) For unavoidable left-side angles — use a Shoulder Peek Bait: strafe out halfway to show only your left shoulder, bait their shot, then immediately wide-swing as their crosshair moves back. Their recoil is mid-reset when you appear. (Source: n0ted — \"Shoulder Peek / Wide Swing Method\")",
-    "framework": "Practice: Shoulder Peek Bait drill — strafe left shoulder only, pull back, then wide swing immediately (Drills tab)",
+    "framework": "Practice: Shoulder Peek Bait (Left-Side Counter) drill — bait with shoulder, pull back, wide swing in same motion (Drills tab)",
     "cue": "Left side = body before gun. Shoulder bait their shot first, then wide swing while their aim is resetting."
   },
   {
