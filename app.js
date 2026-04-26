@@ -1456,7 +1456,7 @@ function renderGetStarted() {
         <div class="gs-card-inner">
           <a class="gs-thumbnail" href="${concept.videoUrl}" target="_blank" rel="noopener" title="Watch on YouTube">
             <img
-              src="https://img.youtube.com/vi/${concept.videoId}/mqdefault.jpg"
+              src="https://img.youtube.com/vi/${concept.videoId}/hqdefault.jpg"
               alt="${concept.name}"
               loading="lazy"
               onerror="this.parentElement.innerHTML='<div class=\\'gs-thumb-fallback\\'><svg width=\\"32\\" height=\\"32\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\"><polygon points=\\"5 3 19 12 5 21 5 3\\"/></svg></div>'"
