@@ -53,7 +53,7 @@
   },
   {
     "id": "breath-control",
-    "name": "Breath Control (fizjologia, nie mindset)",
+    "name": "Breath Control (physiology, not mindset)",
     "category": "mental",
     "tier": 1,
     "drillId": "breath-reset",
@@ -96,7 +96,7 @@
   },
   {
     "id": "slice-fallback",
-    "name": "Slice & Fall Back (informacja przed commitment)",
+    "name": "Slice & Fall Back (info before commitment)",
     "category": "peek",
     "tier": 2,
     "drillId": "slice-fallback",
@@ -166,13 +166,13 @@
     ],
     "roiWeight": 4,
     "assessQuestion": "Can you consistently hit headshots with the Sheriff using counter-strafe at medium range in DM (≥5/10)?",
-    "assessCriteria": "≥5/10 = masz. Mniej = do treningu.",
+    "assessCriteria": "≥5/10 = you have it. Less = needs training.",
     "conflict": null,
     "note": null
   },
   {
     "id": "mass-protocol",
-    "name": "MASS Protocol (ruch → celownik, nie odwrotnie)",
+    "name": "MASS Protocol (movement → crosshair, not the reverse)",
     "category": "aim",
     "tier": 3,
     "drillId": "mass-protocol-dm",
@@ -189,7 +189,7 @@
   },
   {
     "id": "anti-mirror",
-    "name": "Anti-Mirror Dodge (strafe przeciwny do wroga)",
+    "name": "Anti-Mirror Dodge (strafe opposite to enemy)",
     "category": "movement",
     "tier": 3,
     "drillId": "anti-mirror-dodge",
@@ -221,7 +221,7 @@
   },
   {
     "id": "text-message",
-    "name": "Text Message Anticipation (przewidywanie przed peek)",
+    "name": "Text Message Anticipation (predict before peeking)",
     "category": "mental",
     "tier": 3,
     "drillId": null,
@@ -237,7 +237,7 @@
   },
   {
     "id": "ufos-check",
-    "name": "UFOs Position Check (ocena pozycji przed holdowaniem)",
+    "name": "UFOs Position Check (assess position before holding)",
     "category": "mental",
     "tier": 3,
     "drillId": null,
@@ -253,7 +253,7 @@
   },
   {
     "id": "strafe-shoot",
-    "name": "Strafe-and-Shoot (strzelanie na zmianie kierunku)",
+    "name": "Strafe-and-Shoot (shoot on direction change)",
     "category": "aim",
     "tier": 4,
     "drillId": "strafe-shoot-style",
@@ -269,7 +269,7 @@
   },
   {
     "id": "tension-fizzle",
-    "name": "Tension Fizzle (technika flieka gdy flick konieczny)",
+    "name": "Tension Fizzle (flick technique when flick is needed)",
     "category": "aim",
     "tier": 4,
     "drillId": "uncomfortable-flick",
@@ -285,10 +285,10 @@
   },
   {
     "id": "kovaak-transfer",
-    "name": "Kovaak → Game Transfer (przeniesienie aimtrainu do gry)",
+    "name": "Kovaak → Game Transfer (apply aim training in ranked)",
     "category": "aim",
     "tier": 4,
-    "drillId": "kovaak-game-transfer",
+    "drillId": "uncomfortable-flick",
     "prereqs": [
       "mass-protocol",
       "deliberate-dm"

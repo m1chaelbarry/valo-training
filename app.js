@@ -3,7 +3,7 @@
    Architecture: JSON data + in-memory state (+ skill localStorage persistence)
 ═══════════════════════════════════════════════ */
 
-/* ═══ IN-MEMORY STATE (all persistence lives here) ═══ */
+/* ═══ STATE (data loaded at runtime, user state persisted to localStorage) ═══ */
 const appState = {
   // Loaded data
   DRILLS: [],
@@ -13,7 +13,7 @@ const appState = {
   SESSION_PLANS: {},
   DEATH_CAUSES: [],
 
-  // User state (in-memory only, resets on page refresh)
+  // User state (persisted to localStorage under STATE_STORAGE_KEY)
   skillState: {},           // skill id -> 'yes'|'no'|'unsure'|null
   masteredDrills: new Set(),  // drill ids user has marked as mastered
   learnedConcepts: new Set(), // concept ids user has marked as learned
@@ -27,32 +27,63 @@ const appState = {
   drillRotationIndex: 0,
 };
 
-const SKILL_STATE_STORAGE_KEY = 'valo-training.skillState.v1';
+const STATE_STORAGE_KEY = 'valo-training.state.v1';
 const VALID_SKILL_STATES = new Set(['yes', 'no', 'unsure', null]);
 
-function loadPersistedSkillState() {
+// ── Persistence helpers ──────────────────────────────────────────────────────
+function loadPersistedState() {
   try {
-    const raw = localStorage.getItem(SKILL_STATE_STORAGE_KEY);
+    const raw = localStorage.getItem(STATE_STORAGE_KEY);
     if (!raw) return;
-    const parsed = JSON.parse(raw);
-    if (!parsed || typeof parsed !== 'object') return;
+    const saved = JSON.parse(raw);
+    if (!saved || typeof saved !== 'object') return;
 
-    appState.SKILL_TREE.forEach(skill => {
-      const value = Object.hasOwn(parsed, skill.id) ? parsed[skill.id] : null;
-      appState.skillState[skill.id] = VALID_SKILL_STATES.has(value) ? value : null;
-    });
+    // skillState — validate each value
+    if (saved.skillState && typeof saved.skillState === 'object') {
+      appState.SKILL_TREE.forEach(skill => {
+        const v = Object.hasOwn(saved.skillState, skill.id) ? saved.skillState[skill.id] : null;
+        appState.skillState[skill.id] = VALID_SKILL_STATES.has(v) ? v : null;
+      });
+    }
+    // Sets stored as arrays
+    if (Array.isArray(saved.masteredDrills)) appState.masteredDrills = new Set(saved.masteredDrills);
+    if (Array.isArray(saved.learnedConcepts)) appState.learnedConcepts = new Set(saved.learnedConcepts);
+    // Arrays
+    if (Array.isArray(saved.sessionLogs)) appState.sessionLogs = saved.sessionLogs;
+    if (Array.isArray(saved.allDeaths)) appState.allDeaths = saved.allDeaths;
+    // Primitives
+    if (typeof saved.streak === 'number') appState.streak = saved.streak;
+    if (saved.lastSessionDate) appState.lastSessionDate = saved.lastSessionDate;
+    if (typeof saved.completedToday === 'boolean') appState.completedToday = saved.completedToday;
+    if (typeof saved.onboardingDismissed === 'boolean') appState.onboardingDismissed = saved.onboardingDismissed;
+    if (typeof saved.drillRotationIndex === 'number') appState.drillRotationIndex = saved.drillRotationIndex;
   } catch (err) {
-    console.warn('Failed to load persisted skill state:', err);
+    console.warn('Failed to load persisted state:', err);
   }
 }
 
-function persistSkillState() {
+function persistState() {
   try {
-    localStorage.setItem(SKILL_STATE_STORAGE_KEY, JSON.stringify(appState.skillState));
+    const payload = {
+      skillState: appState.skillState,
+      masteredDrills: [...appState.masteredDrills],
+      learnedConcepts: [...appState.learnedConcepts],
+      sessionLogs: appState.sessionLogs,
+      allDeaths: appState.allDeaths,
+      streak: appState.streak,
+      lastSessionDate: appState.lastSessionDate,
+      completedToday: appState.completedToday,
+      onboardingDismissed: appState.onboardingDismissed,
+      drillRotationIndex: appState.drillRotationIndex,
+    };
+    localStorage.setItem(STATE_STORAGE_KEY, JSON.stringify(payload));
   } catch (err) {
-    console.warn('Failed to persist skill state:', err);
+    console.warn('Failed to persist state:', err);
   }
 }
+
+// Keep old name as alias so existing callsites don't break
+function persistSkillState() { persistState(); }
 
 /* ═══ NAVIGATION ═══ */
 let currentView = 'home';
@@ -157,7 +188,7 @@ async function loadAllData() {
     appState.DEATH_CAUSES = deaths;
     // Init skill state
     skills.forEach(s => { appState.skillState[s.id] = null; });
-    loadPersistedSkillState();
+    loadPersistedState();
     return true;
   } catch (err) {
     console.error('Data load failed:', err);
@@ -294,6 +325,7 @@ function renderHome() {
   if (dismissBtn) {
     dismissBtn.onclick = () => {
       appState.onboardingDismissed = true;
+      persistState();
       document.getElementById('onboarding-card').style.display = 'none';
     };
   }
@@ -368,10 +400,13 @@ function getDrillsByRotation(mode) {
     primary = DRILL_POOLS.peek[idx % DRILL_POOLS.peek.length];
     secondary = DRILL_POOLS.mental[idx % DRILL_POOLS.mental.length];
   } else {
-    primary = (idx % 2 === 0 ? DRILL_POOLS.aim : DRILL_POOLS.movement)[idx % 5];
-    secondary = (idx % 2 === 0 ? DRILL_POOLS.movement : DRILL_POOLS.aim)[idx % 5];
+    const aimPool = DRILL_POOLS.aim;
+    const movPool = DRILL_POOLS.movement;
+    primary = (idx % 2 === 0 ? aimPool : movPool)[idx % (idx % 2 === 0 ? aimPool : movPool).length];
+    secondary = (idx % 2 === 0 ? movPool : aimPool)[idx % (idx % 2 === 0 ? movPool : aimPool).length];
   }
   appState.drillRotationIndex++;
+  persistState();
   return { primary, secondary, source: 'rotation' };
 }
 
@@ -424,12 +459,12 @@ function initSessionBuilder() {
       const isPost = selectedTime === 'post';
       const is15 = selectedTime === '15';
 
-      // 15 min = always ranked. Skip mode picker, show generate immediately.
+      // 15 min: show mode picker (same as 30/45/60), but hide DM block
       if (is15) {
-        selectedMode = 'ranked';
-        document.getElementById('mode-block').style.display = 'none';
+        selectedMode = null;
+        document.getElementById('mode-block').style.display = 'block';
         document.getElementById('dm-block').style.display = 'none';
-        document.getElementById('generate-block').style.display = 'block';
+        document.getElementById('generate-block').style.display = 'none';
       } else if (isPost) {
         // Off-PC: need to know ranked/training day, no DM
         selectedMode = null;
@@ -480,6 +515,7 @@ function initSessionBuilder() {
   document.getElementById('complete-session-btn')?.addEventListener('click', () => {
     appState.completedToday = true;
     updateStreak(true);
+    persistState();
     document.getElementById('session-complete-block').style.display = 'none';
     document.getElementById('session-done-banner').style.display = 'flex';
     updateNavBadges();
@@ -527,13 +563,27 @@ function generatePlan() {
     const { primary, secondary, source, primarySkillName, secondarySkillName } = rec;
     const anyAssessed = appState.SKILL_TREE.some(s => appState.skillState[s.id] !== null);
 
-    if (nudgeEl) {
-      if (!anyAssessed) {
+    // Fix 7: Surface habit reminder for top-priority skill(s) with null drillId
+    if (anyAssessed) {
+      const trainingPlan = getTrainingPlan();
+      const allPoolIds = [
+        ...appState.DRILL_POOLS.peek, ...appState.DRILL_POOLS.aim,
+        ...appState.DRILL_POOLS.movement, ...appState.DRILL_POOLS.mental
+      ].map(d => d.id);
+      const habitSkills = trainingPlan.trainNow.filter(s => !s.drillId || !allPoolIds.includes(s.drillId));
+      if (habitSkills.length > 0 && nudgeEl) {
+        const habitLines = habitSkills.map(s =>
+          `<li><strong>${s.name}</strong>${s.note ? ` — ${s.note}` : ''}</li>`
+        ).join('');
         nudgeEl.style.display = 'block';
-        nudgeEl.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Drill from default rotation. <button class="panel-link" data-view="skills">Assess skills →</button> for personalized recommendations.`;
-      } else {
+        nudgeEl.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <strong>Habit reminder</strong> — your top gap(s) below have no dedicated drill. Apply them in every ranked game this session:<ul style="margin:var(--space-2) 0 0 var(--space-4);">${habitLines}</ul>`;
+      } else if (nudgeEl) {
         nudgeEl.style.display = 'none';
       }
+    } else if (nudgeEl) {
+      nudgeEl.style.display = 'block';
+      nudgeEl.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Drill from default rotation. <button class="panel-link" data-view="skills">Assess skills →</button> for personalized recommendations.`;
     }
 
     const buildCard = (drill, label, skillName) => {
@@ -748,6 +798,7 @@ function openDrillModal(drill) {
       appState.masteredDrills.add(drill.id);
       showToast(`${drill.name} marked as mastered!`, 'success');
     }
+    persistState();
     overlay.style.display = 'none';
     renderDrills(currentDrillFilter);
     updateNavBadges();
@@ -817,6 +868,7 @@ function renderConcepts() {
           e.target.textContent = '✓ Learned — remove';
           showToast('Concept learned!', 'success');
         }
+        persistState();
         document.getElementById('stat-concepts').textContent = appState.learnedConcepts.size;
         updateNavBadges();
       });
@@ -848,6 +900,8 @@ function initTracker() {
 
     const entry = { date, minutes, focus, mistake, success, cueSuccess, dmNote, vodInsight, loggedAt: Date.now() };
     appState.sessionLogs.push(entry);
+    updateStreak(true);
+    persistState();
     renderLogs();
     showToast('Session logged!', 'success');
 
@@ -948,6 +1002,7 @@ function logDeath() {
   appState.sessionDeaths.push({ causeId: selectedCause.id, label: selectedCause.label, time: Date.now() });
   appState.allDeaths.push({ causeId: selectedCause.id, label: selectedCause.label, time: Date.now() });
   document.getElementById('stat-deaths').textContent = appState.allDeaths.length;
+  persistState();
   resetLoggerUI();
   showToast('Death logged', '');
   updateNavBadges();
