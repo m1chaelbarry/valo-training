@@ -85,7 +85,7 @@
       "cue": "\"Game never resets your crosshair. Practice starts exactly where it lands.\"",
       "where": "Kovaak or Valorant range. After killing a bot, do NOT recenter. Flick to next target from wherever crosshair stopped. 15+ reps per session.",
       "why": "Standard aim training always resets to center — building a skill that only exists in controlled conditions. Ranked fights start with your crosshair displaced from the last angle cleared. This drill builds the skill the game actually demands."
-    },
+    }
   ],
   "movement": [
     {
@@ -115,7 +115,7 @@
       "cue": "\"Respawn → do NOT move → look at minimap → identify red dots → then hunt.\"",
       "where": "Any DM. Every single respawn: stay still during spawn shield, find every red dot on minimap, plan your route, then move. Every respawn is one rep.",
       "why": "Radiants check the minimap at specific game states as a trained reflex — post-spawn, post-kill, post-cover. DM respawns are free repetitions of that exact reflex at zero risk. After 20+ sessions, this habit auto-fires in ranked without thought."
-    },
+    }
   ],
   "mental": [
     {
