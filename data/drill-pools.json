@@ -86,21 +86,14 @@
       "where": "Kovaak or Valorant range. After killing a bot, do NOT recenter. Flick to next target from wherever crosshair stopped. 15+ reps per session.",
       "why": "Standard aim training always resets to center — building a skill that only exists in controlled conditions. Ranked fights start with your crosshair displaced from the last angle cleared. This drill builds the skill the game actually demands."
     },
-    {
-      "id": "primie-burst-drill",
-      "name": "Primie Burst Drill (Shoot → Move)",
-      "cue": "\"Click and movement key at the same time. Same frame. Zero evaluation gap.\"",
-      "where": "Range first: fire 1 shot → tap D immediately. Then any DM: fire 1–4 bullets → strafe immediately. Count how many shots you stood still after.",
-      "why": "Standing still after any shot is the most common mechanical death in sub-Immortal. The enemy still has peeker's advantage and is tracking your static position while you check the kill feed. Left-click must become the trigger to move — automatically, every time."
-    }
   ],
   "movement": [
     {
       "id": "shoot-then-move",
       "name": "Shoot-Then-Move (Zero Gap)",
-      "cue": "\"Left-click and a direction key at the exact same time. Every shot. No exceptions.\"",
-      "where": "Any DM. After every shot, a movement key must be pressed at the same moment. Count how many times you fire and stand still — those are the death traps.",
-      "why": "The enemy has peeker's advantage and is tracking you while you read the kill feed. Left-click is the trigger to move — not the end of the action. This reflex alone eliminates the most common death cause in sub-Immortal."
+      "cue": "\"Shoot is the trigger for move. Same frame. No checking, no evaluation pause.\"",
+      "where": "Range first: fire 1 shot → press D immediately. Then any DM. Rules: 1 shot → strafe immediately, or burst 2-4 bullets → strafe to cover. Never spray more than 4 before moving. Count post-shot pauses — target is zero.",
+      "why": "Standing still after firing is the most common death in sub-Immortal. The enemy has peeker's advantage and is tracking your static position while you check the kill feed. This drill wires left-click as the trigger to move — not the end of the action. If cover is nearby, retreat there. If not, anti-mirror dodge. Same reflex, every shot, every fight."
     },
     {
       "id": "anti-mirror-dodge",
@@ -123,13 +116,6 @@
       "where": "Any DM. Every single respawn: stay still during spawn shield, find every red dot on minimap, plan your route, then move. Every respawn is one rep.",
       "why": "Radiants check the minimap at specific game states as a trained reflex — post-spawn, post-kill, post-cover. DM respawns are free repetitions of that exact reflex at zero risk. After 20+ sessions, this habit auto-fires in ranked without thought."
     },
-    {
-      "id": "lmb-to-cover",
-      "name": "LMB = Back to Cover",
-      "cue": "\"Fire is the trigger to move. Left-click + movement key. Same frame, every shot.\"",
-      "where": "Any DM or custom. Every time you fire, treat the shot as the trigger to immediately move toward the nearest cover. Make it one reflex, not two separate decisions.",
-      "why": "After any shot, you are stationary and exposed. The enemy is still tracking. Making movement automatic after every shot means you are never standing in the open after firing — every trade requires the enemy to flick to your new position."
-    }
   ],
   "mental": [
     {
@@ -152,6 +138,13 @@
       "cue": "\"Why? Why? Why? Why? Why? — then write the root cause. Stop at the root.\"",
       "where": "After VOD review. Pick one death. Ask \"why did I die?\" 5 times — each answer becomes the next question. Write the root cause (answer 5) in the Tracker.",
       "why": "The first answer is always the symptom. The fifth answer is always the structural cause. Surface analysis produces surface improvements. Structural analysis changes how you actually play. One 5-Why session per review is more valuable than 30 minutes of passive rewatching."
+    },
+    {
+      "id": "economy-decisions",
+      "name": "Economy Decision Practice",
+      "cue": "\"Before clicking buy: state your decision and the reason out loud.\"",
+      "where": "Ranked or unrated. During every buy phase: check team credits, then announce your decision — 'full buying because team is full buying' / 'saving because two teammates are saving.' Note any round where your buy decision hurt the outcome.",
+      "why": "Most buy decisions happen on autopilot. Vocalizing the reason forces one moment of deliberate reasoning per round. Over 10 sessions, patterns of bad economy decisions become visible — solo force-buys, unnecessary spends when team is saving. Economy wins rounds before they start."
     }
   ]
 }

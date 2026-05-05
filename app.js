@@ -1438,7 +1438,7 @@ const ONBOARDING_STAGES = [
         source: 'w0rthy',
         timestamp: '0:00',
         relatedSkill: 'shoot-then-move',
-        relatedDrill: 'primie-burst-drill',
+        relatedDrill: 'shoot-then-move',
         tags: ['aim', 'movement'],
       },
     ],
