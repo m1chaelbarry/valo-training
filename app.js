@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   PROTOCOL — Valorant Training System v6.0
+   PROTOCOL — Valorant Training System v8.0
    Architecture: JSON data + in-memory state (+ skill localStorage persistence)
 ═══════════════════════════════════════════════ */
 
@@ -1253,7 +1253,7 @@ const ONBOARDING_STAGES = [
         why: 'The single highest-ROI concept in the game. Controlling how much of your body is exposed before you shoot decides most duels before they start.',
         videoUrl: 'https://www.youtube.com/watch?v=eMk_GNeXE1I',
         videoId: 'eMk_GNeXE1I',
-        source: 'w0rthy',
+        source: 'Zasko',
         timestamp: '0:00',
         relatedSkill: 'two-step-peek',
         relatedDrill: 'two-step-peek',
