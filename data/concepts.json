@@ -32,8 +32,8 @@
         "videoUrl": "https://www.youtube.com/watch?v=QNh0xj1EyH0",
         "source": "n0ted — \"How RADIANT's Abuse Peekers Advantage\" / w0rthyTV",
         "rankThreshold": "all",
-        "why": "This is not a myth or a feel — it's a measurable stack of delays that compound. The peeker's action time (decision already made) vs. the holder's reaction time (still processing) plus server lag means the holder is always operating on outdated information. Knowing this changes how you approach both sides: as a peeker, go one step further. As a holder, move actively so the peeker becomes the reactor.",
-        "preview": "The peeker sees enemy before enemy can respond. Stack of delays: your decision → input → internet → server → enemy screen → enemy brain → enemy shot. Go one step beyond the intended peek angle. Enemy screen shows you late — you've already aimed and fired."
+        "why": "Peeker's advantage is a real, measurable network-and-render delay — not a myth or feel. Riot's documented formula (dev post 'On Peeker's Advantage & Ranked'): (enemy's client framerate) + (enemy's 1-way network lag) + (server tick = 7.8125 ms on 128-tick) + (your 1-way network lag) + (network interpolation delay = 7.8125 ms default). Riot modelled a baseline of ~141 ms, optimised to ~100 ms via 128-tick servers and Riot Direct routing. Riot tech lead David Straily set the competitive target as 'less than 80 ms is fair' (Polygon, 2020). Reaction time is NOT in the equation — it is equal for both players and cancels out. The advantage is purely the time difference between when you see the holder on your screen and when the holder sees you on theirs. As a peeker: commit fully so the holder reacts to a complete movement. As a holder: actively reposition so the peeker must track a moving target.",
+        "preview": "Peeker's advantage = enemy framerate + enemy 1-way lag + server tick (7.8125 ms) + your 1-way lag + interp delay (7.8125 ms). Riot baseline: ~141 ms → optimised to ~100 ms. Straily (Riot): 'less than 80 ms is fair.' Reaction time is equal for both players — it cancels out. Commit fully to peeks — hesitation removes the advantage."
       },
       {
         "name": "Poisoned Angles (Anti-Repeeking)",
@@ -48,8 +48,8 @@
         "videoUrl": "https://www.youtube.com/watch?v=Ku-n1bAV01Q",
         "source": "w0rthyTV — \"You Move Like A Bot\" / Knight Protocol",
         "rankThreshold": "all",
-        "why": "Diagonal movement (WA or WD) triggers Valorant's speed penalty for simultaneous perpendicular inputs — your character moves slower AND your first-shot accuracy worsens. When entering a fight, both costs are catastrophic. Single-key movement (A or D only) maintains maximum speed and accuracy. If the corner geometry forces a diagonal approach, the Knight Protocol (forward then lateral) gives a straight-line peek from a different position.",
-        "preview": "Diagonal movement (WA/WD) = slower speed + worse accuracy. Only use A or D when peeking. If tight corner prevents straight line: move slightly forward first, then strafe — like a chess knight."
+        "why": "Pressing W+A or W+D simultaneously does not trigger a separate 'perpendicular penalty' — Valorant clamps all movement to max speed regardless of how many keys are held. What actually happens: adding W to an A or D strafe increases your total velocity, and higher velocity means worse movement accuracy. Single-key lateral movement (A or D only) avoids adding W-velocity during the peek and preserves first-shot accuracy at the critical moment of exposure. If the corner geometry forces a diagonal approach, the Knight Protocol (one step forward first, then lateral strafe in sequence) gives you straight-line movement at each phase without the combined-velocity problem.",
+        "preview": "W+A or W+D does not 'slow you' — Valorant clamps to max speed. The problem: adding W raises total velocity, which raises movement error. Use A or D only when peeking. Tight corner? Step forward first (W only), then strafe laterally (A or D only) — each phase is straight-line, lower combined velocity during the peek."
       },
       {
         "name": "Never Repeat an Angle Without Utility",
@@ -76,20 +76,20 @@
         "preview": "4 tools: Slice, Wide Swing, Angle Hold, Jiggle/Jump peek. Never open with wide swing (no info). Always slice first (info + condition). Wide swing requires a setup. Treat combos like Muay Thai: pre-programmed if-then sequences, not improvised chaos."
       },
       {
-        "name": "Left-Side Penalty Awareness",
+        "name": "Left/Right Angle Symmetry (CS:GO Myth)",
         "videoUrl": "https://www.youtube.com/watch?v=QNh0xj1EyH0",
         "source": "n0ted — \"Radiant University EP.4 noted's peeking guide\"",
         "rankThreshold": "sub-immortal",
-        "why": "The gun model sits on the right side of the screen. On a left-side peek, your model is exposed to the enemy before your crosshair reaches them — the physics of the camera offset work against you. Right-side peeks have the opposite geometry. Understanding this means you should actively seek right-side angles, and when forced onto a left side, use utility or shoulder baiting to compensate before committing.",
-        "preview": "Gun model is offset right. Left-side peeks expose more of your body before you see the enemy. Right-side peeks preferred. For unavoidable left-side peeks: shoulder bait + wide swing, or flash. Always stand far from wall to maximize angle advantage on either side."
+        "why": "In CS:GO, the camera is offset from the model centreline, creating a documented 'right-eye peek advantage' where right-side peeks expose less of your body. Valorant does NOT have this asymmetry — the camera is centred, and the left/right viewmodel toggle is purely cosmetic (DDK, Valorant broadcast talent, has confirmed this on record). Both sides are mechanically equal in Valorant. If left-side angles feel harder, it is crosshair placement or habit, not a camera mechanic. The shoulder-bait technique remains useful on any angle you want to commit to — not because of a camera offset, but because it draws the enemy's first shot before your full body is exposed.",
+        "preview": "Valorant has NO left-side penalty — camera is centred (DDK confirmed; viewmodel toggle is cosmetic only). CS:GO's right-eye advantage does NOT apply in Valorant. Difficulty on left-side angles = crosshair placement or habit. Shoulder-bait still useful on any angle: draw their first shot, then wide-swing while they reset."
       },
       {
         "name": "Knight Protocol (L-Shape Peeking)",
         "videoUrl": "https://www.youtube.com/watch?v=qaSCdJRuYRs",
         "source": "w0rthyTV — \"You Move Like A Bot (Movement Guide)\"",
         "rankThreshold": "all",
-        "why": "Tight corners naturally tempt diagonal movement because the geometry seems to require it. But pressing both WA or WD simultaneously cuts your speed and degrades first-shot accuracy at the worst possible moment. The Knight move (forward a step, then lateral) gives you the same angle exposure with straight-line movement — faster, more accurate, and harder for the enemy to track.",
-        "preview": "When tight walls prevent a straight-line peek: move slightly forward to create separation, then strafe laterally — like a chess knight's L-shape. Eliminates the diagonal movement penalty (WA/WD) while still clearing the angle."
+        "why": "Tight corners naturally tempt diagonal movement because the geometry seems to require it. Pressing W+A or W+D simultaneously adds forward velocity on top of your lateral strafe — higher total velocity means worse movement accuracy at the exact moment you need to shoot. The Knight move (one step forward to create separation, then pure lateral strafe) gives you the same angle exposure with straight-line movement at each phase — keeping velocity lower during the critical peek rather than stacking it.",
+        "preview": "When tight walls prevent a straight-line peek: step forward to create separation (W only), then strafe laterally (A or D only) — like a chess knight's L-shape. Each phase is pure straight-line movement. Avoids stacking W-velocity on top of lateral during the peek, which would raise movement error."
       },
       {
         "name": "Overstaying Your Welcome",
@@ -110,16 +110,16 @@
         "videoUrl": "https://www.youtube.com/watch?v=Ku-n1bAV01Q",
         "source": "n0ted — \"Valorant Movement MASTERCLASS\" / \"Counter-Strafe Matters\"",
         "rankThreshold": "all",
-        "why": "Valorant's accuracy isn't binary (moving vs. stopped) — it follows an exponential deceleration curve. This means accuracy begins to recover before you reach a full stop, and the recovery happens fastest in the first ~50ms of a direction change. Knowing this lets you deliberately shoot earlier in the deceleration window rather than waiting for a full stop that takes twice as long.",
-        "preview": "Speed follows an exponential curve, not linear. Accuracy window exists at the instant of direction change (near-zero velocity). Shoot during deceleration phase of the curve — not during acceleration. Counter-strafing tightens bullet clusters ~30% vs. release-only."
+        "why": "Valorant's accuracy is tied directly to movement speed — it is not binary (moving vs. stopped). As you decelerate, movement error falls off and full first-shot accuracy returns once velocity drops below the deadzone threshold (~30% of max speed; documented in Valorant patch notes). You do not have to reach zero velocity to be accurate — just below that threshold. The exact shape of the deceleration curve is not officially specified by Riot; the velocity-based accuracy recovery is what patch notes confirm. Counter-strafing returns velocity toward zero faster than releasing the key alone — but Valorant's deceleration is already fast, so the gain is a few milliseconds rather than a large window advantage.",
+        "preview": "Accuracy recovers before full stop — once velocity drops below the deadzone threshold (~30% of max speed; Riot patch notes). Shoot during the deceleration phase. Counter-strafing saves a few milliseconds vs. key-release — Valorant decelerates quickly regardless. Enable the shooting error graph to feel when accuracy actually returns rather than relying on memorised millisecond numbers."
       },
       {
-        "name": "Shadow Stepping (2-Step Rule)",
+        "name": "Shadow Stepping (Tap-W Movement)",
         "videoUrl": "https://www.youtube.com/watch?v=Ku-n1bAV01Q",
         "source": "w0rthyTV — \"Movement & Peeking Mastery\"",
         "rankThreshold": "all",
-        "why": "Three steps triggers Valorant's footstep audio system. Two steps does not — you are moving at sprint speed but producing zero audio. This is not a bug, it's a game mechanic that Radiant players exploit deliberately. Shadow stepping allows silent repositioning at angles without the audio warning that lets enemies pre-fire or dodge.",
-        "preview": "1–2 steps in any direction = silent + full accuracy on direction change. 3+ steps = audible footsteps + shooting error blue line. Shadow step is not walking — it's short burst sprinting that stays under the noise/inaccuracy threshold."
+        "why": "Brief tap-W movement — very short sprints that don't sustain a full run animation cycle — is widely reported by community testing to produce no footstep audio. However, Riot has never publicly disclosed the exact trigger threshold for footstep sounds (Ask VALORANT #6, Audio Director Peter Zinda, 2020). The specific 'three steps = audio triggers / two steps = silent' rule originates from community coaching content and is not Riot-confirmed. Treat tap-W repositioning as a plausible silent technique rather than a guaranteed mechanic. The reliably silent options are shift-walking (confirmed silent by Riot Support documentation) and standing still.",
+        "preview": "Tap-W movement (very brief sprints) is community-reported to stay below the footstep audio threshold — but Riot has not confirmed the exact step-count trigger (Ask VALORANT #6, Zinda, 2020). Reliably silent: shift-walking (Riot Support confirmed) and standing still. Short burst movement avoids the inaccuracy penalty because accuracy returns at near-zero velocity at each direction change."
       },
       {
         "name": "Crosshair Acceptance Rule",
@@ -134,8 +134,8 @@
         "videoUrl": "https://www.youtube.com/watch?v=ZRUq_kmDBPc",
         "source": "Fundamenty / n0ted",
         "rankThreshold": "all",
-        "why": "The Vandal and Phantom have different forgiveness windows at the dead zone. Phantom allows 2-3 bullets per direction change window (~80ms); Vandal allows only 1 bullet (~50ms). Training Phantom builds timing intuition and volume; training Vandal forces timing precision but will feel impossible until your Phantom timing is solid. Switching weapons randomly in DM builds no timing consistency for either.",
-        "preview": "Vandal: 1 bullet per dead-zone window (tight, ~50ms timing). Phantom: 2–3 bullets per window (more forgiving, ~80ms window). Train them in separate DM sessions. Ghost DM → crosshair placement habits. Guardian DM → stop timing (punishes any movement)."
+        "why": "The Vandal and Phantom use identical movement-accuracy mechanics — there is no per-weapon deadzone window. Their real differences (Riot Data Drop 'Phantom vs. Vandal,' 2021; Valorant Wiki): Phantom has tighter first-shot accuracy (0.20 vs. 0.25 for Vandal, ~20% better on first shot) and a higher fire rate (11 rps vs. 9.75 rps); Vandal deals flat 160 headshot damage at all ranges while Phantom has damage falloff. The Vandal's lower first-shot inaccuracy tolerance makes timing errors more immediately visible — which is why it feels unforgiving. Training them in separate focused DM sessions builds timing consistency for each without the habit-confusion of weapon-switching.",
+        "preview": "Vandal and Phantom use the same movement-accuracy mechanics — no per-weapon deadzone window (Riot Data Drop 2021). Real differences: Phantom — tighter first shot (0.20 vs 0.25), faster fire rate (11 vs 9.75 rps). Vandal — flat 160 headshot damage at all ranges (Phantom drops off). Train them in separate DM sessions. Ghost DM → crosshair placement. Guardian DM → stop timing (punishes movement on either weapon)."
       },
       {
         "name": "Don't Lift Your Fingers",
@@ -158,16 +158,16 @@
         "videoUrl": "https://www.youtube.com/watch?v=wgQHZjy6TxA",
         "source": "w0rthyTV — MASS Protocol analysis of Florescent",
         "rankThreshold": "all",
-        "why": "Florescent analysis proves this empirically: 22 out of 24 rounds, the crosshair was already on the target before any mouse movement. Movement-based crosshair placement works because your WASD keys can move your character—and therefore your crosshair—horizontally across the screen faster and more predictably than your mouse can flick. Flicking is compensating for failed movement; it's not a reliable primary strategy.",
-        "preview": "Florescent: out of 24 rounds reviewed, only 2 were actual flicks. Everything else was movement-based crosshair placement. The crosshair doesn't move from your mouse — your strafe moves it to the target. Flicking is the symptom of bad positioning, not the solution."
+        "why": "Coaching analysis of Florescent (Ava Eugene, Apeks) describes her play as movement-driven: the crosshair is pre-positioned via WASD strafe so it arrives on the target without needing a flick. The specific round count ('22 of 24') is a coaching estimate, not an independently verified statistic. The general principle is well-supported: Riot's combat data (Phantom vs. Vandal data drop, 2021) shows accurate first shots dominate outcomes, which favours movement-based pre-aim over reactive flicking. WASD keys can traverse your crosshair across targets faster and more predictably than a mouse flick — and they don't add aim-error the way a rushed flick does. Flicking is compensating for failed positioning, not a primary strategy.",
+        "preview": "Pro-level Valorant emphasises movement-driven crosshair placement: WASD strafe pre-positions the crosshair, mouse corrects the final gap. Florescent's play is 'mostly movement, minimal flicking' (coaching estimate — specific round counts unverified). Riot combat data (Phantom vs. Vandal, 2021) supports accurate first shots over reactive flicks. Flicking = compensating for missed positioning."
       },
       {
         "name": "Hyper Tap (Hall Effect Keyboards)",
         "videoUrl": "https://www.youtube.com/watch?v=edIzYSYt7Bw",
         "source": "n0ted — \"Hyper Tap is ADDICTING\"",
         "rankThreshold": "immortal",
-        "why": "Traditional keyboards require 1–4mm of physical key travel before registering a press, adding 10–25ms of input lag per direction change. Hall Effect keyboards can trigger at 0.01mm, reducing this to near-zero. In a strafe sequence with 5+ direction changes per second, this compounds to a measurable accuracy window advantage. Not essential below Immortal, but at high elo where every millisecond matters, it is a legitimate edge.",
-        "preview": "Hall Effect keyboards set to 0.01–0.10mm actuation enable direction changes from a touch, not a press. Allows faster A/D strafe windows. Not a macro — just hardware-enabled precision. Worth considering at Immortal+ when every millisecond compounds."
+        "why": "Traditional mechanical switches have ~1.2–2.0 mm pretravel before actuation (Cherry MX Speed: 1.2 mm; standard MX: 2.0 mm), with total input latency varying widely by board — up to 45 ms variance (Dan Luu keyboard latency study). Hall Effect / magnetic switches (Wooting 60HE, Razer Analog) expose a minimum actuation of 0.1 mm — not 0.01 mm (that figure is 10× off). Measured total click latency on the Wooting 60HE: ~1.1 ms (RTINGS). The main competitive advantage is not raw press latency; it is the rapid-trigger feature that resets actuation in 0.1 mm increments, enabling faster direction-change resets in counter-strafe sequences at high strafe frequency.",
+        "preview": "Hall Effect keyboards (e.g., Wooting 60HE): minimum actuation 0.1 mm — not 0.01 mm (that was 10× off). Measured total click latency ~1.1 ms (RTINGS). Real advantage: rapid trigger resets in 0.1 mm increments → faster A/D direction-change resets, not raw key-press speed. Worth considering at Immortal+ where strafe frequency is high."
       }
     ]
   },
@@ -221,14 +221,14 @@
         "source": "w0rthyTV — \"How MENTAL Affects your AIM\"",
         "rankThreshold": "all",
         "why": "Blame and negative self-talk are habitual thought patterns — every time you complete the blame loop, you strengthen the neural pathway for that pattern. It becomes easier to blame next time. This compounds over hundreds of games until blame is the automatic first response to any death. Like diet: each individual instance seems harmless, but the cumulative effect is the habit that controls your performance ceiling.",
-        "preview": "What you feed your mental compounds. Blaming teammates = eating cake every day — day 1 feels good, day 30 you're in the graveyard. Bad mental = up to 80% loss of fine motor control (elevated heart rate, muscle tension). Fix: redirect energy to strategy after every death, not blame."
+        "preview": "What you feed your mental compounds. Blaming teammates = eating cake every day — day 1 feels good, day 30 you're in the graveyard. Elevated fear/arousal degrades fine motor performance — the culprit is the stress state, not heart rate alone (Grossman & Siddle, 1999; Lewinski, Force Science Institute). Fix: redirect energy to strategy after every death, not blame."
       },
       {
         "name": "Pele Protocol (Pre-Round Visualization)",
         "videoUrl": "https://www.youtube.com/watch?v=-ufd8fmvZLA",
         "source": "Fundamenty — \"Pele Protocol\"",
         "rankThreshold": "all",
-        "why": "Motor neuron research (Jeannerod, 2001) shows that visualization activates the same upper motor neurons as physical practice. Elite athletes like Pelé famously visualized every ball contact before matches. In FPS terms: visualizing the peek, the stop, the headshot primes the motor pathways so that when the situation occurs, the execution feels like recall rather than improvisation.",
+        "why": "Motor imagery activates a neural network that substantially overlaps with motor execution — SMA, premotor cortex, posterior parietal cortex, basal ganglia, and cerebellum (Hétu et al. 2013 meta-analysis). Primary motor cortex (M1) activation during imagery is weaker and inconsistent, appearing in only ~18% of fMRI studies. Pascual-Leone et al. (J Neurophysiol, 1995) showed mental piano practice produced similar cortical reorganisation to physical practice over 5 days. Effect sizes for motor-skill improvement from imagery are moderate: d≈0.42–0.53 (Driskell et al. meta-analysis, 1994; Toth et al. 2020 replication), with optimal sessions around 20 minutes. Elite athletes like Pelé famously pre-visualised every contact before matches. In FPS terms: visualising the peek, the stop, the headshot primes the motor planning circuits so execution feels like recall rather than improvisation.",
         "preview": "During buy phase: close eyes, visualize the round. What angle will you hold? What will enemy do? Imagine the exact scenarios before they happen. \"Be in the moment from the future.\" Motor neurons activate identically during visualization as during physical practice — it's free training."
       },
       {
@@ -362,8 +362,8 @@
         "videoUrl": "https://www.youtube.com/watch?v=8YRiCtEByHA",
         "source": "Fundamenty — Motor Learning Research",
         "rankThreshold": "all",
-        "why": "Motor memory consolidation begins immediately after practice and continues during the following rest period. Research shows the hippocampus replays successful motor sequences in reverse during the first minutes of rest, accelerating pattern storage. Jumping straight to social media or another activity interrupts this consolidation window. 5–10 minutes of quiet inactivity is literally free skill gain.",
-        "preview": "5–10 min of pure inactivity with eyes closed after gaming. Hippocampus replays successful motor sequences in reverse — accelerates retention 20–30%. Free skill consolidation. NREM2 sleep spindles (20-30 min after waking): consolidate motor memory by 20-30% next session. Protect sleep above all training decisions."
+        "why": "Motor memory consolidation begins immediately after practice. After meaningful experiences, the hippocampus replays recent spatial trajectories in reverse during quiet wakefulness — a likely reinforcement-learning signal documented by Foster & Wilson (Nature, 2006) and Diba & Buzsáki (Nat Neurosci, 2007). This reverse replay is documented for spatial trajectories, not finger-motor sequences specifically; a quantified percentage retention boost from this effect is not established in the literature. Separately, stage-2 NREM sleep and sleep spindles consolidate motor skills overnight: Walker et al. (Neuron, 2002) measured ~20% improvement in motor speed after a night of sleep, correlated with NREM-2 activity in the final sleep quarter (Laventure et al., PLOS Biology, 2016 confirmed spindle activity is causally involved). Jumping straight to social media after a session may interrupt the early quiet-wakefulness consolidation window.",
+        "preview": "5–10 min of quiet inactivity after gaming — let early consolidation begin before switching to social media. Hippocampus replays spatial trajectories in reverse during quiet rest (Foster & Wilson, Nature 2006) — documented for spatial navigation, not motor sequences specifically; % improvement not established. Overnight NREM2 sleep spindles consolidate motor skills — ~20% motor speed gain (Walker et al., Neuron 2002). Protect sleep above all training decisions."
       }
     ]
   }
