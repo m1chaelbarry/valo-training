@@ -30,7 +30,7 @@
     "name": "Shoot-Then-Move (zero gap)",
     "category": "movement",
     "tier": 1,
-    "drillId": "primie-burst-drill",
+    "drillId": "shoot-then-move",
     "prereqs": [],
     "roiWeight": 5,
     "assessQuestion": "Do you move immediately after every shot? (DM: count how many times you stand still after firing — goal: 0/10 kills.)",
@@ -144,7 +144,7 @@
     "name": "LMB = Cover (shot triggers movement)",
     "category": "movement",
     "tier": 2,
-    "drillId": "lmb-to-cover",
+    "drillId": "shoot-then-move",
     "prereqs": [
       "shoot-then-move"
     ],

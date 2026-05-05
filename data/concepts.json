@@ -8,96 +8,96 @@
         "videoUrl": "https://www.youtube.com/watch?v=eMk_GNeXE1I",
         "source": "Zasko — \"3 Simple Ways To Improve Your Crosshair Placement\"",
         "rankThreshold": "all",
-        "why": "Whoever is closer to the corner gets revealed first — their body enters the opponent's screen before they can see the opponent's body. This is geometry, not aim. Understanding this means you can win duels before they start by simply adjusting your distance from the wall.",
-        "preview": "Further from wall = spots enemy first. Ping your distance vs. enemy's. Closer to wall = disadvantage. Adjust: trace when advantaged, pre-aim or wide swing when not."
+        "why": "Whoever is further from the corner gets revealed first — their body enters the opponent's screen before they can see the opponent's body. This is geometry, not aim. Understanding this means you can win duels before they start by simply adjusting your distance from the wall.",
+        "preview": "Further from wall = spots enemy first. Closer to wall = disadvantage — you're revealed before you can see them. Check who has the angle advantage before committing. If you have advantage: trace carefully. If you're disadvantaged: pre-aim the expected spot or wide-swing to deny them the easy first shot."
       },
       {
         "name": "Trace vs. Pre-Aim Decision",
         "videoUrl": "https://www.youtube.com/watch?v=w_ao9DAeZyc",
         "source": "Zasko — \"How (And When) To ACTUALLY Trace Angles\"",
         "rankThreshold": "all",
-        "why": "Using the wrong technique for your angle advantage is one of the most common mechanical errors. Tracing at a disadvantage angle means your crosshair lags behind and the enemy gets a free first shot. Pre-aiming when you have advantage means you hold a static position that the enemy can learn and pre-fire. The trace/pre-aim decision must be context-driven, not habitual.",
-        "preview": "Trace = transitional state between holding and peeking (angle advantage). Pre-aim = for disadvantage positions. Speed controls depth: fast movement = tight to wall; slow = hold wide."
+        "why": "Using the wrong technique for your angle is one of the most common mechanical errors. Tracing at a disadvantage angle means your crosshair lags behind and the enemy gets a free first shot. Pre-aiming when you have advantage means you hold a static position that the enemy can learn and pre-fire. The decision must be context-driven, not habitual.",
+        "preview": "Trace = sliding crosshair along wall as you peek (use when you have angle advantage — further from wall). Pre-aim = lock crosshair on the spot before you peek (use when disadvantaged — enemy will appear before you fully see them). Speed during trace controls depth: fast peek = crosshair stays tight to wall; slow peek = crosshair drifts wider."
       },
       {
         "name": "Acoustic-Based Hold Width",
         "videoUrl": "https://www.youtube.com/watch?v=iM5Q6bPh7ns",
         "source": "Zasko — \"Stop GUESSING How Wide You Should Hold\"",
         "rankThreshold": "all",
-        "why": "Running footsteps reveal two key facts: the enemy is approaching (not lurking) and they are near full sprint speed. Wide-holding against a sprinting enemy is correct because their first shot will be inaccurate from movement, giving you the first-shot window. Silence means a lurker who has preemptively stopped — holding tight forces them to react to a pixel change rather than your silhouette.",
-        "preview": "Running footsteps = hold WIDE (click timing). Silence / shift-walking = hold TIGHT (react to pixel change). Let audio dictate crosshair distance. Noise = wide; silence = tight."
+        "why": "Running footsteps reveal two facts: the enemy is approaching (not lurking) and they're moving at full sprint speed. A sprinting enemy's first shot is inaccurate, so holding wide is correct — you can fire while they're still decelerating. Silence means a lurker who's already stopped and pre-aimed tight — holding wide against them gives them your entire body to shoot at while you search for a pixel.",
+        "preview": "Running footsteps = hold WIDE (crosshair at far edge of corner). Enemy is sprinting, their first shot will miss. Silence / shift-walking = hold TIGHT (crosshair near wall edge). Enemy is pre-aimed and waiting. Let audio dictate your crosshair distance before the fight even starts."
       },
       {
         "name": "Peeker's Advantage — How It Actually Works",
         "videoUrl": "https://www.youtube.com/watch?v=QNh0xj1EyH0",
         "source": "n0ted — \"How RADIANT's Abuse Peekers Advantage\" / w0rthyTV",
         "rankThreshold": "all",
-        "why": "Peeker's advantage is a real, measurable network-and-render delay — not a myth or feel. Riot's documented formula (dev post 'On Peeker's Advantage & Ranked'): (enemy's client framerate) + (enemy's 1-way network lag) + (server tick = 7.8125 ms on 128-tick) + (your 1-way network lag) + (network interpolation delay = 7.8125 ms default). Riot modelled a baseline of ~141 ms, optimised to ~100 ms via 128-tick servers and Riot Direct routing. Riot tech lead David Straily set the competitive target as 'less than 80 ms is fair' (Polygon, 2020). Reaction time is NOT in the equation — it is equal for both players and cancels out. The advantage is purely the time difference between when you see the holder on your screen and when the holder sees you on theirs. As a peeker: commit fully so the holder reacts to a complete movement. As a holder: actively reposition so the peeker must track a moving target.",
-        "preview": "Peeker's advantage = enemy framerate + enemy 1-way lag + server tick (7.8125 ms) + your 1-way lag + interp delay (7.8125 ms). Riot baseline: ~141 ms → optimised to ~100 ms. Straily (Riot): 'less than 80 ms is fair.' Reaction time is equal for both players — it cancels out. Commit fully to peeks — hesitation removes the advantage."
+        "why": "Peeker's advantage is a real, documented ~100ms timing gap — not a myth. When you move out to peek, the server registers your new position before the defender's client fully renders you and can react. This means you see the defender and start shooting before they even see you on their screen. Reaction time is NOT in the equation — both players react at the same speed. The advantage is purely who sees who first. As a peeker, hesitating removes this advantage entirely — a half-committed peek gives defenders time to catch up.",
+        "preview": "You see the defender ~100ms before they see you. Use it: commit fully to peeks — no slow creeping, no half-swings. As a defender: never hold the same static spot after being peeked — reposition constantly so peeker must track a moving target, not pre-aim a known pixel."
       },
       {
         "name": "Poisoned Angles (Anti-Repeeking)",
         "videoUrl": "https://www.youtube.com/watch?v=rJsKx3HYEc0",
         "source": "Zasko — \"How Canezerra Can BREAK The Rules\"",
         "rankThreshold": "all",
-        "why": "Human memory for spatial positions is fast and accurate. The moment you show yourself at an angle, the enemy has sub-100ms crosshair memory at that exact pixel. Re-peeking there gives them a pre-aimed first shot — you lose peeker's advantage and hand it to the defender. The angle is \"poisoned\" until you reset with utility or a completely different approach geometry.",
-        "preview": "Once you've peeked an angle, the enemy anchors crosshair at your height. Never re-peek same angle at same elevation — crouch, wide swing, or relocate. Break their crosshair conditioning."
+        "why": "The moment you show yourself at an angle, the enemy locks their crosshair at your exact pixel. Re-peeking there hands them a pre-aimed first shot — you lose peeker's advantage and they gain it. The angle is \"poisoned\" and stays poisoned until you reset with utility or approach from completely different geometry.",
+        "preview": "Once you've peeked an angle, the enemy's crosshair is already there. Never re-peek the same spot at the same elevation. Your options: flash underneath first, throw a cloud/smoke, crouch to break their height expectation, or relocate entirely. \"Don't do it dry.\""
       },
       {
         "name": "Straight-Line Only Peeking (No Diagonal)",
         "videoUrl": "https://www.youtube.com/watch?v=Ku-n1bAV01Q",
         "source": "w0rthyTV — \"You Move Like A Bot\" / Knight Protocol",
         "rankThreshold": "all",
-        "why": "Pressing W+A or W+D simultaneously does not trigger a separate 'perpendicular penalty' — Valorant clamps all movement to max speed regardless of how many keys are held. What actually happens: adding W to an A or D strafe increases your total velocity, and higher velocity means worse movement accuracy. Single-key lateral movement (A or D only) avoids adding W-velocity during the peek and preserves first-shot accuracy at the critical moment of exposure. If the corner geometry forces a diagonal approach, the Knight Protocol (one step forward first, then lateral strafe in sequence) gives you straight-line movement at each phase without the combined-velocity problem.",
-        "preview": "W+A or W+D does not 'slow you' — Valorant clamps to max speed. The problem: adding W raises total velocity, which raises movement error. Use A or D only when peeking. Tight corner? Step forward first (W only), then strafe laterally (A or D only) — each phase is straight-line, lower combined velocity during the peek."
+        "why": "Adding W on top of a lateral strafe (pressing W+A or W+D) stacks forward velocity on top of your sideways velocity — higher total speed means significantly worse first-shot accuracy. Single-key lateral movement (A or D only) keeps velocity lower, preserving accurate first shots at the critical moment you're exposed. When corner geometry forces a forward-then-sideways approach, the Knight Protocol gives you straight-line movement at each phase without combining velocities.",
+        "preview": "Use A or D only when peeking — never W+A or W+D together. The combined velocity ruins your first shot. Tight corner forcing a diagonal? Use the Knight Protocol: step forward (W only) to create separation, then strafe laterally (A or D only). Each phase is pure straight-line movement."
       },
       {
         "name": "Never Repeat an Angle Without Utility",
         "videoUrl": "https://www.youtube.com/watch?v=rJsKx3HYEc0",
         "source": "w0rthyTV — \"Why You Get 1 Tapped Holding Angles\"",
         "rankThreshold": "all",
-        "why": "After you've been seen at an angle, the enemy has your exact pixel memorized and will pre-fire it on your next approach. This is pattern recognition operating at millisecond speed — no amount of mechanical skill overcomes being pre-fired at the same location. Utility (flash, cloud, smoke) physically disrupts the visual information they're relying on. Without it, you are giving them a free first shot.",
-        "preview": "After taking a fight on an angle, the enemy knows your exact pixel. Never return dry. Flash underneath first, or cloud burst, or move to a completely different angle. \"Don't do it dry.\""
+        "why": "After you've been seen at an angle, the enemy pre-aims your exact pixel and will fire the moment you appear again. No amount of aim overcomes being pre-fired at a known location. Utility (flash, cloud, smoke) physically disrupts the visual information they're relying on. Without it, you are giving them a guaranteed free first shot.",
+        "preview": "After taking a fight on an angle, the enemy knows your exact pixel. Never return to the same spot without: flashing to break their pre-aim, throwing a cloud or smoke, or approaching from a completely different angle. Returning dry = giving them a free kill."
       },
       {
         "name": "On-Angle vs. Off-Angle",
         "videoUrl": "https://www.youtube.com/watch?v=Plmts9TSpas",
         "source": "w0rthyTV — UFOs Framework / \"How To Win ALL Your Gunfights With ANGLES\"",
         "rankThreshold": "all",
-        "why": "On-angles are locations where enemies have pre-built crosshair placement from repetition. At Ascendant+, pre-fires on common angles are trained muscle memory — you lose regardless of your reaction time because the enemy is already aimed. Off-angles remove this crosshair placement advantage entirely and convert the holder into the reactor. The value compounds with round time: the less time remaining, the more rushing enemies skip their off-angle checks.",
-        "preview": "On-angles: where enemies pre-place crosshairs → fight by peeking in/out constantly. Off-angles: where enemies don't expect you → free peeker's advantage reversal. Round time matters: 15 sec left = rush = off-angle works; 1:20 left = methodical check = on-angle risk."
+        "why": "On-angles are locations where enemies have trained crosshair placement from repetition — at Ascendant+, pre-fires on common spots are muscle memory. Off-angles remove this advantage entirely, converting the prepared holder into a reactor who has to find you first. The value compounds late in rounds: with 15 seconds left, rushing enemies skip off-angle checks entirely.",
+        "preview": "On-angles (common spots): enemies pre-place crosshairs there — expect pre-fires. Fight by peeking in and out constantly to bait shots. Off-angles (unexpected spots): enemies have no crosshair placement — you have full peeker's advantage plus surprise. Use off-angles more as the round timer drops."
       },
       {
         "name": "Peeking Mechanics Are a Combo, Not Improvisation",
         "videoUrl": "https://www.youtube.com/watch?v=QNh0xj1EyH0",
         "source": "Zasko — \"you're killing your own aim\" / \"How to ACTUALLY angle hold properly\"",
         "rankThreshold": "all",
-        "why": "Improvised peeking has high variance — sometimes it works, usually it doesn't. Pre-programmed \"if-then\" combos (slice → condition → wide swing) remove improvisation and decision latency from the equation. The combo fires automatically under pressure because it was installed through deliberate practice, not assembled in real-time. This is why Zasko compares it to Muay Thai: a trained fighter doesn't think about their combinations mid-fight.",
-        "preview": "4 tools: Slice, Wide Swing, Angle Hold, Jiggle/Jump peek. Never open with wide swing (no info). Always slice first (info + condition). Wide swing requires a setup. Treat combos like Muay Thai: pre-programmed if-then sequences, not improvised chaos."
+        "why": "Improvised peeking has high variance. Pre-programmed if-then combos (slice → condition → wide swing) remove decision latency from the equation — the combo fires automatically under pressure because it was installed through deliberate practice, not assembled in real-time. Zasko compares it to Muay Thai: a trained fighter doesn't think about combinations mid-fight.",
+        "preview": "4 tools: Slice (info + condition), Wide Swing (kill after conditioning), Angle Hold (wait for them), Jiggle/Jump peek (bait shots). Rules: never open with a wide swing — you have no info. Always slice first to gather information. Wide swing only after conditioning the enemy crosshair. Treat combos like Muay Thai: pre-programmed if-then sequences."
       },
       {
         "name": "Left/Right Angle Symmetry (CS:GO Myth)",
         "videoUrl": "https://www.youtube.com/watch?v=QNh0xj1EyH0",
         "source": "n0ted — \"Radiant University EP.4 noted's peeking guide\"",
         "rankThreshold": "sub-immortal",
-        "why": "In CS:GO, the camera is offset from the model centreline, creating a documented 'right-eye peek advantage' where right-side peeks expose less of your body. Valorant does NOT have this asymmetry — the camera is centred, and the left/right viewmodel toggle is purely cosmetic (DDK, Valorant broadcast talent, has confirmed this on record). Both sides are mechanically equal in Valorant. If left-side angles feel harder, it is crosshair placement or habit, not a camera mechanic. The shoulder-bait technique remains useful on any angle you want to commit to — not because of a camera offset, but because it draws the enemy's first shot before your full body is exposed.",
-        "preview": "Valorant has NO left-side penalty — camera is centred (DDK confirmed; viewmodel toggle is cosmetic only). CS:GO's right-eye advantage does NOT apply in Valorant. Difficulty on left-side angles = crosshair placement or habit. Shoulder-bait still useful on any angle: draw their first shot, then wide-swing while they reset."
+        "why": "In CS:GO, the camera is offset from the model center, creating a documented right-eye peek advantage. Valorant does NOT have this — the camera is centered, and the viewmodel toggle is purely cosmetic. Left-side angles are not mechanically harder; if they feel harder, it is crosshair placement or habit. Shoulder-bait remains useful on any angle not because of a camera offset, but because it draws the enemy's first shot before your full body is exposed.",
+        "preview": "Valorant has NO left-side penalty — camera is centered (viewmodel toggle is cosmetic only). CS:GO's right-eye advantage does NOT apply here. Left-side difficulty = crosshair placement habit, not engine mechanics. Shoulder-bait is still valuable: draw their first shot with a shoulder peek, then wide-swing while they reset."
       },
       {
         "name": "Knight Protocol (L-Shape Peeking)",
         "videoUrl": "https://www.youtube.com/watch?v=qaSCdJRuYRs",
         "source": "w0rthyTV — \"You Move Like A Bot (Movement Guide)\"",
         "rankThreshold": "all",
-        "why": "Tight corners naturally tempt diagonal movement because the geometry seems to require it. Pressing W+A or W+D simultaneously adds forward velocity on top of your lateral strafe — higher total velocity means worse movement accuracy at the exact moment you need to shoot. The Knight move (one step forward to create separation, then pure lateral strafe) gives you the same angle exposure with straight-line movement at each phase — keeping velocity lower during the critical peek rather than stacking it.",
-        "preview": "When tight walls prevent a straight-line peek: step forward to create separation (W only), then strafe laterally (A or D only) — like a chess knight's L-shape. Each phase is pure straight-line movement. Avoids stacking W-velocity on top of lateral during the peek, which would raise movement error."
+        "why": "Tight corners tempt diagonal movement. Pressing W+A or W+D stacks forward velocity on top of your lateral strafe — higher total speed means worse first-shot accuracy. The Knight move gives you the same angle exposure with straight-line movement at each phase, keeping velocity lower during the critical peek.",
+        "preview": "Tight wall preventing a straight-line peek? Step forward first (W only) to create separation, then strafe laterally (A or D only) — the chess knight's L-shape. Two straight-line phases instead of one diagonal motion. Each phase is lower-velocity and more accurate. Practice on any tight corner until it becomes automatic."
       },
       {
         "name": "Overstaying Your Welcome",
         "videoUrl": "https://www.youtube.com/watch?v=1Mmi3ka50SM",
         "source": "w0rthyTV — \"Why You CANT Hold Angles In VALORANT\"",
         "rankThreshold": "all",
-        "why": "Each additional second in a compromised position increases the probability of a coordinated push or a utility flush. Your life is worth two points: the body and the position it controls. Dying while overstaying costs both. The moment you've extracted value (a kill, information, or a forced rotate), the math says leave — because the value of staying drops to near-zero while the risk stays at 100%.",
-        "preview": "After a kill or utility use, leave immediately. Your life = 2 points (body + position). Every second extra drops your escape probability. Signs you're overstaying: spent utility, multiple enemies aware, team committed elsewhere."
+        "why": "Each additional second in a compromised position increases the probability of a coordinated push or utility flush. Your life is worth two points: the body and the position it controls. Dying while overstaying costs both. The moment you've extracted value (a kill, information, or a forced rotate), the math says leave — staying drops your value to near-zero while the risk stays at 100%.",
+        "preview": "After a kill or successful utility use, leave immediately. Signs you're overstaying: spent utility, multiple enemies now aware, team committed elsewhere. Your life = 2 points (body + position). Every extra second drops your escape probability. Extract the value, then go."
       }
     ]
   },
@@ -110,64 +110,64 @@
         "videoUrl": "https://www.youtube.com/watch?v=Ku-n1bAV01Q",
         "source": "n0ted — \"Valorant Movement MASTERCLASS\" / \"Counter-Strafe Matters\"",
         "rankThreshold": "all",
-        "why": "Valorant's accuracy is tied directly to movement speed — it is not binary (moving vs. stopped). As you decelerate, movement error falls off and full first-shot accuracy returns once velocity drops below the deadzone threshold (~30% of max speed; documented in Valorant patch notes). You do not have to reach zero velocity to be accurate — just below that threshold. The exact shape of the deceleration curve is not officially specified by Riot; the velocity-based accuracy recovery is what patch notes confirm. Counter-strafing returns velocity toward zero faster than releasing the key alone — but Valorant's deceleration is already fast, so the gain is a few milliseconds rather than a large window advantage.",
-        "preview": "Accuracy recovers before full stop — once velocity drops below the deadzone threshold (~30% of max speed; Riot patch notes). Shoot during the deceleration phase. Counter-strafing saves a few milliseconds vs. key-release — Valorant decelerates quickly regardless. Enable the shooting error graph to feel when accuracy actually returns rather than relying on memorised millisecond numbers."
+        "why": "Valorant's accuracy ties directly to movement speed — it's not binary (moving vs. stopped). As you decelerate, bullet spread shrinks and full accuracy returns once velocity drops below roughly 30% of max speed. You don't need to reach zero — just slow enough. Counter-strafing (pressing the opposite key) returns velocity to zero faster than releasing alone, but Valorant decelerates quickly regardless, so the difference is only a few milliseconds.",
+        "preview": "Accuracy returns before a full stop — once you're below ~30% max speed. Shoot during deceleration, not just at full stop. Counter-strafing saves a few milliseconds vs. just releasing the key. Enable the shooting error graph in the range: yellow lines = accurate, blue lines = still moving too fast. Train by feel, not by memorized millisecond numbers."
       },
       {
         "name": "Shadow Stepping (Tap-W Movement)",
         "videoUrl": "https://www.youtube.com/watch?v=Ku-n1bAV01Q",
         "source": "w0rthyTV — \"Movement & Peeking Mastery\"",
         "rankThreshold": "all",
-        "why": "Brief tap-W movement — very short sprints that don't sustain a full run animation cycle — is widely reported by community testing to produce no footstep audio. However, Riot has never publicly disclosed the exact trigger threshold for footstep sounds (Ask VALORANT #6, Audio Director Peter Zinda, 2020). The specific 'three steps = audio triggers / two steps = silent' rule originates from community coaching content and is not Riot-confirmed. Treat tap-W repositioning as a plausible silent technique rather than a guaranteed mechanic. The reliably silent options are shift-walking (confirmed silent by Riot Support documentation) and standing still.",
-        "preview": "Tap-W movement (very brief sprints) is community-reported to stay below the footstep audio threshold — but Riot has not confirmed the exact step-count trigger (Ask VALORANT #6, Zinda, 2020). Reliably silent: shift-walking (Riot Support confirmed) and standing still. Short burst movement avoids the inaccuracy penalty because accuracy returns at near-zero velocity at each direction change."
+        "why": "Brief 1-2 step bursts of movement let you reposition between cover without triggering full footstep audio — you stay below the audio threshold. The reliably silent options are shift-walking and standing still. Shadow steps also benefit accuracy: each short burst returns to near-zero velocity at the direction change, giving you accurate shots without a full stop.",
+        "preview": "For guaranteed silence: shift-walk. For quick silent repositioning: tap W (1-2 steps only, then stop). Never full-sprint near enemies unless you want them to hear you. Shadow steps are especially useful for repositioning off an angle you've already been seen at, or adjusting your cover position mid-round."
       },
       {
         "name": "Crosshair Acceptance Rule",
         "videoUrl": "https://www.youtube.com/watch?v=edIzYSYt7Bw",
         "source": "Zasko — \"You're Making Gunfights WAY Harder Than They Should Be\"",
         "rankThreshold": "all",
-        "why": "Mid-motion crosshair correction creates a curved, chaotic path that is nearly impossible to control precisely. Stopping completely first converts the correction into a linear micro-flick — which is a fundamentally simpler movement your fine motor system can execute with high precision. The \"Goalie Stance\" analogy: a still goalkeeper can dive in any direction; one already leaning can't redirect.",
-        "preview": "During a peek, if crosshair lands slightly off — DO NOT fix it mid-motion. Stop completely. Accept where it landed. Execute ONE clean micro-flick after full stop. Moving the mouse while strafing = messy curved path. Stop → one linear flick = clean."
+        "why": "Mid-motion crosshair correction creates a curved, chaotic path that is nearly impossible to control precisely. Stopping completely first converts the correction into a linear micro-flick — a fundamentally simpler movement your fine motor system can execute with high precision. The Goalie Stance analogy: a still goalkeeper can dive in any direction; one already leaning can't redirect.",
+        "preview": "During a peek, if your crosshair lands slightly off — do NOT fix it while still moving. Stop completely first. Accept where it landed. Execute one clean micro-flick after full stop. Moving the mouse while strafing creates a messy curved path. Stop → one linear flick = clean."
       },
       {
         "name": "Vandal vs. Phantom Mechanics",
         "videoUrl": "https://www.youtube.com/watch?v=ZRUq_kmDBPc",
         "source": "Fundamenty / n0ted",
         "rankThreshold": "all",
-        "why": "The Vandal and Phantom use identical movement-accuracy mechanics — there is no per-weapon deadzone window. Their real differences (Riot Data Drop 'Phantom vs. Vandal,' 2021; Valorant Wiki): Phantom has tighter first-shot accuracy (0.20 vs. 0.25 for Vandal, ~20% better on first shot) and a higher fire rate (11 rps vs. 9.75 rps); Vandal deals flat 160 headshot damage at all ranges while Phantom has damage falloff. The Vandal's lower first-shot inaccuracy tolerance makes timing errors more immediately visible — which is why it feels unforgiving. Training them in separate focused DM sessions builds timing consistency for each without the habit-confusion of weapon-switching.",
-        "preview": "Vandal and Phantom use the same movement-accuracy mechanics — no per-weapon deadzone window (Riot Data Drop 2021). Real differences: Phantom — tighter first shot (0.20 vs 0.25), faster fire rate (11 vs 9.75 rps). Vandal — flat 160 headshot damage at all ranges (Phantom drops off). Train them in separate DM sessions. Ghost DM → crosshair placement. Guardian DM → stop timing (punishes movement on either weapon)."
+        "why": "The Vandal and Phantom have identical movement-accuracy mechanics. Their real differences: Phantom has tighter first-shot accuracy (spread 0.20 vs. 0.25 for Vandal — 20% more forgiving) and a faster fire rate (11 rps vs. 9.75 rps). Vandal deals flat 160 headshot damage at all ranges; Phantom has damage falloff at distance. The Vandal's lower first-shot tolerance makes timing errors immediately visible, which is why it feels punishing.",
+        "preview": "Vandal and Phantom = same movement mechanics, different margin for error. Phantom: faster fire rate (11 vs 9.75 rps), more forgiving first shot (0.20 vs 0.25 spread), damage drops off at range. Vandal: flat 160 headshot damage everywhere, demands cleaner timing. Train them in separate DM sessions — weapon-switching builds habit confusion."
       },
       {
         "name": "Don't Lift Your Fingers",
         "videoUrl": "https://www.youtube.com/watch?v=ZRUq_kmDBPc",
         "source": "n0ted — \"How to Unf*ck Your Aim Part II\"",
         "rankThreshold": "all",
-        "why": "Physically lifting a finger from a key to press the opposite direction adds ~30–60ms of physical transit time — the finger must travel up, across, and down. This window is long enough to cost you accuracy timing in a fast strafe sequence. Keeping all four movement fingers resting on their keys at all times means direction changes happen through simultaneous key engagement with zero travel time.",
-        "preview": "Never lift your hand when changing direction (A→D). The time spent lifting = the time you're dead. The correct way: A key held → D immediately engaged (simultaneously), no physical lift. Fingers are on keys at all times."
+        "why": "Physically lifting a finger to press the opposite direction key adds transit time — the finger must travel up, across, and down. This window is long enough to cost you accuracy timing in a fast strafe sequence. Keeping all four movement fingers resting on their keys at all times means direction changes happen through simultaneous key engagement with zero travel time.",
+        "preview": "Never lift your hand when changing direction (A→D). Correct: A held → D immediately engaged (simultaneously), no physical lift. Fingers rest on all movement keys at all times. Lifting feels natural but adds 30–60ms of dead time — that's the window you need to shoot accurately."
       },
       {
         "name": "Crouch — When to Use It (and When Not To)",
         "videoUrl": "https://www.youtube.com/watch?v=gR-JNjFg9B8",
         "source": "Zasko — \"He Already Had INSANE Mechs\"",
         "rankThreshold": "sub-immortal",
-        "why": "Crouching as an accuracy crutch is punished at higher ranks because enemies have trained the ability to instantly re-aim at crouched head level. Below Immortal, random crouch mid-burst occasionally confuses spray-and-pray opponents — but above Immortal, the enemy's crosshair follows you down faster than you can crouch. Use crouch tactically (to break conditioning) not mechanically (for accuracy).",
-        "preview": "Crouch tap peek: light tap only (don't hold). Exploits enemy expectation of full crouch-spray — gives split-second head advantage. Heavy crouch commit: only in isolated fights, known position, no shoulder threats. ELO rule: low ELO avoid crouch (body spray risk); Immortal 2+ exploit via taps/heavies."
+        "why": "Crouching as an accuracy crutch is punished at higher ranks because enemies have trained the ability to instantly re-aim at crouched head level. Below Immortal, random crouch mid-burst occasionally confuses spray-and-pray opponents. Above Immortal, the enemy's crosshair follows you down faster than you crouch. Use crouch tactically to break conditioning — not as your default accuracy fix.",
+        "preview": "Crouch tap peek: light tap only (don't hold). Exploits enemy expectation of full-crouch spray — gives a split-second head advantage. Heavy crouch commit: only in isolated fights at a known position with no shoulder threats. Rule of thumb: below Immortal, avoid crouching (body shot risk). Immortal 2+: exploit via taps and selective heavies only."
       },
       {
         "name": "Aim Is 90% Movement",
         "videoUrl": "https://www.youtube.com/watch?v=wgQHZjy6TxA",
         "source": "w0rthyTV — MASS Protocol analysis of Florescent",
         "rankThreshold": "all",
-        "why": "Coaching analysis of Florescent (Ava Eugene, Apeks) describes her play as movement-driven: the crosshair is pre-positioned via WASD strafe so it arrives on the target without needing a flick. The specific round count ('22 of 24') is a coaching estimate, not an independently verified statistic. The general principle is well-supported: Riot's combat data (Phantom vs. Vandal data drop, 2021) shows accurate first shots dominate outcomes, which favours movement-based pre-aim over reactive flicking. WASD keys can traverse your crosshair across targets faster and more predictably than a mouse flick — and they don't add aim-error the way a rushed flick does. Flicking is compensating for failed positioning, not a primary strategy.",
-        "preview": "Pro-level Valorant emphasises movement-driven crosshair placement: WASD strafe pre-positions the crosshair, mouse corrects the final gap. Florescent's play is 'mostly movement, minimal flicking' (coaching estimate — specific round counts unverified). Riot combat data (Phantom vs. Vandal, 2021) supports accurate first shots over reactive flicks. Flicking = compensating for missed positioning."
+        "why": "Pro-level Valorant is movement-driven: the crosshair arrives on the target via WASD strafe positioning, not mouse flicking. Analysis of Florescent's play shows almost no flicking — the crosshair is pre-positioned through movement and the mouse only makes a small final correction. WASD keys can reposition your crosshair faster and more predictably than a flick, without the aim error that rushing a flick introduces. Flicking is compensating for failed positioning.",
+        "preview": "Your movement keys do 90% of the aiming work. Use WASD to strafe your crosshair into position, mouse for the final small correction. The goal: by the time you stop moving, your crosshair is already on the head. If you're constantly flicking, your positioning is off — fix the positioning, not the flick."
       },
       {
         "name": "Hyper Tap (Hall Effect Keyboards)",
         "videoUrl": "https://www.youtube.com/watch?v=edIzYSYt7Bw",
         "source": "n0ted — \"Hyper Tap is ADDICTING\"",
         "rankThreshold": "immortal",
-        "why": "Traditional mechanical switches have ~1.2–2.0 mm pretravel before actuation (Cherry MX Speed: 1.2 mm; standard MX: 2.0 mm), with total input latency varying widely by board — up to 45 ms variance (Dan Luu keyboard latency study). Hall Effect / magnetic switches (Wooting 60HE, Razer Analog) expose a minimum actuation of 0.1 mm — not 0.01 mm (that figure is 10× off). Measured total click latency on the Wooting 60HE: ~1.1 ms (RTINGS). The main competitive advantage is not raw press latency; it is the rapid-trigger feature that resets actuation in 0.1 mm increments, enabling faster direction-change resets in counter-strafe sequences at high strafe frequency.",
-        "preview": "Hall Effect keyboards (e.g., Wooting 60HE): minimum actuation 0.1 mm — not 0.01 mm (that was 10× off). Measured total click latency ~1.1 ms (RTINGS). Real advantage: rapid trigger resets in 0.1 mm increments → faster A/D direction-change resets, not raw key-press speed. Worth considering at Immortal+ where strafe frequency is high."
+        "why": "Traditional mechanical switches have 1.2–2.0mm pretravel before actuation. Hall Effect / magnetic switches (Wooting 60HE, Razer Analog) can actuate at 0.1mm minimum. The competitive advantage is not raw press speed — it's the rapid-trigger feature, which resets actuation in 0.1mm increments, enabling faster direction-change resets in counter-strafe sequences. This matters most at high strafe frequencies found in Immortal+ play.",
+        "preview": "Hall Effect keyboards (e.g., Wooting 60HE): minimum actuation 0.1mm, total click latency ~1.1ms. Real advantage: rapid trigger resets in 0.1mm → faster A/D direction-change resets for counter-strafing. Standard keyboards introduce lag in rapid-direction-change sequences. Worth considering at Immortal+ where strafe frequency is high enough for this to matter."
       }
     ]
   },
@@ -180,80 +180,80 @@
         "videoUrl": "https://www.youtube.com/watch?v=k1dXzO0RIBc",
         "source": "Zasko — \"This Subtle Mistake WASTES So Much Time\"",
         "rankThreshold": "all",
-        "why": "Motor skill execution uses different neural pathways than analytical thinking. Bringing conscious analysis into a gunfight literally activates the wrong part of your brain — the prefrontal cortex is slower and less efficient for motor execution than the trained automatic system. Green/Pink is not about attitude; it's about routing your neural processing to the correct system for the task.",
-        "preview": "Green = performance mode: flow state, intuition, trust mechanics. For warm-up, comp, DM. Pink = learning mode: analytical, deliberate, critical. For drills, VOD review, end-of-session training ONLY. Mechanics = motor skill — cannot improve by thinking mid-gunfight. Game sense = CAN improve by thinking during comp."
+        "why": "Motor skill execution uses different neural pathways than analytical thinking. Bringing conscious analysis into a gunfight literally activates the wrong part of your brain — the prefrontal cortex is slower and less efficient for motor execution than your trained automatic system. Green/Pink is not about attitude; it's about routing your neural processing to the correct system for the task.",
+        "preview": "Green = performance mode: flow state, intuition, trust mechanics. For warmup, comp, and DM. Pink = learning mode: analytical, deliberate, critical. For drills, VOD review, and end-of-session training only. Never go Pink during ranked. Mechanics = motor skill — cannot improve by thinking mid-gunfight. Game sense = CAN improve by thinking during comp."
       },
       {
         "name": "Text Message Anticipation",
         "videoUrl": "https://www.youtube.com/watch?v=28yvjExaR80",
         "source": "Zasko — \"You'll Never RUSH Your Shots Again\"",
         "rankThreshold": "all",
-        "why": "Surprise is the single largest driver of panic and missed shots. When an enemy appears unexpectedly, your startle reflex activates before your trained motor response — the reflex wins. Pre-visualizing scenarios before they happen removes the element of surprise. When the event occurs, your brain processes it as \"this is what I predicted\" rather than \"unexpected threat,\" bypassing the startle response entirely.",
-        "preview": "Before taking space, mentally preview what you'll see. \"Mid might push through smoke as I walk up.\" When enemy appears — it's a predicted event, not a surprise. Panic eliminated. Radiant game sense is just more text messages sent per minute. Collect scenarios after deaths, prepare for them next round."
+        "why": "Surprise is the largest driver of panic and missed shots. When an enemy appears unexpectedly, your startle reflex fires before your trained motor response — the reflex wins every time. Pre-visualizing scenarios before they happen removes surprise entirely. When the event occurs, your brain processes it as \"this is what I predicted\" rather than \"unexpected threat,\" bypassing the startle response.",
+        "preview": "Before taking space, mentally preview what you'll see. \"Mid might push through smoke as I walk up. B player might be peeking long.\" When the enemy appears — it's a predicted event, not a surprise. No panic, no reflex miss. After each death: collect the scenario, prepare for it next round. Radiant game sense is just more predictions sent per minute."
       },
       {
         "name": "Inner Game / Self 1 vs. Self 2",
         "videoUrl": "https://www.youtube.com/watch?v=8YRiCtEByHA",
         "source": "Zasko — \"You'll Never Rank Up Until You Fix This\" (Inner Game of Tennis)",
         "rankThreshold": "all",
-        "why": "The Inner Game of Tennis framework (Timothy Gallwey) identifies that critical self-talk (Self 1) actively degrades performance by pulling conscious attention into motor execution that runs better automatically. Tilt is not just an emotion — it is a specific neural interference pattern where Self 1 hijacks the motor execution system. The fix (non-judgmental observation) is neuroscience: it prevents the interference without suppressing it.",
-        "preview": "Self 1 (critic/thinker) causes tilt when dominant. Self 2 (doer/body) is what executes perfectly. Goal in ranked: give all control to Self 2. Tilt = Self 1 hijacking Self 2. Fix: observe without judgment, just notice what happens. Missing a shot = feedback, not failure."
+        "why": "The Inner Game of Tennis framework identifies that critical self-talk (Self 1) actively degrades performance by pulling conscious attention into motor execution that runs better automatically. Tilt is not just an emotion — it is a specific interference pattern where Self 1 hijacks the motor execution system. The fix is non-judgmental observation, which prevents interference without suppressing it.",
+        "preview": "Self 1 (critic/thinker) causes tilt when dominant. Self 2 (doer/body) is what executes perfectly. Goal in ranked: give all control to Self 2. Tilt = Self 1 hijacking Self 2. Fix: observe without judgment — just notice what happens. Missing a shot = feedback, not failure. Replace \"I'm so bad\" with \"interesting, what happened there?\""
       },
       {
         "name": "0% Excuses / 100% Responsibility",
         "videoUrl": "https://www.youtube.com/watch?v=-ufd8fmvZLA",
         "source": "w0rthyTV — \"AIM is NOT Your Issue, THIS is\"",
         "rankThreshold": "all",
-        "why": "Blaming creates a fixed attribution (it was their fault) that closes the loop without generating a solution. Taking responsibility creates an open attribution (what could I do differently?) that forces problem-solving. The two mental states produce different subsequent brain states: blame activates the amygdala (emotional, reactive), while responsibility activates the prefrontal cortex (analytical, solution-seeking). Over 100+ games, this difference compounds into very different trajectories.",
-        "preview": "\"If we blame, we stay the same.\" Taking responsibility = solutions-based thinking = growth. Blaming = fixed mindset = stuck at current rank. Applied: when teammate does wrong, ask \"How was I responsible for that outcome?\" Tilt is rooted in victimhood — looking for something to blame."
+        "why": "Blaming creates a fixed attribution (it was their fault) that closes the loop without generating a solution. Taking responsibility creates an open attribution (what could I do differently?) that forces problem-solving. Over 100+ games, this difference compounds into very different rank trajectories — one gets stuck, one climbs.",
+        "preview": "\"If we blame, we stay the same.\" When a teammate does something wrong: ask \"How was I responsible for that outcome?\" When you die: ask \"What could I have done differently?\" Tilt is rooted in victimhood — it's looking for something to blame. Responsibility = solutions-based thinking = growth."
       },
       {
         "name": "Investing RR (Reframe Losses)",
         "videoUrl": "https://www.youtube.com/watch?v=MBO9jUMjCPE",
         "source": "w0rthyTV — coaching content",
         "rankThreshold": "all",
-        "why": "The emotional pain of losing RR (ranking points) triggers the same neural response as a financial loss — loss aversion. This creates tilt through a neurological mechanism, not a weakness of character. Reframing a loss as \"investing RR into information about my current weaknesses\" changes the emotional tagging of the event from negative to neutral-to-positive. This is not cope — it's a measurable change in how the prefrontal cortex processes the outcome.",
-        "preview": "Reframe losses from \"losing RR\" to \"investing RR.\" Every loss contains information that a win conceals. You always get something from a loss. Benefits of loss: mistakes are visible (hidden in wins), humbles ego, makes eventual success more meaningful."
+        "why": "The emotional pain of losing RR triggers the same neural response as a financial loss — loss aversion. This creates tilt through a neurological mechanism, not a character weakness. Reframing a loss as \"investing RR into information about my current weaknesses\" changes the emotional tag from negative to neutral-to-positive. Every loss contains information that a win conceals.",
+        "preview": "Reframe losses from \"losing RR\" to \"investing RR.\" Every loss makes mistakes visible that wins hide. You always get something from a loss: where your mechanics broke down, where your positioning failed, what your current ceiling is. Eventual success built on understood losses is more durable than success built on blind wins."
       },
       {
         "name": "Mental Diet (Copium Analogy)",
         "videoUrl": "https://www.youtube.com/watch?v=EjcOqzbO24c",
         "source": "w0rthyTV — \"How MENTAL Affects your AIM\"",
         "rankThreshold": "all",
-        "why": "Blame and negative self-talk are habitual thought patterns — every time you complete the blame loop, you strengthen the neural pathway for that pattern. It becomes easier to blame next time. This compounds over hundreds of games until blame is the automatic first response to any death. Like diet: each individual instance seems harmless, but the cumulative effect is the habit that controls your performance ceiling.",
-        "preview": "What you feed your mental compounds. Blaming teammates = eating cake every day — day 1 feels good, day 30 you're in the graveyard. Elevated fear/arousal degrades fine motor performance — the culprit is the stress state, not heart rate alone (Grossman & Siddle, 1999; Lewinski, Force Science Institute). Fix: redirect energy to strategy after every death, not blame."
+        "why": "Blame and negative self-talk are habitual thought patterns — every time you complete the blame loop, you strengthen the neural pathway for it. It becomes easier to blame next time. This compounds over hundreds of games until blame is the automatic first response to any death. Like diet: each individual instance seems harmless, but the cumulative effect controls your performance ceiling.",
+        "preview": "What you feed your mental compounds. Blaming teammates = eating bad every day — day 1 feels fine, day 30 it's a habit that's controlling your play. High arousal/fear states degrade fine motor performance (grip tension, over-flicking). After every death: redirect energy to strategy and next-round planning, not blame. The habit of blame is more limiting than your aim."
       },
       {
         "name": "Pele Protocol (Pre-Round Visualization)",
         "videoUrl": "https://www.youtube.com/watch?v=-ufd8fmvZLA",
         "source": "Fundamenty — \"Pele Protocol\"",
         "rankThreshold": "all",
-        "why": "Motor imagery activates a neural network that substantially overlaps with motor execution — SMA, premotor cortex, posterior parietal cortex, basal ganglia, and cerebellum (Hétu et al. 2013 meta-analysis). Primary motor cortex (M1) activation during imagery is weaker and inconsistent, appearing in only ~18% of fMRI studies. Pascual-Leone et al. (J Neurophysiol, 1995) showed mental piano practice produced similar cortical reorganisation to physical practice over 5 days. Effect sizes for motor-skill improvement from imagery are moderate: d≈0.42–0.53 (Driskell et al. meta-analysis, 1994; Toth et al. 2020 replication), with optimal sessions around 20 minutes. Elite athletes like Pelé famously pre-visualised every contact before matches. In FPS terms: visualising the peek, the stop, the headshot primes the motor planning circuits so execution feels like recall rather than improvisation.",
-        "preview": "During buy phase: close eyes, visualize the round. What angle will you hold? What will enemy do? Imagine the exact scenarios before they happen. \"Be in the moment from the future.\" Motor neurons activate identically during visualization as during physical practice — it's free training."
+        "why": "When you mentally rehearse an action, your brain fires nearly the same motor circuits as when you physically perform it. This is not wishful thinking — it is actual neural preparation. Elite athletes consistently use pre-event visualization, and FPS players benefit the same way: mentally seeing the peek, the stop, the headshot before it happens primes your motor circuits so execution feels like recall rather than improvisation. Surprise is eliminated. Your first fight becomes a predicted event.",
+        "preview": "During buy phase: close your eyes and mentally preview the first fight you'll take. Visualize the exact angle, the two steps, the stop, the headshot. See it as a movie — complete and successful. When the real fight happens, your body recognizes it as a predicted event and executes without panic. 20–30 seconds per round. Build the habit."
       },
       {
         "name": "Flow State Triggers",
         "videoUrl": "https://www.youtube.com/watch?v=k1dXzO0RIBc",
         "source": "Zasko — \"You'll Never Rank Up Until You Fix This\"",
         "rankThreshold": "all",
-        "why": "Flow state (Csikszentmihalyi) is defined by four conditions: clear goal, immediate feedback, challenge at skill level, and loss of self-consciousness. All four are engineerable. The reset ritual between rounds directly addresses self-consciousness (breathe, loosen, release). Choosing one cue before queue creates the clear goal. Understanding these triggers means flow is not luck — it's a repeatable state you build conditions for.",
-        "preview": "Flow emerges when: trust mechanics (not analyzing them), clear goal, immediate feedback, challenge slightly above skill level. Between rounds: mute sound, breathe, water, posture reset. The reset ritual IS the flow trigger. Don't skip it even in casual games."
+        "why": "Flow state is defined by four conditions: clear goal, immediate feedback, challenge at skill level, and loss of self-consciousness. All four are engineerable. The reset ritual between rounds directly addresses self-consciousness (breathe, loosen, release). Choosing one cue before queue creates the clear goal. Flow is not luck — it's a repeatable state you build conditions for.",
+        "preview": "Flow emerges when: trusting mechanics (not analyzing them), clear single goal, immediate feedback, challenge slightly above skill level. Between rounds: mute game sound, take one deep breath, loosen shoulders, release mouse grip tension. The reset ritual IS the flow trigger. Don't skip it even in casual games."
       },
       {
         "name": "Pre-Round Fight Planning",
         "videoUrl": "https://www.youtube.com/watch?v=8LPOwGfsw6U",
         "source": "OD26 — \"Why Everyone Hates Reyna Players\"",
         "rankThreshold": "sub-immortal",
-        "why": "Entering a round without a specific fight intention means your first contact becomes improvised and reactionary. Decision latency in the moment costs 200–400ms that is not recoverable once the fight starts. Pre-programming the fight (who you want to duel, from where, with what utility) converts that decision from real-time improvisation into a pre-committed plan with zero latency.",
-        "preview": "Before every round: decide what fight you want. Not \"play aggressively\" — a specific angle, specific utility setup, specific route. No plan = random results regardless of mechanics. Win condition: choose one thing you can do that meaningfully improves round win probability."
+        "why": "Entering a round without a specific fight intention means your first contact is improvised and reactionary. Decision latency in the moment costs 200–400ms that you can't recover once the fight starts. Pre-programming the fight (who you want to duel, from where, with what utility) converts that real-time decision into a pre-committed plan with zero latency.",
+        "preview": "Before every round: decide what fight you want. Not \"play aggressive\" — a specific angle, specific utility setup, specific route. No plan = random results regardless of mechanics. Ask: \"What is the one thing I can do this round that meaningfully improves our win probability?\" Write it during buy phase. Execute it."
       },
       {
         "name": "Hindsight vs. Technique",
         "videoUrl": "https://www.youtube.com/watch?v=6j24Kextt0k",
         "source": "OD26 — \"We Cured This Clove's Ranked Anxiety\"",
         "rankThreshold": "all",
-        "why": "Reviewing your own play and beating yourself up for \"bad\" decisions is often analytically incorrect. Many deaths come from hindsight bias — you only know it was a mistake because you saw the outcome. Technique mistakes (things you could have identified live: bad crosshair, wrong movement) are the only actionable review targets. Separating the two prevents false improvement signals and wasted drilling.",
-        "preview": "Hindsight = info you only had after the outcome (not a mistake — cannot learn from it). Technique = something identifiable live (actionable, drill this). VOD review: only focus on decisions you could have recognized in real time. Beating yourself up for hindsight deaths is not growth — it is noise."
+        "why": "Reviewing your own play and punishing yourself for \"bad\" decisions is often analytically incorrect. Many deaths come from hindsight bias — you only know it was a mistake because you saw the outcome. Technique mistakes (identifiable in real-time: bad crosshair, wrong movement) are the only actionable review targets. Separating them prevents false improvement signals and wasted drilling.",
+        "preview": "Hindsight = info you only had after the outcome (not actionable — cannot learn from it). Technique = something you could have identified live (actionable — drill this). VOD review: only flag decisions you could have recognized in real time. Ask: \"Did I have this information when I made the decision?\" If no — hindsight. Let it go."
       }
     ]
   },
@@ -266,104 +266,120 @@
         "videoUrl": "https://www.youtube.com/watch?v=3_0ajFbCcUA",
         "source": "w0rthyTV — \"How RADIANTS POSITION in VALORANT\"",
         "rankThreshold": "all",
-        "why": "Most positioning decisions are made on instinct (\"this feels fine\"). UFOs converts instinct into a scored checklist, making positioning errors visible and correctable. The framework's power is in VOD review: pausing at each death and scoring the position reveals patterns (e.g., \"I always die in 0-escape positions\") that were invisible without the structure.",
-        "preview": "5 yes/no questions: (U) Utility — can teammate support? (F) Flash-dodge — can you dodge? (O) On/Off angle — off is better. (S) Support/Trade — teammate to trade you? (E) Escape — cover immediately available? Score 0.5 per criterion. Below 2.5/5 = death trap. Use in VOD review: pause on every death and score your position."
+        "why": "Most positioning decisions are made on instinct (\"this feels fine\"). UFOs converts instinct into a scored checklist, making positioning errors visible and correctable. Its real power is in VOD review: pausing at each death and scoring the position reveals patterns — e.g., \"I always die in 0-escape positions\" — that were invisible without the structure.",
+        "preview": "5 yes/no questions: (U) Utility — can a teammate support you? (F) Flash-dodge — can you dodge a flash? (O) On/Off angle — off is better. (S) Support/Trade — teammate close enough to trade? (E) Escape — cover immediately available? Score 0.5 per yes. Below 2.5/5 = death trap. Use in VOD review: pause on every death and score your position."
       },
       {
         "name": "OH SH*T Line",
         "videoUrl": "https://www.youtube.com/watch?v=eMk_GNeXE1I",
         "source": "w0rthyTV — coaching sessions / TikTok",
         "rankThreshold": "all",
-        "why": "Every weapon and position has a range where it excels. Crossing the OH SH*T Line is when you are now fighting with your weapon's disadvantages instead of its advantages. For an Operator player: the line is where close-range negates the one-shot advantage. For any player: it's the position from which retreat is no longer possible. Knowing the line before you need it means you never cross it accidentally.",
-        "preview": "Invisible spatial boundary where combat nature changes. Cross it only with gun out, animations finished, eyes on crosshair, 100% active mode. For Operator: the line where close range nullifies your one-shot advantage — don't cross it. Practice: narrate mode aloud. \"Passive... Sentry... ACTIVE.\""
+        "why": "Every position has a spatial boundary — the OH SH*T Line — past which the nature of the fight changes entirely against you. For an Operator player it's the distance where enemies can sprint past your scope. For any defender it's the point where retreat to cover is no longer possible. Knowing exactly where the line is lets you hold deliberately in front of it, rather than drifting past it mid-round and suddenly being in the wrong fight.",
+        "preview": "Before every hold: mentally define your OH SH*T Line — the point past which you're committed with no escape. For Operators: the distance where close-quarters negates your one-shot advantage. For any position: the moment retreat becomes impossible. Rules: only cross the line with gun out and aim ready. Never drift past it passively mid-rotation. If you're past it, commit fully — don't half-fight."
       },
       {
         "name": "Driver's Protocol (Awareness Modes)",
         "videoUrl": "https://www.youtube.com/watch?v=Plmts9TSpas",
         "source": "w0rthyTV — \"How Radiants Look At The Radar/Minimap\"",
         "rankThreshold": "all",
-        "why": "Radiant players do not have superior minimap awareness — they have scheduled minimap awareness. They know exactly which game states allow a minimap glance without dying. Checking minimap during Active mode (live threat present) costs you a gunfight. Never checking it leaves you flying blind on rotations. The three modes create a clear rule for when each type of information-gathering is safe.",
-        "preview": "Active (100% crosshair): crossing danger line, live threat. Sentry (50/50): behind cover — peek in/out, minimap flicks when covered. Passive (0%): safe rotations only. Rubbernecking: after shots fired, flick eyes to kill feed → scoreboard → minimap. Sequence: Kill feed → Scoreboard → Minimap → Crosshair → back to fight."
+        "why": "Radiant players have scheduled minimap awareness — they know exactly which game states allow a minimap glance without dying. Checking minimap during Active mode (live threat present) costs you a gunfight. Never checking leaves you blind on rotations. The three modes create a clear rule for when each type of information-gathering is safe.",
+        "preview": "Active (100% crosshair): crossing danger line, live threat. Never minimap here. Sentry (50/50): behind cover, peeking in/out. Minimap flicks okay when covered. Passive (0%): safe rotations only. Rubbernecking sequence after shots: Kill feed → Scoreboard → Minimap → Crosshair → back to fight. Practice the sequence until it's automatic."
       },
       {
         "name": "Dead Zone Protocol",
         "videoUrl": "https://www.youtube.com/watch?v=3_0ajFbCcUA",
         "source": "w0rthyTV — \"How to TRIGGER DISCIPLINE like a RADIANT\"",
         "rankThreshold": "all",
-        "why": "Dead zones are invisible in real time — standing and watching a hallway feels productive because you're \"covering.\" The question \"am I supporting my team's effort right now?\" is a direct forcing function that exposes dead zone behavior. For controllers in particular, the wait time between fights is actually prime utility pre-positioning time, and recognizing the dead zone converts wasted time into map control.",
-        "preview": "Dead zone = standing somewhere doing nothing useful for your team. Your Actions Per Minute contribute 0% support. Question: \"Am I supporting my team's effort, working against it, or doing nothing?\" Controllers especially: use wait time to pre-position smokes, prepare utility, read minimap for rotations."
+        "why": "Dead zones are invisible in real time — standing and watching a hallway feels productive because you're \"covering.\" The question \"am I supporting my team's effort right now?\" is a direct forcing function that exposes dead zone behavior. For controllers especially, the wait time between fights is prime utility pre-positioning time, and recognizing the dead zone converts wasted time into map control.",
+        "preview": "Dead zone = standing somewhere contributing 0% support to your team. Diagnose it: \"Am I supporting my team's effort, working against it, or doing nothing?\" Controllers: use wait time to pre-position smokes, prepare utility, and read the minimap for rotates. Duelists: use wait time to find better angles. Nobody should be passive while their team fights."
       },
       {
         "name": "Numbers Game Framework",
         "videoUrl": "https://www.youtube.com/watch?v=3_0ajFbCcUA",
         "source": "w0rthyTV — Trigger Discipline analysis",
         "rankThreshold": "all",
-        "why": "The decision to shoot or hold fire in a disadvantaged numbers situation is one of the highest-leverage decisions in a round. Taking a bad trade in a 3v5 can convert it into a 2v5 in seconds. The Numbers Game framework provides the expected-value calculation in advance so that when the situation occurs, the answer is already known: never fight when outnumbered unless you can kill without being seen.",
-        "preview": "In a 3v5, one kill barely improves win probability — but 3 undetected kills could win the round. The calculation: expected value of shooting vs. expected value of not shooting. If losing in numbers AND undetected: DO NOT shoot unless you can multi-frag. Trigger discipline is knowing when holding fire is worth more than taking a shot."
+        "why": "The decision to shoot or hold fire in a disadvantaged numbers situation is one of the highest-leverage decisions in a round. Taking a bad trade in a 3v5 converts it to a 2v5 in seconds. The Numbers Game framework provides the expected-value calculation in advance — so when the situation occurs, the answer is already known.",
+        "preview": "In a 3v5: one kill barely improves win probability. Three undetected kills could win the round. Calculation: expected value of shooting vs. staying hidden. If outnumbered AND undetected: do NOT shoot unless you can multi-frag without being seen. Trigger discipline is knowing when holding fire is worth more than taking the shot."
       },
       {
         "name": "Win Condition Hierarchy",
         "videoUrl": "https://www.youtube.com/watch?v=eMk_GNeXE1I",
         "source": "w0rthyTV — \"Why Pros Buy Sheriffs\"",
         "rankThreshold": "all",
-        "why": "Most sub-Immortal players optimize for kills because kills feel good and are visible feedback. But rounds are won by objectives, not KDA. Understanding that kills are only valuable when they serve the spike (plant/defuse) or time (burning the clock) re-orients every decision in the round. A player who dies planting the spike gave more value than a player who got three kills and lost the round.",
-        "preview": "Priority: 1. Spike (plant/defuse). 2. Time (burn the clock). 3. Kills (only as tool for #1 and #2). Kills without objective = stat-padding that loses rounds. Pros buy Sheriffs specifically because the alternative is eco pistols — the Sheriff wins the round via burst damage, not average damage."
+        "why": "Most sub-Immortal players optimize for kills because kills provide visible feedback. But rounds are won by objectives, not KDA. Understanding that kills are only valuable when they serve the spike or the clock re-orients every decision. A player who dies planting the spike gave more value than one who got three kills and lost the round.",
+        "preview": "Priority: 1. Spike (plant/defuse). 2. Time (burn the clock on attack; play for time to defuse on defense). 3. Kills (only as a tool for #1 and #2). Kills without objective = stat-padding that loses rounds. Re-evaluate every \"should I fight?\" decision through this lens."
+      },
+      {
+        "name": "Economy Management",
+        "videoUrl": "https://www.youtube.com/watch?v=3_0ajFbCcUA",
+        "source": "w0rthyTV / OD26 — economy coaching",
+        "rankThreshold": "sub-immortal",
+        "why": "Most sub-Immortal players make buy decisions in a vacuum — ignoring teammates' credits and the round history. Valorant's economy is a team system: one player force-buying while four save generates an underpowered half-buy fight that you lose anyway and can't reset from. Coordinated economy wins rounds before they start by ensuring your whole team has a proper kit — or everyone resets to buy properly next round.",
+        "preview": "Full buy: rifle + full armor + key utility (≥3900 creds). Half buy: Spectre/Stinger + light armor, limited utility. Save: pistol only — protect your credits to reset. Force buy: everyone spends everything (for round 2 momentum or when a save loss ends the half). Team rule: if 2+ teammates are saving, you save. Never force-buy alone. Call 'save' or 'buy' at the start of buy phase and align with your team."
+      },
+      {
+        "name": "Spike Timing & Post-Plant",
+        "videoUrl": "https://www.youtube.com/watch?v=3_0ajFbCcUA",
+        "source": "w0rthyTV — competitive Valorant fundamentals",
+        "rankThreshold": "sub-immortal",
+        "why": "The spike plant timer (45 seconds) and defuse timer (7 seconds, 3.5s per beep) are the most consistently ignored numbers in sub-Immortal play. Attackers who don't know these numbers make desperate pushes that cost rounds. Defenders who don't know them take suicidal retakes at the wrong moment. Knowing the timers converts reactive, panicked decisions into calm, calculated ones.",
+        "preview": "Spike detonates 45 seconds after plant. Defuse takes 7 seconds total (first beep at 3.5s, second beep at 7s). Post-plant for attackers: get into crossfire positions before defenders arrive — do not stand on site after planting. Post-plant for defenders: you need 7 clear seconds on-site. With 15 seconds left, defender must immediately push. With 30+ seconds remaining, a slower crossfire-clearing retake is viable. In a 1v1 post-plant: attacker with cover wins; defender must find them before timer runs out."
       },
       {
         "name": "Swing Protocol (OD26)",
         "videoUrl": "https://www.youtube.com/watch?v=QBL2NXSZDCA",
         "source": "OD26 — \"Learn How To SWING\" / coaching sessions",
         "rankThreshold": "all",
-        "why": "Half-swings are the worst of both worlds: you expose yourself without the speed of a committed swing and without the protection of full cover. A committed swing uses peeker's advantage; a half-swing hands it away. Timing swings to teammate pressure works because enemy attention is physically divided — they cannot track two simultaneous threats as effectively as one, and the first look at your teammate creates the flicker window for your swing.",
-        "preview": "Wide swing = full commitment — don't half-swing. Time swings to teammate pressure (swing when enemy attention is on teammate). Never dry swing when you can use utility first. After a swing: move immediately — never hold the spot you swung from. Game sense underpins swinging: know where enemies are before committing."
+        "why": "Half-swings are the worst of both worlds: you expose yourself without the speed of a committed swing and without the protection of full cover. A committed swing uses peeker's advantage; a half-swing hands it to the defender. Timing swings to teammate pressure works because the enemy cannot track two simultaneous threats equally — the first look at your teammate creates the window for your swing.",
+        "preview": "Wide swing = full commitment — don't half-swing. Time swings to teammate pressure (swing when enemy attention is on your teammate). Never dry-swing when utility is available. After a swing: move immediately — never hold the same spot you swung from. Game sense underpins this: know roughly where enemies are before committing."
       },
       {
         "name": "Autopilot Prevention",
         "videoUrl": "https://www.youtube.com/watch?v=8LPOwGfsw6U",
         "source": "OD26 — \"This Raze Couldn't Stop Auto Piloting\"",
         "rankThreshold": "all",
-        "why": "Autopilot occurs when you execute patterns from muscle memory without updating them to the current game state. This is cognitively efficient (saves mental resources) but produces consistently wrong decisions in a dynamic game where conditions change every round. The 5-second buy-phase check breaks autopilot by forcing one moment of deliberate situational awareness per round — cheap cost, high value.",
-        "preview": "Autopilot = running the same routine without reading the current game state. Each round is different: enemy positions change, economy changes, team composure changes. Before each round, take 5 seconds during buy phase to assess: \"What is the most important thing I can do this round?\""
+        "why": "Autopilot means executing muscle-memory patterns without updating them to the current game state. This is cognitively efficient but produces consistently wrong decisions in a dynamic game where conditions change every round. The 5-second buy-phase check breaks autopilot by forcing one moment of deliberate situational awareness per round — cheap cost, high value.",
+        "preview": "Autopilot = running the same routine regardless of what the current game state actually is. Each round differs: enemy positions change, economy changes, team composition changes. Before each round, take 5 seconds during buy phase: \"What is the most important thing I can do this specific round?\" Not your default play — this round."
       },
       {
         "name": "Info → Utility → Commit",
         "videoUrl": "https://www.youtube.com/watch?v=a0qO_CDr1GE",
         "source": "Zasko — \"You're WASTING Your Utility\"",
         "rankThreshold": "all",
-        "why": "Utility used without confirmed information is wasted in two ways: it misses the target and it signals your position without payoff. The Info→Util→Commit sequence guarantees that every piece of utility is aimed at a confirmed target, which means every utility use has positive expected value. Dry utility usage (no information before throwing) is one of the most common errors that coaches identify in sub-Immortal VODs.",
-        "preview": "Formula for utility usage: Info (slice/teammate/noise) → Util (pop at confirmed position) → Commit (wide swing for kill). Never throw utility dry without confirming a target. Install combos as subconscious if-then statements: pick one combo → drill range → drill custom → implement in TDM → drill daily → subconscious."
+        "why": "Utility used without confirmed information is wasted in two ways: it misses the target and signals your position without payoff. The Info→Util→Commit sequence guarantees every piece of utility is aimed at a confirmed target, which means every utility use has positive expected value. Dry utility usage (no information before throwing) is one of the most common errors coaches identify in sub-Immortal VODs.",
+        "preview": "Formula: Info (slice/teammate call/noise) → Util (pop at confirmed position) → Commit (wide swing for the kill). Never throw utility dry without confirming a target. Install this as a subconscious if-then: pick one combo, drill it in range, drill in custom, apply in TDM, then carry it into ranked. One combo at a time."
       },
       {
         "name": "Neutral Space Framework",
         "videoUrl": "https://www.youtube.com/watch?v=Plmts9TSpas",
         "source": "OD26 — \"This Top 1% Aimer Had No Brain\"",
         "rankThreshold": "sub-immortal",
-        "why": "Neutral space (the area between spawn barriers) is the primary map control battleground. Teams that contest it gain information, force enemies to commit resources, and create execute opportunities. Teams that ignore it give the enemy free map control and predictable spawn-to-site distance advantages. OD26 identifies ignoring neutral space as one of the most common high-ceiling limiting factors in sub-Immortal players.",
-        "preview": "Contest or gather info on the space between spawn barriers every round — ignoring it gives enemy free map control. This is not just for IGLs: every player should have a neutral-space habit. Check it early, force the enemy to react to you rather than vice versa."
+        "why": "Neutral space — the area between spawn barriers — is where map control is won or lost. Teams that contest it gain information, force enemies to commit resources, and create execute opportunities. Teams that ignore it give the enemy free map control and a predictable rushing distance to site. OD26 identifies ignoring neutral space as one of the most common high-ceiling limiting factors in sub-Immortal players.",
+        "preview": "Contest or gather info on the space between spawn barriers every round — ignoring it gives the enemy free map control. Every player should have a neutral-space habit for their role: check it early, force enemies to react to you rather than vice versa. Ask: \"What information can I get from mid/neutral in the first 30 seconds?\""
       },
       {
         "name": "Numbers Advantage Rule",
         "videoUrl": "https://www.youtube.com/watch?v=3_0ajFbCcUA",
         "source": "OD26 — \"This Top 1% Aimer Had No Brain\"",
         "rankThreshold": "sub-immortal",
-        "why": "Statistical win probability changes non-linearly with numbers advantage. +1 in numbers (e.g., 3v2) in ranked is not a dominant advantage — individual mechanical variation makes the outcome nearly 50/50. +2 (e.g., 4v2) raises win probability to ~92%, making the tactical decision simple: group up and execute. Understanding this prevents solo plays and \"hero moments\" that statistically lose more than they win.",
-        "preview": "+2 in numbers = ~92% win probability. +1 is unreliable in ranked — individual mechanics create near-50/50 outcomes. In a 3v1: fight together — enemy's only win is isolating you into three separate 1v1s. In +2: locate then execute as a unit, never split. Always know your numbers before committing to a fight."
+        "why": "Win probability changes non-linearly with numbers advantage. +1 (e.g., 3v2) in ranked is not dominant — individual mechanical variance makes it nearly 50/50. +2 (e.g., 4v2) raises win probability to ~92%, making the tactical decision simple: group and execute. Understanding this prevents solo plays that statistically lose more than they win.",
+        "preview": "+2 in numbers = ~92% win probability — group and execute as a unit. +1 is unreliable in ranked — individual mechanics create near 50/50 outcomes. In a 3v1: fight together — the enemy only wins by isolating you into three separate 1v1s. Always know your numbers before committing to a fight. Never split when you have a +2 advantage."
       },
       {
         "name": "Mada's Multi-Frag Protocol",
         "videoUrl": "https://www.youtube.com/watch?v=cjuc9ix02-w",
         "source": "Zasko — \"Mada Makes Fragging EFFORTLESS\"",
         "rankThreshold": "immortal",
-        "why": "The 150–200ms kill-confirmation delay is a hardwired habit from games where kill confirmation is required for an action (looting, objectives). In Valorant, kills require no confirmation — the game continues immediately. Training \"assume the kill\" repurposes those 150ms as aiming time on target 2. Across all multi-enemy scenarios in a ranked game, this compounds to a significant mechanical advantage.",
-        "preview": "In multi-enemy fights: shoot T1 → assume dead → immediately snap to T2. Do not wait for kill animation or audio confirmation. Mada removes 150–200ms per kill this way. Practice: custom game, fire one shot at T1 dummy, snap to T2 before animation plays. Build the reflex — fire and forget."
+        "why": "The 150–200ms kill-confirmation delay is a hardwired habit from games where kill confirmation triggers an action (looting, objectives). In Valorant, kills require no confirmation — the game continues immediately. Training \"assume the kill\" repurposes those 150ms as aiming time on the next target. Across all multi-enemy scenarios in a ranked game, this compounds to a significant mechanical advantage.",
+        "preview": "In multi-enemy fights: shoot T1 → assume dead → immediately snap to T2. Do not wait for kill animation or audio confirmation. Practice in custom: fire one shot at T1 dummy, snap to T2 before T1's death animation plays. Build the reflex: fire → move → evaluate, never fire → evaluate → move."
       },
       {
         "name": "Idle Rest After Session",
         "videoUrl": "https://www.youtube.com/watch?v=8YRiCtEByHA",
         "source": "Fundamenty — Motor Learning Research",
         "rankThreshold": "all",
-        "why": "Motor memory consolidation begins immediately after practice. After meaningful experiences, the hippocampus replays recent spatial trajectories in reverse during quiet wakefulness — a likely reinforcement-learning signal documented by Foster & Wilson (Nature, 2006) and Diba & Buzsáki (Nat Neurosci, 2007). This reverse replay is documented for spatial trajectories, not finger-motor sequences specifically; a quantified percentage retention boost from this effect is not established in the literature. Separately, stage-2 NREM sleep and sleep spindles consolidate motor skills overnight: Walker et al. (Neuron, 2002) measured ~20% improvement in motor speed after a night of sleep, correlated with NREM-2 activity in the final sleep quarter (Laventure et al., PLOS Biology, 2016 confirmed spindle activity is causally involved). Jumping straight to social media after a session may interrupt the early quiet-wakefulness consolidation window.",
-        "preview": "5–10 min of quiet inactivity after gaming — let early consolidation begin before switching to social media. Hippocampus replays spatial trajectories in reverse during quiet rest (Foster & Wilson, Nature 2006) — documented for spatial navigation, not motor sequences specifically; % improvement not established. Overnight NREM2 sleep spindles consolidate motor skills — ~20% motor speed gain (Walker et al., Neuron 2002). Protect sleep above all training decisions."
+        "why": "Your brain consolidates motor skills during rest, not during practice. The 5-10 minutes immediately after a session is when early memory consolidation begins — jumping straight to social media or other stimulating activity interrupts this window. Sleep is the most powerful consolidation tool: ~20% improvement in motor skill speed has been measured after a full night's sleep compared to an equal waking period.",
+        "preview": "5-10 minutes of quiet inactivity after gaming — no phone, no immediate task-switching. Let the session settle. Protect your sleep above all training decisions: a night's sleep after a training session produces real, measurable skill improvement overnight. Never sacrifice sleep for extra ranked games. The session plants the seed. Rest and sleep grow it."
       }
     ]
   }
