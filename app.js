@@ -28,6 +28,7 @@ const appState = {
 };
 
 const STATE_STORAGE_KEY = 'valo-training.state.v1';
+const THEME_STORAGE_KEY = 'valo-training.theme.v1';
 const VALID_SKILL_STATES = new Set(['yes', 'no', 'unsure', null]);
 
 // ── Persistence helpers ──────────────────────────────────────────────────────
@@ -148,8 +149,8 @@ function switchView(view) {
 /* ═══ DARK MODE ═══ */
 function initTheme() {
   const root = document.documentElement;
-  let theme = root.getAttribute('data-theme') ||
-    (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+  const stored = localStorage.getItem(THEME_STORAGE_KEY);
+  let theme = stored || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
   root.setAttribute('data-theme', theme);
 
   const setIcon = (t) => {
@@ -165,6 +166,7 @@ function initTheme() {
       theme = theme === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', theme);
       setIcon(theme);
+      localStorage.setItem(THEME_STORAGE_KEY, theme);
     }
   });
 }
@@ -1228,6 +1230,7 @@ async function initApp() {
   // Show home view
   switchView('home');
   updateNavBadges();
+  updateGetStartedProgress();
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
@@ -1538,6 +1541,16 @@ function renderGetStarted() {
           </div>
         </div>
       `;
+
+      card.querySelector('a.gs-thumbnail').addEventListener('click', () => {
+        if (!watchedConcepts.has(concept.id)) {
+          watchedConcepts.add(concept.id);
+          saveWatchedState(watchedConcepts);
+          renderGetStarted();
+          updateGetStartedProgress();
+          updateNavBadges();
+        }
+      });
 
       card.querySelector('.gs-watch-btn').addEventListener('click', (e) => {
         e.stopPropagation();
